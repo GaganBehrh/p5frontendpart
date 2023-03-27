@@ -1,24 +1,30 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 const Navigationbar = () => {
-
     return (
-        <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="#home">Recipbook</Navbar.Brand>
-                    <Nav className="ml-auto">
-                        <Nav.Link >Home</Nav.Link>
-                        <Nav.Link >SignUp</Nav.Link>
-                        <Nav.Link >Signin</Nav.Link>
+        <Navbar bg="dark" variant="dark" expand="md" fixed="top">
+            <Container>
+                <Navbar.Brand>
+                    ReciBook
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto text-left">
+                        <Nav.Link>
+                            Home
+                        </Nav.Link>
+                        <Nav.Link>
+                            Sign in
+                        </Nav.Link>
+                        <Nav.Link>
+                            Sign up
+                        </Nav.Link>
                     </Nav>
-                </Container>
-            </Navbar>
-            <br />
-
-
-        </>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
-}
-
+};
 export default Navigationbar;
+
+
