@@ -8,7 +8,7 @@ function App() {
       <Navigationbar />
       <Container>
         <h1>Homepage</h1>
-        <h1>SigniIn</h1>
+        <h1>SignIn</h1>
       </Container>
     </div>
   );

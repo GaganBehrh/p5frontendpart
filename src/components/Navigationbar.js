@@ -3,7 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import styles from "../styles/Navigationbar.module.css";
 const Navigationbar = () => {
     return (
-        <Navbar  expand="md" fixed="top">
+        <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
                 <Navbar.Brand>
                     ReciBook
