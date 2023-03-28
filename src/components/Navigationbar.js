@@ -1,8 +1,9 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import styles from "../styles/Navigationbar.module.css";
 const Navigationbar = () => {
     return (
-        <Navbar bg="dark" variant="dark" expand="md" fixed="top">
+        <Navbar  expand="md" fixed="top">
             <Container>
                 <Navbar.Brand>
                     ReciBook
