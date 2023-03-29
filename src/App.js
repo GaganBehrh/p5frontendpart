@@ -2,13 +2,17 @@
 import styles from './App.module.css';
 import Navigationbar from "./components/Navigationbar";
 import Container from "react-bootstrap/Container";
+import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <div className={styles.App}>
       <Navigationbar />
       <Container>
-        <h1>Homepage</h1>
-        <h1>SignIn</h1>
+        <Switch>
+          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route exact path="/signin" render={() => <h1>Sign in</h1>} />
+
+        </Switch>
       </Container>
     </div>
   );
