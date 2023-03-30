@@ -1,7 +1,17 @@
 .Navigationbar {
-    background-color: rgb(153, 127, 195);
-    border: 1px solid #dadadf;
-    color: white;
+  background-color: rgb(153, 127, 195);
+  border: 1px solid #dadadf;
+  color: white;
 
 }
 
+.NavLink {
+  padding: 5px;
+  text-decoration: none;
+ color: black;
+}
+
+.Active {
+  color: white;
+
+}
