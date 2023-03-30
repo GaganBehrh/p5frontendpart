@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import Navigationbar from "./components/Navigationbar";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
+import './api/axioDefaults';
 function App() {
   return (
     <div className={styles.App}>
