@@ -133,6 +133,7 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
+  console.log(username);
 
   const [errors, setErrors] = useState({});
 
@@ -152,6 +153,7 @@ const SignUpForm = () => {
       history.push("/signin");
     } catch (err) {
       setErrors(err.response?.data);
+      console.log(err);
     }
   };
 
@@ -164,6 +166,7 @@ const SignUpForm = () => {
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>
+
               <Form.Control
                 className={styles.Input}
                 type="text"
