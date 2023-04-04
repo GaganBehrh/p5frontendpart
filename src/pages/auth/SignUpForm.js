@@ -128,12 +128,12 @@ import axios from "axios";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
-    firstname: "",
-    lastname: " ",
+    username: "",
+    lastname: "",
     password1: "",
     password2: "",
   });
-  const { firstname, lastname, password1, password2 } = signUpData;
+  const { username, lastname, password1, password2 } = signUpData;
 
 
   const [errors, setErrors] = useState({});
@@ -154,7 +154,6 @@ const SignUpForm = () => {
       history.push("/signin");
     } catch (err) {
       setErrors(err.response?.data);
-      console.log(err);
     }
   };
 
@@ -165,31 +164,31 @@ const SignUpForm = () => {
           <h1 className={styles.Header}>sign up</h1>
 
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="firstname">
-              <Form.Label className="d-none">firstname</Form.Label>
+            <Form.Group controlId="username">
+              <Form.Label className="d-none">username</Form.Label>
 
               <Form.Control
                 className={styles.Input}
                 type="text"
-                placeholder="Firstname"
-                name="firstname"
-                value={firstname}
+                placeholder="firstname"
+                name="username"
+                value={username}
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.firstname?.map((message, idx) => (
+            {errors.username?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
 
             <Form.Group controlId="lastname">
-              <Form.Label className="d-none">Lastname</Form.Label>
+              <Form.Label className="d-none">lastname</Form.Label>
 
               <Form.Control
                 className={styles.Input}
                 type="text"
-                placeholder="Lastname"
+                placeholder="lastname"
                 name="lastname"
                 value={lastname}
                 onChange={handleChange}
@@ -259,7 +258,7 @@ const SignUpForm = () => {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
-        
+
       </Col>
     </Row>
   );
