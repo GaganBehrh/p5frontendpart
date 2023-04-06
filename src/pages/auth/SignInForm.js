@@ -1,10 +1,11 @@
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignIn.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { SetCurrentUserContext } from "../../App";
 
 import {
     Form,
@@ -23,7 +24,7 @@ const SignInForm = () => {
         password1: "",
     });
     const { username, lastname, password } = SignInData;
-
+    const setCurrentUser = useContext(SetCurrentUserContext);
 
     const [errors, setErrors] = useState({});
 
@@ -39,12 +40,14 @@ const SignInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("/dj-rest-auth/registration/", SignInData);
-            history.push("/signin");
+            const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
+            setCurrentUser(data.user);
+            history.push("/");
         } catch (err) {
             setErrors(err.response?.data);
         }
     };
+
 
     return (
         <Row className={styles.Row}>
