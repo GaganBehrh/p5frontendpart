@@ -3,11 +3,14 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/Navigationbar.module.css";
 import { CurrentUserContext } from "../App";
+
 const Navigationbar = () => {
     const currentUser = useContext(CurrentUserContext)
 
 
     const loggedInIcons = <>{currentUser?.username}</>;
+    console.log(loggedInIcons);
+    console.log(currentUser);
     const loggedOutIcons = <><NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
         Sign in
     </NavLink>
