@@ -28,18 +28,18 @@ const Navigationbar = () => {
             activeClassName={styles.Active}
             to="/posts/create"
         >
-            <i className="far fa-plus-square"></i>Add post
+            <i className=""></i>Add post
         </NavLink>
 
     );
     const loggedInIcons = <> <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
+        <i className=""></i>Sign out
     </NavLink>
         <NavLink
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
-            <LoggedinPic src={currentUser?.profile_image} text="Profile" height={40} />
+            <LoggedinPic src={currentUser?.profile_id} text="Profile" height={40} />
         </NavLink>
     </>;
     console.log(loggedInIcons);
