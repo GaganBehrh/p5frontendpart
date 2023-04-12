@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import RecipeImage from "../../../components/RecipeImage";
+import Upload from "../../../media/upload.png";
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
 
@@ -23,9 +25,9 @@ function CreateRecipes() {
                 <Form.Label>Ingredients</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the Ingredients" rows={8} rowsname="Recipesteps" />
             </Form.Group>
-
-            <Button variant="outline-primary">Cancel</Button>{' '}
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
+            <Button variant="outline-success">Cancel</Button>{' '}
+
 
         </div>
     );
@@ -33,27 +35,19 @@ function CreateRecipes() {
     return (
         <Form>
             <Row>
-                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
 
 
-                    <Container
-                        className={`  d-flex flex-column justify-content-center`}
-                    >
-                        <Form.Group className="text-center">
 
-                            <Form.Label
-                                className="d-flex justify-content-center"
-                                htmlFor="image-upload"
-                            >
 
-                            </Form.Label>
 
-                        </Form.Group>
-                        <div className="d-md-none">{buttonFields}</div>
-                    </Container>
-                </Col>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
+                    <Container><Form.Label
+                        className="d-flex justify-content-center"
+                        htmlFor="image-upload"
+                    >
+                        <RecipeImage />
+                    </Form.Label></Container>
                 </Col>
             </Row>
         </Form>
