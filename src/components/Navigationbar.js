@@ -7,7 +7,15 @@ import { CurrentUserContext } from "../App";
 const Navigationbar = () => {
     const currentUser = useContext(CurrentUserContext)
 
-
+    const addPostIcon = (
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className="far fa-plus-square"></i>Add post
+        </NavLink>
+    );
     const loggedInIcons = <>{currentUser?.username}</>;
     console.log(loggedInIcons);
     console.log(currentUser);
@@ -24,6 +32,7 @@ const Navigationbar = () => {
                 <Navbar.Brand>
                     ReciBook
                 </Navbar.Brand>
+             {addPostIcon}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
