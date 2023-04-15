@@ -8,8 +8,12 @@ import Container from "react-bootstrap/Container";
 import RecipeImage from "../../../components/RecipeImage";
 import Upload from "../../../media/upload.png";
 import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
+import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
+    const fileSelectedHandler = (event) => {
+        console.log(event);
+    }
     /* const [postData, setPostData] = useState({
          title ="",
          content="",
@@ -65,7 +69,7 @@ function CreateRecipes() {
                             className="d-flex justify-content-center"
                             htmlFor="image-upload"
                         >
-                            <RecipeImage />
+                            <input type="file" onChange={this.fileSelectedHandler} />
 
                         </Form.Label>
                     </Container>

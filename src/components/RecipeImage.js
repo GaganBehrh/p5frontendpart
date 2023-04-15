@@ -1,10 +1,18 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+/*
+function RecipeImage(){
+    fileSelectedHandler= event=>{
+    console.log(event);   }
 
 
+/*
 const RecipeImage = ({ spinner, src, message }) => {
+    
+    }
     return (
+        
 
         <div className="m-3">
 
@@ -13,7 +21,15 @@ const RecipeImage = ({ spinner, src, message }) => {
             <input type="file" />
         </div>
 
+    );*/
+    /*
+    return (
+        <input type="file" onChange={this.fileSelectedHandler
+        }/>
+
     );
+
 };
 
-export default RecipeImage;
+
+export default RecipeImage;*/
