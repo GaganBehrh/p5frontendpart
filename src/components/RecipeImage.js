@@ -10,6 +10,7 @@ const RecipeImage = ({ spinner, src, message }) => {
 
             <input className="d-none" type="file" />
             <Button variant="outline-success">Upload</Button>
+            <input type="file" />
         </div>
 
     );
