@@ -38,13 +38,13 @@ function CreateRecipes() {
 
 }*/
     const [errors, setErrors] = useState({});
-    
+
     const [postData, setPostData] = useState({
         Recipe: "",
         Recipesteps: "",
         Ingredients: "",
         image: "",
-      });
+    });
     const { Recipe, Recipesteps, Ingredients, image } = postData;
     const handleChange = (event) => {
         setPostData({
@@ -59,9 +59,9 @@ function CreateRecipes() {
             setPostData({
                 ...postData,
                 image: URL.createObjectURL(event.target.files[0]),
-            })
+            });
         }
-    }
+    };
 
 
     const buttonFields = (
