@@ -10,6 +10,7 @@ import Upload from "../../../media/upload.png";
 import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
 import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
 import axios from "axios";
+import { Image } from "react-bootstrap";
 function CreateRecipes() {
 
 
@@ -37,13 +38,14 @@ function CreateRecipes() {
 
 }*/
     const [errors, setErrors] = useState({});
+    
     const [postData, setPostData] = useState({
-        Recipe =" ",
-        Recipesteps =" ",
-        image =" ",
-
-    });
-    const { Recipe, Recipesteps, image } = postData;
+        Recipe: "",
+        Recipesteps: "",
+        Ingredients: "",
+        image: "",
+      });
+    const { Recipe, Recipesteps, Ingredients, image } = postData;
     const handleChange = (event) => {
         setPostData({
             ...postData,
