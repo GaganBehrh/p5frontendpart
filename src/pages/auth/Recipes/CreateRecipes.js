@@ -9,10 +9,31 @@ import RecipeImage from "../../../components/RecipeImage";
 import Upload from "../../../media/upload.png";
 import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
 import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
+import axios from "axios";
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
+
     const fileSelectedHandler = (event) => {
-        console.log(event.target);
+        /*console.log(event.target.files[0]);*/
+        if (event.target.files.length)
+            this.setState({
+                selectedFile: event.target.files[0],
+            })
+    }
+
+    const fileUploadHandler = (event) => {
+        const image = URL.createObjectURL(event.target.files[0])
+        /* const fd = new FormData();
+         fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
+         axios.post("https://p5djangobackend.herokuapp.com").then(res => console.log(res));*/
+        if (event.target.files.length) {
+            URL.revokeObjectURL(image);
+            this.setState({
+                selectedFile: event.target.files[0],
+                image: URL.createObjectURL(event.target.files[0])
+            })
+        }
+
     }
     /* const [postData, setPostData] = useState({
          title ="",
@@ -69,7 +90,7 @@ function CreateRecipes() {
                             className="d-flex justify-content-center"
                             htmlFor="image-upload"
                         >
-                            <input type="file" onChange={fileSelectedHandler} />
+                            <RecipeImage src={Upload} message={"Click to Upload"} />
 
                         </Form.Label>
                     </Container>
@@ -82,3 +103,5 @@ function CreateRecipes() {
 
 
 export default CreateRecipes;
+/* <input type="file" onChange={fileSelectedHandler} />
+<button onClick={fileUploadHandler}>Upload</button>*/
