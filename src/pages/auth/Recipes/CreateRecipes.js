@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,12 +7,11 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import RecipeImage from "../../../components/RecipeImage";
 import Upload from "../../../media/upload.png";
-import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
+import Image from "react-bootstrap/Image";
 import axios from "axios";
-import { Image } from "react-bootstrap";
-function CreateRecipes() {
 
+
+function CreateRecipes() {
 
     /*const fileSelectedHandler = (event) => {*/
     /*console.log(event.target.files[0]);*/
@@ -40,12 +39,16 @@ function CreateRecipes() {
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
-        Recipe: "",
-        Recipesteps: "",
+        RecipeName: "",
+        RecipeSteps: "",
         Ingredients: "",
         image: "",
     });
-    const { Recipe, Recipesteps, Ingredients, image } = postData;
+
+    const { RecipeName, RecipeSteps, Ingredients, image } = postData;
+
+    const imageInput = useRef(null);
+
     const handleChange = (event) => {
         setPostData({
             ...postData,
@@ -68,22 +71,21 @@ function CreateRecipes() {
         <div className="text-center">
             <Form.Group>
                 <Form.Label>RecipeName</Form.Label>
-                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="Recipe" value={Recipe} onChange={handleChange} />
+                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="RecipeName" value={RecipeName} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>RecipeSteps</Form.Label>
-                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="Recipesteps" value={Recipesteps} onChange={handleChange} />
+                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="RecipeSteps" value={RecipeSteps} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Ingredients</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the Ingredients" rows={8} name="Ingredients" value={Ingredients} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
-            <Button variant="outline-success">Cancel</Button>{' '}
-
-
+            <Button variant="outline-success" onClick={() => { }}>Cancel</Button>{' '}
         </div>
     );
+
     return (
         <Form>
             <Row>
@@ -97,7 +99,7 @@ function CreateRecipes() {
                                 </figure>
                                 <div>
                                     <Form.label htmlFor="image-upload">
-                                        Chnage the Image
+                                        Change the Image
                                     </Form.label>
                                 </div>
                             </>
@@ -110,11 +112,13 @@ function CreateRecipes() {
                                 <RecipeImage src={Upload} message={"Click to Upload"} />
                             </Form.Label>
                         )}
-
-                        <Form.File id="image-upload" accept="image/*" onChange="handleChangeoftheImage" />
+                        <Form.File
+                            id="image-upload"
+                            accept="image/*"
+                            onChange={handleChangeoftheImage}
+                            ref={imageInput}
+                        />
                     </Form.Group>
-
-
                 </Col>
             </Row>
         </Form >
@@ -124,5 +128,6 @@ function CreateRecipes() {
 
 
 export default CreateRecipes;
+
 /* <input type="file" onChange={fileSelectedHandler} />
 <button onClick={fileUploadHandler}>Upload</button>*/
