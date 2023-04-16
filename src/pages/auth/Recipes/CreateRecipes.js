@@ -12,7 +12,7 @@ import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matc
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
     const fileSelectedHandler = (event) => {
-        console.log(event);
+        console.log(event.target);
     }
     /* const [postData, setPostData] = useState({
          title ="",
@@ -69,7 +69,7 @@ function CreateRecipes() {
                             className="d-flex justify-content-center"
                             htmlFor="image-upload"
                         >
-                            <input type="file" onChange={this.fileSelectedHandler} />
+                            <input type="file" onChange={fileSelectedHandler} />
 
                         </Form.Label>
                     </Container>
