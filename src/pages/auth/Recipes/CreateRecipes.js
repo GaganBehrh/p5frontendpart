@@ -12,32 +12,7 @@ import axios from "axios";
 
 
 function CreateRecipes() {
-
-    /*const fileSelectedHandler = (event) => {*/
-    /*console.log(event.target.files[0]);*/
-    /*    if (event.target.files.length)
-            this.setState({
-                selectedFile: event.target.files[0],
-            })
-    }
-
-    const fileUploadHandler = (event) => {
-        const image = URL.createObjectURL(event.target.files[0])
-        /* const fd = new FormData();
-         fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
-         axios.post("https://p5djangobackend.herokuapp.com").then(res => console.log(res));*/
-    /*
-   if (event.target.files.length) {
-       URL.revokeObjectURL(image);
-       this.setState({
-           selectedFile: event.target.files[0],
-           image: URL.createObjectURL(event.target.files[0])
-       })
-   }
-
-}*/
     const [errors, setErrors] = useState({});
-
     const [postData, setPostData] = useState({
         RecipeName: "",
         RecipeSteps: "",
@@ -91,6 +66,7 @@ function CreateRecipes() {
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
+                    <Container >
                     <Form.Group className="text-center">
                         {image ? (
                             <>
@@ -119,6 +95,7 @@ function CreateRecipes() {
                             ref={imageInput}
                         />
                     </Form.Group>
+                    </Container>
                 </Col>
             </Row>
         </Form >
@@ -131,3 +108,26 @@ export default CreateRecipes;
 
 /* <input type="file" onChange={fileSelectedHandler} />
 <button onClick={fileUploadHandler}>Upload</button>*/
+/*const fileSelectedHandler = (event) => {*/
+    /*console.log(event.target.files[0]);*/
+    /*    if (event.target.files.length)
+            this.setState({
+                selectedFile: event.target.files[0],
+            })
+    }
+
+    const fileUploadHandler = (event) => {
+        const image = URL.createObjectURL(event.target.files[0])
+        /* const fd = new FormData();
+         fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
+         axios.post("https://p5djangobackend.herokuapp.com").then(res => console.log(res));*/
+    /*
+   if (event.target.files.length) {
+       URL.revokeObjectURL(image);
+       this.setState({
+           selectedFile: event.target.files[0],
+           image: URL.createObjectURL(event.target.files[0])
+       })
+   }
+
+}*/
