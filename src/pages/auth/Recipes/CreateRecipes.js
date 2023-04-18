@@ -5,7 +5,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-/*import {RecipeImage} from "../../../components/RecipeImage";*/
+/*import {RecipeImage} from "../../../components/RecipeImage";
+ <RecipeImage src={Upload} message={"Click to Upload"} />*/
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
 import axios from "axios";
