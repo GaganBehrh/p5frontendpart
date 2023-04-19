@@ -41,8 +41,10 @@ const SignInForm = () => {
         event.preventDefault();
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
-            setCurrentUser(data.user);
-          
+            setCurrentUser(data.user.username);
+            console.log(data);
+            console.log(data.user.username);
+
             history.push("/");
         } catch (err) {
             setErrors(err.response?.data);
@@ -63,7 +65,7 @@ const SignInForm = () => {
                             <Form.Control
                                 className={styles.Input}
                                 type="text"
-                                placeholder="firstname"
+                                placeholder="username"
                                 name="username"
                                 value={username}
                                 onChange={handleChange}
