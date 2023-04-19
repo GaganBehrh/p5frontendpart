@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignIn.module.css";
@@ -15,15 +15,18 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
+import { useSetCurrentUser } from "../../tokens/RefreshTokens";
 
 const SignInForm = () => {
+  
+  const setCurrentUser=useSetCurrentUser();
   const [SignInData, setSignInData] = useState({
     username: "",
     lastname: "",
     password1: "",
   });
   const { username, lastname, password } = SignInData;
-  const setCurrentUser = useContext(SetCurrentUserContext);
+
 
   const [errors, setErrors] = useState({});
 
@@ -40,6 +43,7 @@ const SignInForm = () => {
     event.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
+      /*Theis setcurrentuser can break the signin page*/
       /*setCurrentUser(data.user);
       console.log(data.user);
       console.log("call");*/

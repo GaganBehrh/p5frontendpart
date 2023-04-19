@@ -12,15 +12,15 @@ import {
 
 
 const Navigationbar = () => {
-    const currentUser = useContext(CurrentUserContext);
-    
+    const currentUser = useCurrentUser();
+
     const setCurrentUser = useSetCurrentUser();
 
 
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
-            setCurrentUser(null);
+              setCurrentUser(null);
         } catch (err) {
             console.log(err);
         }
