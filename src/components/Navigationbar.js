@@ -8,7 +8,7 @@ import LoggedinPic from "./LoggedinPic";
 import {
     useCurrentUser,
     useSetCurrentUser,
-} from "../tokens/RefreshTokens";
+} from "../contexts/CurrentUser";
 
 
 const Navigationbar = () => {
