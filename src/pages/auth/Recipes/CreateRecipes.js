@@ -15,14 +15,14 @@ import axios from "axios";
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-         RecipeName: "",
-         RecipeSteps: "",
-         Ingredients: "",
+        RecipeName: "",
+        RecipeSteps: "",
+        Ingredients: "",
         image: "",
     });
 
     const { RecipeName, RecipeSteps, Ingredients, image } = postData;
-   // const { image } = postData;
+    // const { image } = postData;
 
     const imageInput = useRef(null);
 
@@ -49,7 +49,7 @@ function CreateRecipes() {
     };
 
 
-   /* const buttonFields = (
+    const buttonFields = (
         <div className="text-center">
             <Form.Group>
                 <Form.Label>RecipeName</Form.Label>
@@ -66,14 +66,14 @@ function CreateRecipes() {
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => { }}>Cancel</Button>{' '}
         </div>
-        <Container >{buttonFields}</Container>
-    );*/
+
+    );
 
     return (
         <Form>
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
-                    
+                    <Container >{buttonFields}</Container>
                     <Container >
                         <Form.Group className="text-center">
                             {image ? (
