@@ -44,7 +44,7 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
       /*Theis setcurrentuser can break the signin page*/
-      setCurrentUser(data.user.username);
+      setCurrentUser(data.user);
       console.log(data.user);
       console.log("call");
 

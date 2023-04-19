@@ -47,6 +47,13 @@ const Navigationbar = () => {
             <LoggedinPic src={currentUser?.profile_id} text="Profile" height={40} />
 
         </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className=""></i>Add post
+        </NavLink>
     </>;
     console.log(loggedInIcons);
     console.log(currentUser);
@@ -63,7 +70,7 @@ const Navigationbar = () => {
                 <Navbar.Brand>
                     ReciBook
                 </Navbar.Brand>
-                {addPostIcon}
+             
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
