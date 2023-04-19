@@ -70,7 +70,7 @@ const Navigationbar = () => {
                 <Navbar.Brand>
                     ReciBook
                 </Navbar.Brand>
-             
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
