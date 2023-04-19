@@ -18,8 +18,8 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../tokens/RefreshTokens";
 
 const SignInForm = () => {
-  
-  const setCurrentUser=useSetCurrentUser();
+
+  const setCurrentUser = useSetCurrentUser();
   const [SignInData, setSignInData] = useState({
     username: "",
     lastname: "",
@@ -44,9 +44,9 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
       /*Theis setcurrentuser can break the signin page*/
-      /*setCurrentUser(data.user);
+      setCurrentUser(data.user.username);
       console.log(data.user);
-      console.log("call");*/
+      console.log("call");
 
       history.push("/");
     } catch (err) {

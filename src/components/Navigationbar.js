@@ -13,6 +13,7 @@ import {
 
 const Navigationbar = () => {
     const currentUser = useCurrentUser();
+    console.log(currentUser);
 
     const setCurrentUser = useSetCurrentUser();
 
@@ -20,7 +21,7 @@ const Navigationbar = () => {
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
-              setCurrentUser(null);
+            setCurrentUser(null);
         } catch (err) {
             console.log(err);
         }
@@ -44,6 +45,7 @@ const Navigationbar = () => {
             to={`/profiles/${currentUser?.profile_id}`}
         >
             <LoggedinPic src={currentUser?.profile_id} text="Profile" height={40} />
+
         </NavLink>
     </>;
     console.log(loggedInIcons);
