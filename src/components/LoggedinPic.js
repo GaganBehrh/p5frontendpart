@@ -5,11 +5,11 @@ const LoggedinPic = ({ src, height = 45, text }) => {
     return (
         <span>
             <img
-                className={styles.Avatar}
+                className={styles.LoggedinPic}
                 src={src}
                 height={height}
                 width={height}
-                alt="avatar"
+                alt=""
             />
             {text}
         </span>
