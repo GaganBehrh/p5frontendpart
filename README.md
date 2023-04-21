@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+UX
+User Stories
+Navigation: As a user I can view a navbar from every page so that I can navigate easily between pages
 
-## Available Scripts
+Sign up: As a user I can create a new account so that I can access all the features for signed up users
 
-In the project directory, you can run:
+Sign in: As a user I can sign in to the app so that I can access functionality for logged in users
 
-### `npm start`
+View most recent posts: As a user I can view all the most recent posts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Edit post: As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Post a comment: As a logged in user I can add comments to a post so that I can share my thoughts about the post
 
-### `npm test`
+View comments: As a user I can read comments on posts so that I can read what other users think about the posts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wireframe:
+Mockups were designed using Figma
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Existing Features
+Register Account
+Anybody can register for free and create their own unique account.
+Log In to Account
+Users can easily log out of their account with the click of a button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Log Out of Account
+Users can easily log out of their account with the click of a button.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CRUD functionality
 
-### `npm run eject`
+[CRUD]Read functionality
+Travelling Posts can be viewed by going on the Manage Posts button on the navigation bar and clicking on View button on the individual post
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Add a post
+[CRUD] Create or 'add' a new travelling experience by clicking on the Add New button.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Update a Travelling Experience
+[CRUD] Update or 'edit' their own travelling experience on this page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Delete a Travelling Experience
+[CRUD] Delete or 'remove' a travelling experience by clicking on the Delete button.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Detailed view of each post can also be viewed!
 
-## Learn More
+echnologies Used
+HTML, CSS, Javascript, Heroku, Python, Django, ElephantSQL
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Agile Method:
+The agile Methodology was used and different user stories were created using Kanban board and implemented for the project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Model for project
+Here is the model I used
 
-### Code Splitting
+Validators
+W3C HTML Validator -
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+W3C CSS Validator -
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+JShint:
+only warnings found
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+PEP8 Online:
+No errors found
 
-### Advanced Configuration
+Testing of user stories
+MAnual Testing
+User Stories
+Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Result: Pass, A navigation bar was found
 
-### Deployment
+Sign up Test: As a user I can create a new account so that I can access all the features for signed up users
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Result: Pass, A sign up page was found
 
-### `npm run build` fails to minify
+Sign in Test: As a user I can sign in to the app so that I can access functionality for logged in users
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Result: Pass, A sign in page was found
+
+
+Edit post Test: As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created
+
+Result: Pass, An Edit button under "Manage Posts"on each individual post was found
+
+Post a comment Test: As a logged in user I can add comments to a post so that I can share my thoughts about the post
+
+Result: Pass, A comment box was found on each of the post detail view through which you can add the comments
+
+View comments v: As a user I can read comments on posts so that I can read what other users think about the posts
+
+Result: Pass, A comment section was found on each of the post detail view where the posted comments can be found
+
+Javascript and Python testing
+Unit tests were written for both Python and Js
+
+Python: Unit tests were written to test the url of different views
+
+Javascript: Unit tests were written to test the next travel destionation page On Tripcostcalculator page.
+
+Result:These tests were successful.
+
+Setup and Deployment
+Making a Local Clone
+Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+Cloning into CI-Clone... remote: Counting objects: 10, done. remote: Compressing objects: 100% (8/8), done. remove: Total 10 (delta 1), reused 10 (delta 1) Unpacking objects: 100% (10/10), done. Running it from the github
+
+After cloning the repo please run the following command to include all the neccesary apps in requirement.txt
+
+pip install -r requirements.txt
+
+and include the env.py file which should look like this and the user has to fill in these values
+emote Heroku Deployment:
+Create an account at Heroku.
+
+Download CLI here.
+
+Open up CMD (Windows) or Terminal (MacOS) and type the following and follow the instructions that appear.
+
+heroku login Create a new Heroku app using the following code in your terminal: heroku create app-name-here With the Heroku app name you just created, modified the production.py file in the settings folder and update the following: ALLOWED_HOSTS = ['your-app-name.herokuapp.com', '127.0.0.1', 'localhost'] Open the Heroku apps webpage and click the app you created in Step 4.
+
+Navigate to the Settings tab on the top horizontal bar, we will be adding the required environment variables here.
+
+Click the 'Reveal Config Vars' button and add the below variables:
+
+You can deploy it using the Deploy option and carry out the build like this Heroku Deployment
+
+-Add for the React---
+
+Acknowledgements and Credits
+Mentor and Tutor support Media Info Inspired by "I think before I blog walkthrough project"
