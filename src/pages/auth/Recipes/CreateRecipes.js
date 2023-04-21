@@ -5,11 +5,12 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-/*import {RecipeImage} from "../../../components/RecipeImage";
- <RecipeImage src={Upload} message={"Click to Upload"} />*/
+import { useHistory } from "react-router";
+
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
-import axios from "axios";
+import { axiosReq, axiosRes } from  "../../../api/axioDefaults";
+
 
 
 function CreateRecipes() {
@@ -25,6 +26,7 @@ function CreateRecipes() {
     // const { image } = postData;
 
     const imageInput = useRef(null);
+    const history=useHistory();
 
     const handleChange = (event) => {
         console.log("call");
@@ -48,6 +50,25 @@ function CreateRecipes() {
         console.log("dfkd");
     };
 
+    const handleSubmitbutton = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+     
+        formData.append("RecipeName", RecipeName);
+        formData.append("RecipeSteps", RecipeSteps);
+        formData.append("Ingredients",Ingredients );
+        formData.append("image", imageInput.current.files[0]);
+    
+        try {
+          const { data } = await axiosReq.post("/posts/", formData);
+          history.push(`/posts/${data.id}`);
+        } catch (err) {
+          console.log(err);
+          if (err.response?.status !== 401) {
+            setErrors(err.response?.data);
+          }
+        }
+      };
 
     const buttonFields = (
         <div className="text-center">
@@ -70,7 +91,7 @@ function CreateRecipes() {
     );
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmitbutton}>
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
