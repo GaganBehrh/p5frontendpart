@@ -9,7 +9,7 @@ import { useHistory } from "react-router";
 
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
-import { axiosReq, axiosRes } from  "../../../api/axioDefaults";
+import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 
 
 
@@ -26,10 +26,10 @@ function CreateRecipes() {
     // const { image } = postData;
 
     const imageInput = useRef(null);
-    const history=useHistory();
+    const history = useHistory();
 
     const handleChange = (event) => {
-        console.log("call");
+      
         console.log(event.target);
         setPostData({
             ...postData,
@@ -52,23 +52,25 @@ function CreateRecipes() {
 
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
+        console.log("call");
         const formData = new FormData();
-     
-        formData.append("RecipeName", RecipeName);
+
+     /*   formData.append("RecipeName", RecipeName);
         formData.append("RecipeSteps", RecipeSteps);
-        formData.append("Ingredients",Ingredients );
+        formData.append("Ingredients", Ingredients);*/
         formData.append("image", imageInput.current.files[0]);
-    
+
         try {
-          const { data } = await axiosReq.post("/posts/", formData);
-          history.push(`/posts/${data.id}`);
+            const { data } = await axiosReq.post("/Recipeposts/", formData);
+            console.log(data);
+            history.push(`/Recipeposts/${data.id}`);
         } catch (err) {
-          console.log(err);
-          if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
-          }
+            console.log(err);
+            if (err.response?.status !== 401) {
+                setErrors(err.response?.data);
+            }
         }
-      };
+    };
 
     const buttonFields = (
         <div className="text-center">
@@ -85,7 +87,7 @@ function CreateRecipes() {
                 <Form.Control as="textarea" placeholder="Please enter the Ingredients" rows={8} name="Ingredients" value={Ingredients} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
-            <Button variant="outline-success" onClick={() => { }}>Cancel</Button>{' '}
+            <Button variant="outline-success"  onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
     );
