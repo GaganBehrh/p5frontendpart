@@ -9,28 +9,28 @@ import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import './api/axioDefaults';
+
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
 
 function App() {
-    return (
-    
-      <div className={styles.App}>
-        <Navigationbar />
-        <Container className={styles.Main}>
-          <Switch>
-            <Route exact path="/" render={() => <h1>Home page</h1>} />
-            <Route exact path="/signin" render={() => <SignInForm />} />
-            
-            <Route exact path="/signup" render={() => <SignUpForm />} />
-            <Route exact path="/posts/create" render={() => <CreateRecipes />} />
-            <Route render={() => <p>Page not found!</p>} />
-          </Switch>
-        </Container>
-      </div>
- 
-    );
-  }
+  return (
 
-  export default App;
+    <div className={styles.App}>
+      <Navigationbar />
+      <Container className={styles.Main}>
+        <Switch>
+          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route exact path="/signin" render={() => <SignInForm />} />
+          <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/posts/create" render={() => <CreateRecipes />} />
+          <Route render={() => <p>Page not found!</p>} />
+        </Switch>
+      </Container>
+    </div>
+
+  );
+}
+
+export default App;
