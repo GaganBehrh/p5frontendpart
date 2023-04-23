@@ -13,13 +13,14 @@ import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        RecipeName: "",
-        RecipeSteps: "",
-        Ingredients: "",
-        image: "",
+        name: "",
+        matter: "",
+        pic: "",
+        created_on: "",
+        updated_on: "",
     });
 
-    const { RecipeName, RecipeSteps, Ingredients, image } = postData;
+    const { name, matter, pic, created_on, updated_on } = postData;
     // const { image } = postData;
 
     const imageInput = useRef(null);
@@ -36,31 +37,31 @@ function CreateRecipes() {
 
     const handleChangeoftheImage = (event) => {
         if (event.target.files.length) {
-            URL.revokeObjectURL(image);
-            console.log(image);
-            /* setPostData({
-                  ...postData,
-                  image: URL.createObjectURL(event.target.files[0]),
-              });
-            console.log(URL.revokeObjectURL(image));*/
+            URL.revokeObjectURL(pic);
+            setPostData({
+                ...postData,
+                imageInput: URL.createObjectURL(event.target.files[0]),
+            });
         }
-        console.log("dfkd");
     };
 
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");
         const formData = new FormData();
+        formData.append("name", name);
+        formData.append("matter", matter);
+        formData.append("pic", imageInput.current.files[0]);
+        formData.append("created_on", created_on);
+        formData.append("updated_on", updated_on);
 
-        formData.append("RecipeName", RecipeName);
-        formData.append("RecipeSteps", RecipeSteps);
-        formData.append("Ingredients", Ingredients);
-        formData.append("image", imageInput.current.files[0]);
+        console.log(imageInput.current.files[0])
 
         try {
             const { data } = await axiosReq.post("/Recipeposts/", formData);
             console.log(data);
             history.push(`/Recipeposts/${data.id}`);
+
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -73,15 +74,11 @@ function CreateRecipes() {
         <div className="text-center">
             <Form.Group>
                 <Form.Label>RecipeName</Form.Label>
-                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="RecipeName" value={RecipeName} onChange={handleChange} />
+                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>RecipeSteps</Form.Label>
-                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="RecipeSteps" value={RecipeSteps} onChange={handleChange} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Ingredients</Form.Label>
-                <Form.Control as="textarea" placeholder="Please enter the Ingredients" rows={8} name="Ingredients" value={Ingredients} onChange={handleChange} />
+                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
@@ -90,16 +87,16 @@ function CreateRecipes() {
     );
 
     return (
-        <Form onSubmit={handleSubmitbutton}>
+        <form onSubmit={handleSubmitbutton} encType="multipart/form-data">
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
                     <Container >
                         <Form.Group className="text-center">
-                            {image ? (
+                            {pic ? (
                                 <>
                                     <figure>
-                                        <Image src={image} rounded />
+                                        <Image src={pic} rounded />
                                     </figure>
                                     <div>
                                         <Form.label htmlFor="image-upload">
@@ -126,7 +123,7 @@ function CreateRecipes() {
                     </Container>
                 </Col>
             </Row>
-        </Form >
+        </form>
     );
 }
 
@@ -134,6 +131,12 @@ function CreateRecipes() {
 
 export default CreateRecipes;
 
+/*  <Form.File
+                                id="image-upload"
+                                accept="image/*"
+                                onChange={handleChangeoftheImage}
+                                ref={imageInput}
+                            />*/
 /* <input type="file" onChange={fileSelectedHandler} />
 <button onClick={fileUploadHandler}>Upload</button>*/
 /*const fileSelectedHandler = (event) => {*/
