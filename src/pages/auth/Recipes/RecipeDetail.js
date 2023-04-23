@@ -6,10 +6,9 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
+import RecipePost from "../Recipes/RecipePost";
 
-
-
-function RecipeDtetail() {
+function RecipeDetail() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
   useEffect(() => {
@@ -19,7 +18,7 @@ function RecipeDtetail() {
           axiosReq.get(`/posts/${id}`),
         ]);
         setPost({ results: [post] });
-        console.log(post);
+        /*console.log(post);*/
       } catch (err) {
         console.log(err);
       }
@@ -33,7 +32,7 @@ function RecipeDtetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <p>Post component</p>
+       
         <Container >
           Comments
         </Container>
@@ -45,4 +44,6 @@ function RecipeDtetail() {
   );
 }
 
-export default RecipeDtetail;
+export default RecipeDetail;
+
+/* <RecipePost {...RecipePost.results[0]} setPosts={setPost} postPage />*/

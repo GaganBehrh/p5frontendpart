@@ -26,7 +26,7 @@ function CreateRecipes() {
     const history = useHistory();
 
     const handleChange = (event) => {
-      
+
         console.log(event.target);
         setPostData({
             ...postData,
@@ -46,7 +46,7 @@ function CreateRecipes() {
         }
         console.log("dfkd");
     };
-/*
+
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");
@@ -68,7 +68,7 @@ function CreateRecipes() {
             }
         }
     };
-*/
+
     const buttonFields = (
         <div className="text-center">
             <Form.Group>
@@ -84,13 +84,13 @@ function CreateRecipes() {
                 <Form.Control as="textarea" placeholder="Please enter the Ingredients" rows={8} name="Ingredients" value={Ingredients} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
-            <Button variant="outline-success"  onClick={() => history.goBack()}>Cancel</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
     );
 
     return (
-        <Form /*onSubmit={handleSubmitbutton}*/>
+        <Form onSubmit={handleSubmitbutton}>
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
