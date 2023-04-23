@@ -55,8 +55,6 @@ function CreateRecipes() {
         formData.append("created_on", created_on);
         formData.append("updated_on", updated_on);
 
-        console.log(imageInput.current.files[0])
-
         try {
             const { data } = await axiosReq.post("/Recipeposts/", formData);
             console.log(data);
