@@ -58,9 +58,9 @@ function CreateRecipes() {
         formData.append("image", imageInput.current.files[0]);
 
         try {
-            const { data } = await axiosReq.post("/posts/", formData);
+            const { data } = await axiosReq.post("/Recipeposts/", formData);
             console.log(data);
-            history.push(`/posts/${data.id}`);
+            history.push(`/Recipeposts/${data.id}`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
