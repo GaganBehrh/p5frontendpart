@@ -37,7 +37,7 @@ const Navigationbar = () => {
         </NavLink>
 
     );
-    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/hme" onClick={handleSignOut}>
         <i className=""></i>Sign out
     </NavLink>
         <NavLink

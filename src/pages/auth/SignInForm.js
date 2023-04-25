@@ -48,7 +48,7 @@ const SignInForm = () => {
       console.log(data.user);
       console.log("call");
 
-      history.push("/");
+      history.push("/Recipeposts/create");
     } catch (err) {
       setErrors(err.response?.data);
     }
