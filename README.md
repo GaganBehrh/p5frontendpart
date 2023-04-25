@@ -8,8 +8,15 @@ Sign up: As a user I can create a new account so that I can access all the featu
 
 Sign in: As a user I can sign in to the app so that I can access functionality for logged in users
 
+Add Post:As a user I would like to add posts to the app so that I can add my recipe
+
 Wireframe:
-Mockups were designed using Figma
+Mockups were designed using Figma!
+
+[Sign In](src/media/Signin.png)!
+[SignUp](src/media/Signup.png)!
+[Add Post](src/media/Add%20Post.png)
+
 
 
 Existing Features
@@ -17,7 +24,6 @@ Register Account
 Anybody can register for free and create their own unique account.
 Log In to Account
 Users can easily log out of their account with the click of a button.
-
 Log Out of Account
 Users can easily log out of their account with the click of a button.
 
