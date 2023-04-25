@@ -51,7 +51,7 @@ const Navigationbar = () => {
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
-            to="/posts/create"
+            to="/Recipeposts/create"
         >
             <i className=""></i>Add post
         </NavLink>
