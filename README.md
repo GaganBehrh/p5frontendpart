@@ -1,7 +1,7 @@
 Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
 
-UX
-User Stories
+## UX
+### User Stories
 Navigation: As a user I can view a navbar from every page so that I can navigate easily between pages
 
 Sign up: As a user I can create a new account so that I can access all the features for signed up users
@@ -10,16 +10,18 @@ Sign in: As a user I can sign in to the app so that I can access functionality f
 
 Add Post:As a user I would like to add posts to the app so that I can add my recipe
 
-Wireframe:
+## Wireframe:
 Mockups were designed using Figma!
 
 [Sign In](src/media/Signin.png)!
+
 [SignUp](src/media/Signup.png)!
+
 [Add Post](src/media/Add%20Post.png)
 
 
 
-Existing Features
+## Existing Features
 Register Account
 Anybody can register for free and create their own unique account.
 Log In to Account
@@ -28,18 +30,16 @@ Log Out of Account
 Users can easily log out of their account with the click of a button.
 
 
+## Technologies Used
+ React,Heroku, Python, Django, ElephantSQL,
 
-
-Technologies Used
-HTML, CSS, Javascript, Heroku, Python, Django, ElephantSQL,React
-
-Agile Method:
+## Agile Method:
 The agile Methodology was used and different user stories were created using Kanban board and implemented for the project.
 
-Model for project
+## Model for project
 Here is the model I used
 
-Validators
+### Validators
 W3C HTML Validator -
 
 
@@ -53,7 +53,7 @@ PEP8 Online:
 No errors found
 
 Testing of user stories
-MAnual Testing
+## Manual Testing
 User Stories
 Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
 
@@ -68,11 +68,7 @@ Sign in Test: As a user I can sign in to the app so that I can access functional
 Result: Pass, A sign in page was found
 
 
-Javascript and Python testing
-
-Result:These tests were successful.
-
-Setup and Deployment
+## Setup and Deployment
 Making a Local Clone
 Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
@@ -103,5 +99,5 @@ Gitpod space was created as guided in the setup part of the moments app
 and the react bootstrap was installled
 
 
-Acknowledgements and Credits
+## Acknowledgements and Credits
 Mentor and Tutor support Media Info Inspired by "Moments App"
