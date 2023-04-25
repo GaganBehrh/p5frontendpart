@@ -69,7 +69,7 @@ const Navigationbar = () => {
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
                 <Navbar.Brand>
-                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/">
                         ReciBook
                     </NavLink>
 
