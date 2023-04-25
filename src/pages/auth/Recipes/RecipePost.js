@@ -32,9 +32,9 @@ import React from "react";
 
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {
-    useCurrentUser,
-} from "../contexts/CurrentUser";
+
+import LoggedinPic from "../../../components/LoggedinPic";
+import useCurrentUser from "../../contexts/CurrentUser";
 
 
 const Post = (props) => {
@@ -61,7 +61,7 @@ const Post = (props) => {
             <Card.Body>
                 <Media className="align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
-                        <Avatar src={profile_image} height={55} />
+                        <LoggedinPic src={profile_image} height={55} />
                         {owner}
                     </Link>
                     <div className="d-flex align-items-center">
@@ -76,7 +76,7 @@ const Post = (props) => {
             <Card.Body>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 {content && <Card.Text>{content}</Card.Text>}
-                <div className={styles.PostBar}>
+                <div >
                     {is_owner ? (
                         <OverlayTrigger
                             placement="top"
@@ -86,11 +86,11 @@ const Post = (props) => {
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={() => { }}>
-                            <i className={`fas fa-heart ${styles.Heart}`} />
+                            <i className={`fas fa-heart `} />
                         </span>
                     ) : currentUser ? (
                         <span onClick={() => { }}>
-                            <i className={`far fa-heart ${styles.HeartOutline}`} />
+                            <i className={`far fa-heart`} />
                         </span>
                     ) : (
                         <OverlayTrigger
