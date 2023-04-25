@@ -59,7 +59,7 @@ const SignInForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={12}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>Welcome to Recibook,explore new recipes</h1>
+          <h1 className={styles.Header}>SIGN IN</h1>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
