@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
-
+import CreateComments from './pages/auth/Recipes/CreateComments';
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import './api/axioDefaults';
@@ -28,6 +28,7 @@ function App() {
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
           <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipes />} />
+          <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

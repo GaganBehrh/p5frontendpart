@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -33,7 +32,6 @@ function EditRecipes() {
             try {
                 const { data } = await axiosReq.get(`/posts/${id}/`);
                 const { name, matter, pic, is_owner } = data;
-
                 is_owner ? setPostData({ name, matter, pic }) : history.push("/");
             } catch (err) {
                 console.log(err);
@@ -68,12 +66,15 @@ function EditRecipes() {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("matter", matter);
-        formData.append("pic", imageInput.current.files[0]);
+        if (imageInput?.current?.files[0]) {
+            formData.append("pic", imageInput.current.files[0]);
+        }
+
         formData.append("created_on", created_on);
         formData.append("updated_on", updated_on);
 
         try {
-            const { data } = await axiosReq.post("/Recipeposts/", formData);
+            const { data } = await axiosReq.put("/Recipeposts/${id}/", formData);
             console.log(data);
             history.push(`/Recipeposts/${data.id}`);
 
