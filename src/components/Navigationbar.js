@@ -44,7 +44,7 @@ const Navigationbar = () => {
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
-          
+
             <LoggedinPic src={currentUser?.profile_id} text="Profile" height={20} />
 
         </NavLink>
@@ -69,15 +69,16 @@ const Navigationbar = () => {
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
                 <Navbar.Brand>
-                    ReciBook
+                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+                        ReciBook
+                    </NavLink>
+
                 </Navbar.Brand>
-             
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
-                        <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
-                            Home
-                        </NavLink>
+
                         {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>
                 </Navbar.Collapse>

@@ -22,7 +22,6 @@ function App() {
       <Navigationbar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
