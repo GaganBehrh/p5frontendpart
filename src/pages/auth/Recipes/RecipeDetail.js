@@ -33,7 +33,7 @@ function RecipeDetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <Recipepost {...post.results[0]} setPosts={setPost} postPage />
+        <Recipepost/>
         <Container >
           Comments
         </Container>
@@ -46,5 +46,6 @@ function RecipeDetail() {
 }
 
 export default RecipeDetail;
-/* <RecipePost {...RecipePost.results[0]} setRecipePosts={setRecipePost} postPage />*/
+/* 
+  <Recipepost {...post.results[0]} setPosts={setPost} postPage /><RecipePost {...RecipePost.results[0]} setRecipePosts={setRecipePost} postPage />*/
 

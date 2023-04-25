@@ -36,26 +36,32 @@ import { useCurrentUser } from "../../../contexts/CurrentUser";
 
 
 const Post = (props) => {
-    const {
-        id,
-        owner,
-        profile_id,
+    let {
+        id=5,
+        owner="jdfkjd",
+        profile_id=4,
         profile_image,
         username
     } = props;
+
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
     return (
+        
         <Card >
             <Card.Body>
+                
                 <Media className="align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <LoggedinPic src={profile_image} height={55} />
                         {owner}
                     </Link>
                     <div className="d-flex align-items-center">
+fgfgfgfgf
+{profile_id}
+{username}
 
                     </div>
                 </Media>
