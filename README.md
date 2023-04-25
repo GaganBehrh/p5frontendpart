@@ -8,14 +8,6 @@ Sign up: As a user I can create a new account so that I can access all the featu
 
 Sign in: As a user I can sign in to the app so that I can access functionality for logged in users
 
-View most recent posts: As a user I can view all the most recent posts
-
-Edit post: As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created
-
-Post a comment: As a logged in user I can add comments to a post so that I can share my thoughts about the post
-
-View comments: As a user I can read comments on posts so that I can read what other users think about the posts
-
 Wireframe:
 Mockups were designed using Figma
 
@@ -29,24 +21,11 @@ Users can easily log out of their account with the click of a button.
 Log Out of Account
 Users can easily log out of their account with the click of a button.
 
-CRUD functionality
 
-[CRUD]Read functionality
-Travelling Posts can be viewed by going on the Manage Posts button on the navigation bar and clicking on View button on the individual post
 
-Add a post
-[CRUD] Create or 'add' a new travelling experience by clicking on the Add New button.
 
-Update a Travelling Experience
-[CRUD] Update or 'edit' their own travelling experience on this page.
-
-Delete a Travelling Experience
-[CRUD] Delete or 'remove' a travelling experience by clicking on the Delete button.
-
-Detailed view of each post can also be viewed!
-
-echnologies Used
-HTML, CSS, Javascript, Heroku, Python, Django, ElephantSQL
+Technologies Used
+HTML, CSS, Javascript, Heroku, Python, Django, ElephantSQL,React
 
 Agile Method:
 The agile Methodology was used and different user stories were created using Kanban board and implemented for the project.
@@ -83,24 +62,7 @@ Sign in Test: As a user I can sign in to the app so that I can access functional
 Result: Pass, A sign in page was found
 
 
-Edit post Test: As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created
-
-Result: Pass, An Edit button under "Manage Posts"on each individual post was found
-
-Post a comment Test: As a logged in user I can add comments to a post so that I can share my thoughts about the post
-
-Result: Pass, A comment box was found on each of the post detail view through which you can add the comments
-
-View comments v: As a user I can read comments on posts so that I can read what other users think about the posts
-
-Result: Pass, A comment section was found on each of the post detail view where the posted comments can be found
-
 Javascript and Python testing
-Unit tests were written for both Python and Js
-
-Python: Unit tests were written to test the url of different views
-
-Javascript: Unit tests were written to test the next travel destionation page On Tripcostcalculator page.
 
 Result:These tests were successful.
 
@@ -130,7 +92,10 @@ Click the 'Reveal Config Vars' button and add the below variables:
 
 You can deploy it using the Deploy option and carry out the build like this Heroku Deployment
 
--Add for the React---
+All the React installation steps were followed accoriding to the guidelines in the moments app
+Gitpod space was created as guided in the setup part of the moments app
+and the react bootstrap was installled
+
 
 Acknowledgements and Credits
-Mentor and Tutor support Media Info Inspired by "I think before I blog walkthrough project"
+Mentor and Tutor support Media Info Inspired by "Moments App"
