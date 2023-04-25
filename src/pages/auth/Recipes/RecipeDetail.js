@@ -17,7 +17,7 @@ function RecipeDetail() {
     const handleMount = async () => {
       try {
         const [{ data: post }] = await Promise.all([
-          axiosReq.get(`/Recipeposts/${id}`),
+          axiosReq.get(`/Recipeposts/${id}`), 
         ]);
         setPost({ results: [post] });
       } catch (err) {
