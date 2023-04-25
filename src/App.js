@@ -9,7 +9,7 @@ import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import './api/axioDefaults';
-import RecipeDtetail from './pages/auth/Recipes/RecipeDetail';
+import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
-          <Route exact path="/Recipeposts/:id" render={() => <RecipeDtetail />} />
+          <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
