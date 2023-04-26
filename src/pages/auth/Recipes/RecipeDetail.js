@@ -17,11 +17,11 @@ function RecipeDetail() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: post }] = await Promise.all([
-          axiosReq.get(`/Recipeposts/${post.id}`),
+        const [{ data: postarray }] = await Promise.all([
+          axiosReq.get(`/Recipeposts/${id}/`),
         ]);
-        setPost({ results: [post] });
-        console.log(post);
+        setPost({ ...post, results: [postarray] });
+
       } catch (err) {
         console.log(err);
       }
@@ -36,7 +36,6 @@ function RecipeDetail() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <RecipePost {...post.results[0]} setPosts={setPost} postPage />
-        <p>{post.results[0]}</p>
         <Container >
           Comments
         </Container>
