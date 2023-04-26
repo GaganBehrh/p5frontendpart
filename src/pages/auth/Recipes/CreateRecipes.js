@@ -10,6 +10,7 @@ import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 
+
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -79,7 +80,7 @@ function CreateRecipes() {
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.push(`/Recipeposts/`)}>Cancel</Button>{' '}
         </div>
 
     );
