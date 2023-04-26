@@ -15,9 +15,9 @@ Mockups were designed using Figma
 
 ![Sign In](src/media/Signin.png)
 
-![SignUp](src/media/Signup.png)
-
 ![Add Post](src/media/Add%20Post.png)
+
+![Signup](src/media/Signup.png)
 
 
 
