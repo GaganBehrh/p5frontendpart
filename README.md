@@ -11,11 +11,11 @@ Sign in: As a user I can sign in to the app so that I can access functionality f
 Add Post:As a user I would like to add posts to the app so that I can add my recipe
 
 ## Wireframe:
-Mockups were designed using Figma!
+Mockups were designed using Figma
 
-![Sign In](src/media/Signin.png)!
+![Sign In](src/media/Signin.png)
 
-![SignUp](src/media/Signup.png)!
+![SignUp](src/media/Signup.png)
 
 ![Add Post](src/media/Add%20Post.png)
 
