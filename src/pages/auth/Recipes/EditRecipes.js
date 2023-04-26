@@ -33,7 +33,7 @@ function EditRecipes() {
             try {
                 const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
                 const { name, matter, pic, is_owner } = data;
-                is_owner ? setPostData({ name, matter, pic }) : history.push("/");
+                is_owner ? setPostData({ name, matter, pic }) : history.push('/');
             } catch (err) {
                 console.log(err);
             }

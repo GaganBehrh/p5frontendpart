@@ -29,6 +29,12 @@ Users can easily log out of their account with the click of a button.
 Log Out of Account
 Users can easily log out of their account with the click of a button.
 
+## Database Model
+![Database Model](src/media/P5%20Database%20Model.png)
+
+## Kanban Board
+![Kanban Board](src/media/Kanban%20Board.png)
+
 
 ## Technologies Used
  React,Heroku, Python, Django, ElephantSQL,
@@ -40,10 +46,10 @@ The agile Methodology was used and different user stories were created using Kan
 Here is the model I used
 
 ### Validators
-W3C HTML Validator -
+W3C HTML Validator - No errors found
 
 
-W3C CSS Validator -
+W3C CSS Validator -No errors found
 
 
 JShint:

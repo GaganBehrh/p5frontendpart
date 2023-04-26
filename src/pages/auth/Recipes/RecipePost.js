@@ -10,8 +10,6 @@ import Button from "react-bootstrap/Button";
 import LoggedinPic from "../../../components/LoggedinPic";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
 import { useHistory } from "react-router";
-
-
 const Post = (props) => {
     let {
         id,

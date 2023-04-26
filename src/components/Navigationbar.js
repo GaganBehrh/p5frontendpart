@@ -55,13 +55,7 @@ const Navigationbar = () => {
         >
             <i className=""></i>Add Recipe
         </NavLink>
-        <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="Recipeposts/:${id}/edit"
-        >
-            <i className=""></i>Edit Recipe
-        </NavLink>
+      
     </>;
     //console.log(loggedInIcons);
     //console.log(currentUser);
