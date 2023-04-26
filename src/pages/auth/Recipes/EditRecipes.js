@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import { useHistory } from "react-router";
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
-import { axiosReq, axiosRes } from "../../../api/axioDefaults";
+import { axiosReq } from "../../../api/axioDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditRecipes() {
@@ -26,31 +26,20 @@ function EditRecipes() {
 
     const imageInput = useRef(null);
     const history = useHistory();
-    const id = useParams();
-
-    /* useEffect(() => {
-         const handleMount = async () => {
-             try {
-                 const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
-                 const { name, matter, pic, is_owner } = data;
-                 is_owner ? setPostData({ name, matter, pic }) : history.push("/");
-             } catch (err) {
-                 console.log(err);
-             }
-         };*/
+    const { id } = useParams();
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: postarray }] = await Promise.all([
-                    axiosReq.get(`/Recipeposts/${id}/`),
-                ]);
-                setPostData({ ...postData, results: [postarray] });
-
+                const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+                const { name, matter, pic, is_owner } = data;
+                is_owner ? setPostData({ name, matter, pic }) : history.push("/");
             } catch (err) {
                 console.log(err);
             }
         };
+
+
         handleMount();
     }, [history, id]);
 
@@ -69,7 +58,7 @@ function EditRecipes() {
             URL.revokeObjectURL(pic);
             setPostData({
                 ...postData,
-                imageInput: URL.createObjectURL(event.target.files[0]),
+                image: URL.createObjectURL(event.target.files[0]),
             });
         }
     };
@@ -88,9 +77,9 @@ function EditRecipes() {
         formData.append("updated_on", updated_on);
 
         try {
-            const { data } = await axiosReq.put("/Recipeposts/${id}/", formData);
-            console.log(data);
-            history.push(`/Recipeposts/${data.id}`);
+            await axiosReq.put(`/Recipeposts/${id}/`, formData);
+
+            history.push(`/Recipeposts/${id}`);
 
         } catch (err) {
             console.log(err);
