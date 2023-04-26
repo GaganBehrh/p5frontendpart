@@ -18,7 +18,7 @@ function RecipeDetail() {
     const handleMount = async () => {
       try {
         const [{ data: post }] = await Promise.all([
-          axiosReq.get(`/Recipeposts/${id}`),
+          axiosReq.get(`/Recipeposts/${post.id}`),
         ]);
         setPost({ results: [post] });
         console.log(post);
@@ -35,6 +35,7 @@ function RecipeDetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
+        <RecipePost {...post.results[0]} setPosts={setPost} postPage />
         <p>{post.results[0]}</p>
         <Container >
           Comments

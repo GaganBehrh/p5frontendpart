@@ -13,11 +13,11 @@ Add Post:As a user I would like to add posts to the app so that I can add my rec
 ## Wireframe:
 Mockups were designed using Figma!
 
-[Sign In](src/media/Signin.png)!
+![Sign In](src/media/Signin.png)!
 
-[SignUp](src/media/Signup.png)!
+![SignUp](src/media/Signup.png)!
 
-[Add Post](src/media/Add%20Post.png)
+![Add Post](src/media/Add%20Post.png)
 
 
 
