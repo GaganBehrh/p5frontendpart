@@ -9,10 +9,10 @@ import { useCurrentUser } from "../../../contexts/CurrentUser";
 
 const Post = (props) => {
     let {
-        id=5,
+        id,
         name,
-        owner="jdfkjd",
-        profile_id=4,
+        owner,
+        profile_id,
         profile_image,
         username
     } = props;
@@ -32,12 +32,12 @@ const Post = (props) => {
                         {owner}
                     </Link>
                     <div className="d-flex align-items-center">
-fgfgfgfgf
-{name}
-{profile_id}
-{username}
-{name}
-
+                    
+        {name}
+        {owner}
+        {profile_id}
+       
+       {username}
                     </div>
                 </Media>
             </Card.Body>
