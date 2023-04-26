@@ -6,21 +6,22 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
-import Recipepost from "../Recipes/RecipePost";
+import RecipePost from "../Recipes/RecipePost";
 
 function RecipeDetail() {
   const { id } = useParams();
 
   const [post, setPost] = useState({ results: [] });
 
+
   useEffect(() => {
     const handleMount = async () => {
       try {
         const [{ data: post }] = await Promise.all([
-          axiosReq.get(`/Recipeposts/${id}`), 
-         
+          axiosReq.get(`/Recipeposts/${id}`),
         ]);
         setPost({ results: [post] });
+        console.log(post);
       } catch (err) {
         console.log(err);
       }
@@ -34,7 +35,7 @@ function RecipeDetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <Recipepost/>
+        <p>{post.results[0]}</p>
         <Container >
           Comments
         </Container>

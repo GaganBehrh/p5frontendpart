@@ -30,6 +30,7 @@ export default Post;*/
 import React from "react";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import RecipeDetail from "./RecipeDetail";
 
 import LoggedinPic from "../../../components/LoggedinPic";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
@@ -38,6 +39,7 @@ import { useCurrentUser } from "../../../contexts/CurrentUser";
 const Post = (props) => {
     let {
         id=5,
+        name,
         owner="jdfkjd",
         profile_id=4,
         profile_image,
@@ -60,8 +62,10 @@ const Post = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
 fgfgfgfgf
+{name}
 {profile_id}
 {username}
+{name}
 
                     </div>
                 </Media>

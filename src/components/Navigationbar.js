@@ -13,7 +13,7 @@ import {
 
 const Navigationbar = () => {
     const currentUser = useCurrentUser();
-    console.log(currentUser);
+    //console.log(currentUser);
 
     const setCurrentUser = useSetCurrentUser();
 
@@ -56,8 +56,8 @@ const Navigationbar = () => {
             <i className=""></i>Add post
         </NavLink>
     </>;
-    console.log(loggedInIcons);
-    console.log(currentUser);
+    //console.log(loggedInIcons);
+    //console.log(currentUser);
     const loggedOutIcons = <><NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
         Sign in
     </NavLink>
