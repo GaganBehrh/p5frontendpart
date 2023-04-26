@@ -32,8 +32,11 @@ function EditRecipes() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+                console.log(id);
+                console.log(data);
                 const { name, matter, pic, is_owner } = data;
                 is_owner ? setPostData({ name, matter, pic }) : history.push('/');
+                
             } catch (err) {
                 console.log(err);
             }
@@ -118,9 +121,7 @@ function EditRecipes() {
                                         <Image src={pic} rounded />
                                     </figure>
                                     <div>
-                                        <Form.label htmlFor="image-upload">
-                                            Change the Image
-                                        </Form.label>
+                                        
                                     </div>
                                 </>
 
@@ -132,12 +133,7 @@ function EditRecipes() {
 
                                 </Form.Label>
                             )}
-                            <Form.File
-                                id="image-upload"
-                                accept="image/*"
-                                onChange={handleChangeoftheImage}
-                                ref={imageInput}
-                            />
+                            
                         </Form.Group>
                     </Container>
                 </Col>
@@ -323,6 +319,10 @@ function EditRecipes() {
         </Form>
     );
 }
+
+<Form.label htmlFor="image-upload">
+                                            Change the Image
+                                        </Form.label>
 
 export default EditRecipes;
 ..................................*/
