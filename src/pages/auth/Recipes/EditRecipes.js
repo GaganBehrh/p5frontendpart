@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import { useHistory } from "react-router";
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
-import { axiosReq } from "../../../api/axioDefaults";
+import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditRecipes() {
@@ -78,7 +78,7 @@ function EditRecipes() {
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
-
+          
             history.push(`/Recipeposts/${id}`);
 
         } catch (err) {
