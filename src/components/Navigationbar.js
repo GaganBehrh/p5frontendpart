@@ -40,14 +40,14 @@ const Navigationbar = () => {
     const loggedInIcons = <> <NavLink className={styles.NavLink} to="/hme" onClick={handleSignOut}>
         <i className=""></i>Sign out
     </NavLink>
-        <NavLink
+        <div
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
 
             <LoggedinPic src={currentUser?.profile_id} text="Profile" height={20} />
 
-        </NavLink>
+            </div>
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
