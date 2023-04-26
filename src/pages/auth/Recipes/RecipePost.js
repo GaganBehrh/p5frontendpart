@@ -20,6 +20,21 @@ const Post = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const buttonFields = (
+        <div className="text-center">
+            <Form.Group>
+                <Form.Label>RecipeName</Form.Label>
+                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>RecipeSteps</Form.Label>
+                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
+            </Form.Group>
+            <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
+        </div>
+
+    );
 
     return (
         
@@ -39,8 +54,12 @@ const Post = (props) => {
        
        {username}
                     </div>
-                </Media>
+                    </Media>
             </Card.Body>
+                    <Row>
+                <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
+                    <Container >{buttonFields}</Container>
+             </Row>
             <Link to={`/posts/${id}`}>
 
             </Link>
