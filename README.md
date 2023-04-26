@@ -1,3 +1,4 @@
+![Resposive Image](src/media/Responsive.png)
 Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
 
 ## UX
