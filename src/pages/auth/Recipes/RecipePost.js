@@ -6,9 +6,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import axios from "axios";
 import Button from "react-bootstrap/Button";
 import LoggedinPic from "../../../components/LoggedinPic";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
+import { axiosReq } from "../../../api/axioDefaults";
 import { useHistory } from "react-router";
 const Post = (props) => {
     let {
@@ -25,6 +27,13 @@ const Post = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
+    // Delete function
+    const deleteRecipe = async (id) => {
+       await axios.delete(`/Recipeposts/${id}/`)
+       history.push('/');
+       
+    }
+
     const FormFields = (
         <div className="text-center">
             <Form.Group>
@@ -39,8 +48,8 @@ const Post = (props) => {
                 <Form.Label>RecipeSteps</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
             </Form.Group>
+            <Button variant="outline-success" onClick={() => deleteRecipe(Post.id)}>Delete</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
-
         </div>
 
     );
