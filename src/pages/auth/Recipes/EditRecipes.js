@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 function EditRecipes() {
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
+        id: "",
         name: "",
         matter: "",
         pic: "",
@@ -36,7 +37,7 @@ function EditRecipes() {
                 console.log(data);
                 const { name, matter, pic, is_owner } = data;
                 is_owner ? setPostData({ name, matter, pic }) : history.push('/');
-                
+
             } catch (err) {
                 console.log(err);
             }
@@ -81,7 +82,7 @@ function EditRecipes() {
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
-          
+
             history.push(`/Recipeposts/${id}`);
 
         } catch (err) {
@@ -102,7 +103,7 @@ function EditRecipes() {
                 <Form.Label>RecipeSteps</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
-            <Button variant="outline-success" type="submit">Edit Recipe</Button>{' '}
+            <Button variant="outline-success" type="submit"  >Edit Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
@@ -113,7 +114,7 @@ function EditRecipes() {
             <Row>
                 <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
                     <Container >{buttonFields}</Container>
-                  
+
                 </Col>
             </Row>
         </form>
