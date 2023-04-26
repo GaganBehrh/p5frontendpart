@@ -103,7 +103,7 @@ function EditRecipes() {
                 <Form.Label>RecipeSteps</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
-            <Button variant="outline-success" type="submit"  >Edit Recipe</Button>{' '}
+            <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 

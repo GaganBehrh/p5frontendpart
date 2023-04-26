@@ -29,9 +29,9 @@ const Post = (props) => {
     const history = useHistory();
     // Delete function
     const deleteRecipe = async (id) => {
-       await axios.delete(`/Recipeposts/${id}/`)
-       history.push('/');
-       
+        await axios.delete(`/Recipeposts/${id}/`)
+        history.push('/');
+
     }
 
     const FormFields = (
@@ -49,6 +49,7 @@ const Post = (props) => {
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
             </Form.Group>
             <Button variant="outline-success" onClick={() => deleteRecipe(Post.id)}>Delete</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.push('Recipeposts/${id}/edit')}>Edit</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
