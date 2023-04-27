@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-
-
+import Button from "react-bootstrap/Button";
 import { axiosRes } from "../../../api/axioDefaults";
 import LoggedinPic from "../../../components/LoggedinPic";
 
@@ -19,7 +17,7 @@ function CreateComments(props) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await axiosRes.post("/comments/", {
+            const { data } = await axiosRes.post("/Recipecomments/", {
                 content,
                 post,
             });
@@ -45,9 +43,7 @@ function CreateComments(props) {
         <Form className="mt-2" onSubmit={handleSubmit}>
             <Form.Group>
                 <InputGroup>
-                    <Link to={`/profiles/${profile_id}`}>
-                        <LoggedinPic src={profileImage} />
-                    </Link>
+
                     <Form.Control
 
                         placeholder="my comment..."
@@ -58,13 +54,14 @@ function CreateComments(props) {
                     />
                 </InputGroup>
             </Form.Group>
-            <button
+            <Button
                 className={` btn d-block ml-auto`}
                 disabled={!content.trim()}
+                variant="outline-success"
                 type="submit"
             >
-                post
-            </button>
+                Add your coment here
+            </Button>
         </Form>
     );
 }

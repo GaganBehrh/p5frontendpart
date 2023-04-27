@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import { useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import RecipePost from "../Recipes/RecipePost";
+import CreateComments from "../Recipes/CreateComments";
 
 function RecipeDetail() {
   const { id } = useParams();
@@ -36,11 +37,8 @@ function RecipeDetail() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <RecipePost {...post.results[0]} setPosts={setPost} postPage />
-        <Container >
-          Comments
-        </Container>
-      </Col>
-      
+        <CreateComments/> 
+      </Col>   
     </Row>
   );
 }
