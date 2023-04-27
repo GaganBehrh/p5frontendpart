@@ -37,7 +37,7 @@ const Navigationbar = () => {
         </NavLink>
 
     );
-    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/hme" onClick={handleSignOut}>
+    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/home" onClick={handleSignOut}>
         <i className=""></i>Sign out
     </NavLink>
         <div
@@ -47,7 +47,7 @@ const Navigationbar = () => {
 
             <LoggedinPic src={currentUser?.profile_id} text="Profile" height={20} />
 
-            </div>
+        </div>
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
@@ -55,7 +55,7 @@ const Navigationbar = () => {
         >
             <i className=""></i>Add Recipe
         </NavLink>
-      
+
     </>;
     //console.log(loggedInIcons);
     //console.log(currentUser);
@@ -70,7 +70,7 @@ const Navigationbar = () => {
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
                 <Navbar.Brand>
-                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/">
+                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/home">
                         ReciBook
                     </NavLink>
 

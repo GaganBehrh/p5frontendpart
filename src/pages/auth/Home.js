@@ -1,11 +1,25 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-import styles from "../../styles/SignIn.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+function Home() {
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+  );
+}
 
+export default Home;
+/*.............Home page initial code.............
 import {
   Form,
   Button,
@@ -44,6 +58,7 @@ const Home = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignInData);
       /*Theis setcurrentuser can break the signin page*/
+      /*
       setCurrentUser(data.user);
       console.log(data.user);
       console.log("call");
@@ -138,6 +153,5 @@ const Home = () => {
       </Col>
     </Row>
   );
-};
-
-export default Home;
+};*/
+/*-----------------Initial code ends here-------------*/
