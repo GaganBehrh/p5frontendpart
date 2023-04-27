@@ -27,6 +27,9 @@ const Post = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
+    const editRecipepagerouting = () => {
+        history.push(`/Recipeposts/${id}/edit`)
+    }
     // Delete function
     const deleteRecipe = async (id) => {
         await axios.delete(`/Recipeposts/${id}/`)
@@ -49,7 +52,7 @@ const Post = (props) => {
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
             </Form.Group>
             <Button variant="outline-success" onClick={() => deleteRecipe(Post.id)}>Delete</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.push('Recipeposts/:id/edit')}>Edit</Button>{' '}
+            <Button variant="outline-success" onClick={() => {editRecipepagerouting() }}>Edit</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
