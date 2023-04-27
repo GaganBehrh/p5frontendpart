@@ -23,12 +23,7 @@ const Navigationbar = () => {
 
     const setCurrentUser = useSetCurrentUser();
 
-    const getCurrentUser = async function () {
-        const currentUser = await Parse.User.current();
-        // Update state variable holding current user
-        setCurrentUser(currentUser);
-        return currentUser;
-    };
+    
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
