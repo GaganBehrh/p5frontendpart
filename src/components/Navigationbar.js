@@ -5,15 +5,18 @@ import styles from "../styles/Navigationbar.module.css";
 import { CurrentUserContext } from "../App";
 import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
+import { useParams } from "react-router";
 import {
     useCurrentUser,
     useSetCurrentUser,
 } from "../contexts/CurrentUser";
 
 
+
+
 const Navigationbar = () => {
     const currentUser = useCurrentUser();
-    //console.log(currentUser);
+    //console.log(currentUser)
 
     const setCurrentUser = useSetCurrentUser();
 
@@ -44,9 +47,8 @@ const Navigationbar = () => {
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
-
-            <LoggedinPic src={currentUser?.profile_id} text="Profile" height={20} />
-
+            <LoggedinPic src={currentUser?.profile_id} text="gagi123" value={currentUser} height={20} />
+         
         </div>
         <NavLink
             className={styles.NavLink}
@@ -58,7 +60,7 @@ const Navigationbar = () => {
 
     </>;
     //console.log(loggedInIcons);
-    //console.log(currentUser);
+    // console.log(currentUser);
     const loggedOutIcons = <><NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
         Sign in
     </NavLink>

@@ -52,10 +52,7 @@ function Home() {
             alt=''
           />
         </MDBCol>
-
-
       </MDBRow>
-
     </>
 
   );
