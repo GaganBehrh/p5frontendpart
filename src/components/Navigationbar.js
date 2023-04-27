@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import Parse from 'parse/dist/parse.min.js';
 import styles from "../styles/Navigationbar.module.css";
 import { CurrentUserContext } from "../App";
 import axios from "axios";
@@ -15,12 +16,19 @@ import {
 
 
 const Navigationbar = () => {
-    const currentUser = useCurrentUser();
+
+   
+     const currentUser = useCurrentUser();
     //console.log(currentUser)
 
     const setCurrentUser = useSetCurrentUser();
 
-
+    const getCurrentUser = async function () {
+        const currentUser = await Parse.User.current();
+        // Update state variable holding current user
+        setCurrentUser(currentUser);
+        return currentUser;
+    };
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
@@ -47,9 +55,10 @@ const Navigationbar = () => {
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
-            <LoggedinPic src={currentUser?.profile_id} text="gagi123" value={currentUser} height={20} />
-         
+            <LoggedinPic src={currentUser?.profile_id} text="gagi123"  height={20} />
+
         </div>
+
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
@@ -60,7 +69,7 @@ const Navigationbar = () => {
 
     </>;
     //console.log(loggedInIcons);
-    // console.log(currentUser);
+    console.log(currentUser);
     const loggedOutIcons = <><NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
         Sign in
     </NavLink>
@@ -75,9 +84,8 @@ const Navigationbar = () => {
                     <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/home">
                         ReciBook
                     </NavLink>
-
                 </Navbar.Brand>
-
+                
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
