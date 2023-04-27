@@ -10,7 +10,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import LoggedinPic from "../../../components/LoggedinPic";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
-import { axiosReq } from "../../../api/axioDefaults";
+import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import { useHistory } from "react-router";
 const Post = (props) => {
     let {
@@ -31,10 +31,9 @@ const Post = (props) => {
         history.push(`/Recipeposts/${id}/edit`)
     }
     // Delete function
-    const deleteRecipe = async (id) => {
-        await axios.delete(`/Recipeposts/${id}/`)
-        history.push('/');
-
+    const deleteRecipe = async () => {
+        await axiosRes.delete(`/Recipeposts/${id}/`)
+        history.goBack();
     }
 
     const FormFields = (
@@ -51,8 +50,8 @@ const Post = (props) => {
                 <Form.Label>RecipeSteps</Form.Label>
                 <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
             </Form.Group>
-            <Button variant="outline-success" onClick={() => deleteRecipe(Post.id)}>Delete</Button>{' '}
-            <Button variant="outline-success" onClick={() => {editRecipepagerouting() }}>Edit</Button>{' '}
+            <Button variant="outline-success" onClick={() => {deleteRecipe()}}>Delete</Button>{' '}
+            <Button variant="outline-success" onClick={() => { editRecipepagerouting() }}>Edit</Button>{' '}
             <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
