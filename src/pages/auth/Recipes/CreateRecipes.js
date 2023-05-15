@@ -9,7 +9,8 @@ import { useHistory } from "react-router";
 import Upload from "../../../media/upload.png";
 import Image from "react-bootstrap/Image";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
-
+import styles from "../../../styles/SignIn.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 
 function CreateRecipes() {
     const [errors, setErrors] = useState({});
@@ -73,11 +74,11 @@ function CreateRecipes() {
         <div className="text-center">
             <Form.Group>
                 <Form.Label>RecipeName</Form.Label>
-                <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
+                <Form.Control className={styles.Input} type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>RecipeSteps</Form.Label>
-                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
+                <Form.Control as="textarea" className={styles.Input} placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => history.push(`/Recipeposts/`)}>Cancel</Button>{' '}
@@ -87,10 +88,11 @@ function CreateRecipes() {
 
     return (
         <form onSubmit={handleSubmitbutton} encType="multipart/form-data">
-            <Row>
-                <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
+            <Row className={styles.Row}>
+                <Col className="my-auto py-2" md={12}>
                     <Container >{buttonFields}</Container>
                     <Container >
+
                         <Form.Group className="text-center">
                             {pic ? (
                                 <>
@@ -109,7 +111,6 @@ function CreateRecipes() {
                                     className="d-flex justify-content-center"
                                     htmlFor="image-upload"
                                 >
-
                                 </Form.Label>
                             )}
                             <Form.File
@@ -119,13 +120,19 @@ function CreateRecipes() {
                                 ref={imageInput}
                             />
                         </Form.Group>
+
                     </Container>
                 </Col>
             </Row>
         </form>
+
     );
 }
 
-
-
 export default CreateRecipes;
+
+
+/* 
+</form>
+ <Row>
+                <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2"> */

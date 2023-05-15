@@ -13,17 +13,15 @@ import {
 } from "../contexts/CurrentUser";
 
 
-
-
 const Navigationbar = () => {
 
-   
-     const currentUser = useCurrentUser();
+
+    const currentUser = useCurrentUser();
     //console.log(currentUser)
 
     const setCurrentUser = useSetCurrentUser();
 
-    
+
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
@@ -50,7 +48,7 @@ const Navigationbar = () => {
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
-            <LoggedinPic src={currentUser?.profile_id} text="gagi123"  height={20} />
+            <LoggedinPic src={currentUser?.profile_id} text="gagi123" height={20} />
 
         </div>
 
@@ -58,6 +56,13 @@ const Navigationbar = () => {
             className={styles.NavLink}
             activeClassName={styles.Active}
             to="/Recipeposts/create"
+        >
+            <i className=""></i>Add Recipe
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
         </NavLink>
@@ -80,7 +85,7 @@ const Navigationbar = () => {
                         ReciBook
                     </NavLink>
                 </Navbar.Brand>
-                
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
