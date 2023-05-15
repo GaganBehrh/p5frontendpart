@@ -45,15 +45,6 @@ const AddRecipeTrial = () => {
     });
   };
 
-  const handleChangeoftheImage = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(pic);
-      setPostData({
-        ...postData,
-        imageInput: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
 
   const handleSubmitbutton = async (event) => {
     event.preventDefault();
