@@ -16,7 +16,7 @@ import {
 } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 
-const CreateCommentsTrial= (props) => {
+const CreateCommentsTrial = (props) => {
     const { post, setPost, setComments, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
 
@@ -49,37 +49,37 @@ const CreateCommentsTrial= (props) => {
         }
     };
 
-  return (
-    <Row className={styles.Row}>
-      <Col  md={12}>
-        <Container className={`${appStyles.Content} `}>
-        <Form className="mt-4" onSubmit={handleSubmit}>
-            <Form.Group>
-                <InputGroup>
+    return (
+        <Row className={styles.Row}>
+            <Col md={12}>
+                <Container className={`${appStyles.Content}p-4 `}>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <InputGroup>
 
-                    <Form.Control
+                                <Form.Control
 
-                        placeholder="my comment..."
-                        as="textarea"
-                        value={content}
-                        onChange={handleChange}
-                        rows={2}
-                    />
-                </InputGroup>
-            </Form.Group>
-            <Button
-                className={` btn d-block ml-auto`}
-                disabled={!content.trim()}
-                variant="outline-success"
-                type="submit"
-            >
-                Add your coment here
-            </Button>
-        </Form>
-        </Container>
-      </Col>
-    </Row>
-  );
+                                    placeholder="my comment..."
+                                    as="textarea"
+                                    value={content}
+                                    onChange={handleChange}
+                                    rows={2}
+                                />
+                            </InputGroup>
+                        </Form.Group>
+                        <Button
+                            className={` btn d-block ml-auto`}
+                            disabled={!content.trim()}
+                            variant="outline-success"
+                            type="submit"
+                        >
+                            Add your coment here
+                        </Button>
+                    </Form>
+                </Container>
+            </Col>
+        </Row>
+    );
 };
 
 export default CreateCommentsTrial;

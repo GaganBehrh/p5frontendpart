@@ -8,6 +8,7 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import CreateCommentsTrial from "../Recipes/CreateCommentsTrial";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
+import InputGroup from "react-bootstrap/InputGroup";
 import {
     Form,
     Button,
@@ -25,12 +26,18 @@ const RecipePostTrial = (props) => {
         owner,
         profile_id,
         profile_image,
-        username
+        username,
     } = props;
 
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const { post, setPost, setComments, profileImag } = props;
+    const [content, setContent] = useState("");
+
+    const handleChange = (event) => {
+        setContent(event.target.value);
+    };
     const history = useHistory();
     const editRecipepagerouting = () => {
         history.push(`/Recipeposts/${id}/edit`)
@@ -41,11 +48,36 @@ const RecipePostTrial = (props) => {
         history.goBack();
     }
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await axiosRes.post("/Recipecomments/", {
+                content,
+                post,
+            });
+            setComments((prevComments) => ({
+                ...prevComments,
+                results: [data, ...prevComments.results],
+            }));
+            setPost((prevPost) => ({
+                results: [
+                    {
+                        ...prevPost.results[0],
+                        comments_count: prevPost.results[0].comments_count + 1,
+                    },
+                ],
+            }));
+            setContent("");
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <Row className={styles.Row} >
-            <Col className="my-auto py-2 p-md-2" md={12} >
+            <Col md={12} >
                 <Container className={`${appStyles.Content} p-4 `}>
-                    <Form >
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>UserName < /Form.Label>
                                 < Form.Control type="text" col={6} name="name" value={owner} />
@@ -61,9 +93,34 @@ const RecipePostTrial = (props) => {
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
                                 < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}
-                                <CreateCommentsTrial />
+
+<Container>
+                                    <Form.Group>
+                                        <InputGroup>
+
+                                            <Form.Control
+
+                                                placeholder="my comment..."
+                                                as="textarea"
+                                                value={content}
+                                                onChange={handleChange}
+                                                rows={2}
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                    <Button
+                                        className={` btn d-block ml-auto`}
+                                        disabled={!content.trim()}
+                                        variant="outline-success"
+                                        type="submit"
+                                    >
+                                        Add your coment here
+                                    </Button>
+                                    </Container>
                                     < /Form>
+                               
                                     < /Container>
+
                                     < /Col>
                                     < /Row>
 
