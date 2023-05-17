@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import RecipePost from "../Recipes/RecipePost";
 import CreateComments from "../Recipes/CreateComments";
+import RecipePostTrial from "./RecipePostTrial.js";
 
 function RecipeDetail() {
   const { id } = useParams();
@@ -36,7 +37,7 @@ function RecipeDetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <RecipePost {...post.results[0]} setPosts={setPost} postPage />
+        <RecipePostTrial {...post.results[0]} setPosts={setPost} postPage />
         <CreateComments/> 
       </Col>   
     </Row>
@@ -45,5 +46,9 @@ function RecipeDetail() {
 
 export default RecipeDetail;
 /* 
-  <Recipepost {...post.results[0]} setPosts={setPost} postPage /><RecipePost {...RecipePost.results[0]} setRecipePosts={setRecipePost} postPage />*/
+  <Recipepost {...post.results[0]} setPosts={setPost} postPage />
+  <RecipePost {...RecipePost.results[0]} setRecipePosts={setRecipePost} postPage />
+  New Line
+   <RecipePost {...post.results[0]} setPosts={setPost} postPage />
+  */
 
