@@ -6,7 +6,7 @@ import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
-
+import CreateCommentsTrial from "../Recipes/CreateCommentsTrial";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
 import {
     Form,
@@ -61,6 +61,7 @@ const RecipePostTrial = (props) => {
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
                                 < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}
+                                <CreateCommentsTrial />
                                     < /Form>
                                     < /Container>
                                     < /Col>

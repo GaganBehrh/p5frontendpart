@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import RecipePost from "../Recipes/RecipePost";
 import CreateComments from "../Recipes/CreateComments";
+import CreateCommentsTrial from "../Recipes/CreateCommentsTrial";
 import RecipePostTrial from "./RecipePostTrial.js";
 
 function RecipeDetail() {
@@ -38,8 +39,9 @@ function RecipeDetail() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <RecipePostTrial {...post.results[0]} setPosts={setPost} postPage />
-        <CreateComments/> 
-      </Col>   
+
+
+      </Col>
     </Row>
   );
 }
