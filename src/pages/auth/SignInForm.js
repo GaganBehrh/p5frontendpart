@@ -10,6 +10,7 @@ import {
   Form,
   Button,
   Col,
+  Image,
   Row,
   Container,
   Alert,
@@ -57,7 +58,18 @@ const SignInForm = () => {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={12}>
+      <Col
+        md={6}
+        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
+      >
+         <h1 className={styles.Recibook}>Recibook</h1>
+         
+        <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://images.themodernproper.com/billowy-turkey/production/posts/2022/MarryMeChicken_7.jpg?w=1200&h=1800&q=82&fm=jpg&fit=crop&dm=1661981453&s=eda3bbe6bf02f7b108d003457c1ea99e"}alt="recipe image"
+        />
+      </Col>
+      <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>SIGN IN</h1>
 
@@ -129,7 +141,13 @@ const SignInForm = () => {
             ))}
           </Form>
         </Container>
-        
+        <Container className={`mt-3 ${appStyles.Content}`}>
+          <Link className={styles.Link} to="/signup">
+           Create and share  your exciting  new recipes with ReciBook. Donot have an account yet? Feel free to here <span>Sign up</span>
+          </Link>
+         
+        </Container>
+
 
       </Col>
     </Row>
