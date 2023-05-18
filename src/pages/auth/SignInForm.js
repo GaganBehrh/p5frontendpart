@@ -62,7 +62,7 @@ const SignInForm = () => {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
-         <h1 className={styles.Recibook}>Recibook</h1>
+         <h1 className={styles.Recibookcreate}>Create your new recipes today</h1>
          
         <Image
           className={`${appStyles.FillerImage}`}

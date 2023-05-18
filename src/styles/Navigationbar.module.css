@@ -1,7 +1,7 @@
 .Navigationbar {
-  background-color: rgb(153, 127, 195);
+
   border: 1px solid #dadadf;
-  color: white;
+  color: black;
 
 }
 
@@ -14,4 +14,14 @@
 .Active {
   color: white;
 
+}
+.Recibook {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2142b2;
 }

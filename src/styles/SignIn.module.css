@@ -32,6 +32,17 @@
   color: #2142b2;
 }
 
+.Recibookcreate
+{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a31975;
+}
 .Link {
   text-decoration: none;
   text-align: center;

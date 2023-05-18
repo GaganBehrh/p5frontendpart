@@ -6,6 +6,7 @@ import styles from "../styles/Navigationbar.module.css";
 import { CurrentUserContext } from "../App";
 import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
+
 import { useParams } from "react-router";
 import {
     useCurrentUser,
@@ -41,7 +42,7 @@ const Navigationbar = () => {
         </NavLink>
 
     );
-    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/home" onClick={handleSignOut}>
+    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/signin" onClick={handleSignOut}>
         <i className=""></i>Sign out
     </NavLink>
         <div
@@ -70,21 +71,14 @@ const Navigationbar = () => {
     </>;
     //console.log(loggedInIcons);
     console.log(currentUser);
-    const loggedOutIcons = <><NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-        Sign in
-    </NavLink>
-        <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
-            Sign up
-        </NavLink></>
+    const loggedOutIcons = <>
+    
+    </>
 
     return (
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
-                <Navbar.Brand>
-                    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-                        ReciBook
-                    </NavLink>
-                </Navbar.Brand>
+            <h1 className={styles.Recibook}>Recibook</h1>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

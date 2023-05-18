@@ -8,6 +8,7 @@ import appStyles from "../../App.module.css";
 import {
   Form,
   Button,
+  Image,
   Col,
   Row,
   Container,
@@ -49,7 +50,18 @@ const SignUpForm = () => {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={12}>
+       <Col
+        md={6}
+        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
+      >
+         <h1 className={styles.Recibookcreate}>Create your new recipes today</h1>
+         
+        <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"}alt="recipe image"
+        />
+      </Col>
+      <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
@@ -140,16 +152,11 @@ const SignUpForm = () => {
 
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-            Already have an account? <span>Sign in</span>
+          Create and share  your exciting  new recipes with ReciBook. Already have an account? <span>Sign in</span>
           </Link>
         </Container>
       </Col>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
-
-      </Col>
+      
     </Row>
   );
 };
