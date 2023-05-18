@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "../../../styles/SignIn.module.css";
 import btnStyles from "../../../styles/Button.module.css";
@@ -6,10 +6,10 @@ import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
-import CreateCommentsTrial from "../Recipes/CreateCommentsTrial";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import InputGroup from "react-bootstrap/InputGroup";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
 
-import InputGroup from "react-bootstrap/InputGroup";
 import {
     Form,
     Button,
@@ -19,7 +19,9 @@ import {
     Alert,
 } from "react-bootstrap";
 import axios from "axios";
-const RecipePostTrial = (props) => {
+
+
+const RecipePostTrial1 = (props) => {
     let {
         id,
         name,
@@ -75,8 +77,8 @@ const RecipePostTrial = (props) => {
     };
 
     return (
-        <Row className={styles.Row} >
-            <Col className="my-auto py-2 p-md-2" md={12} >
+        <Row className={styles.Row}>
+            <Col className="my-auto py-2 p-md-2" md={12}>
                 <Container className={`${appStyles.Content} p-4 `}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
@@ -94,17 +96,11 @@ const RecipePostTrial = (props) => {
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
                                 < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}
-
-                                    < /Form>
-                                    < /Container>
-
-                                    < /Col>
-                                    < /Row>
-
-                                    );
+                                </Form>
+                            </Container>
+                        </Col>
+                    </Row>
+                    );
 };
 
-                                    export default RecipePostTrial;
-
-
-
+                    export default RecipePostTrial1;

@@ -9,6 +9,7 @@ import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import RecipePost from "../Recipes/RecipePost";
 import CreateComments from "../Recipes/CreateComments";
 import CreateCommentsTrial1 from "../Recipes/CreateCommentsTrial1";
+import RecipePostTrial1 from "./RecipePostTrial1.js";
 import RecipePostTrial from "./RecipePostTrial.js";
 
 function RecipeDetail() {
