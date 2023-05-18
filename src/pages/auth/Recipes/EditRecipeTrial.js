@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "../../../styles/SignIn.module.css";
 import btnStyles from "../../../styles/Button.module.css";
@@ -7,6 +7,7 @@ import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import InputGroup from "react-bootstrap/InputGroup";
 
 import {
     Form,
@@ -31,7 +32,7 @@ const EditRecipeTrial = () => {
         updated_on: "",
     });
 
-
+    const [content, setContent] = useState("");
     const { name, matter, pic, created_on, updated_on } = postData;
     // const { image } = postData;
 
@@ -107,7 +108,28 @@ const EditRecipeTrial = () => {
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>
+                <Container>
+                    <Form.Group>
+                        <InputGroup>
+                            <Form.Control
 
+                                placeholder="my comment..."
+                                as="textarea"
+                                value={content}
+                                onChange={handleChange}
+                                rows={2}
+                            />
+                        </InputGroup>
+                    </Form.Group>
+                    <Button
+                        className={` btn d-block ml-auto`}
+                        disabled={!content.trim()}
+                        variant="outline-success"
+                        type="submit"
+                    >
+                        Add your coment here
+                    </Button>
+                </Container>
 
             </Col>
         </Row>

@@ -8,6 +8,7 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import CreateCommentsTrial from "../Recipes/CreateCommentsTrial";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
+
 import InputGroup from "react-bootstrap/InputGroup";
 import {
     Form,
@@ -94,31 +95,7 @@ const RecipePostTrial = (props) => {
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
                                 < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}
 
-<Container>
-                                    <Form.Group>
-                                        <InputGroup>
-
-                                            <Form.Control
-
-                                                placeholder="my comment..."
-                                                as="textarea"
-                                                value={content}
-                                                onChange={handleChange}
-                                                rows={2}
-                                            />
-                                        </InputGroup>
-                                    </Form.Group>
-                                    <Button
-                                        className={` btn d-block ml-auto`}
-                                        disabled={!content.trim()}
-                                        variant="outline-success"
-                                        type="submit"
-                                    >
-                                        Add your coment here
-                                    </Button>
-                                    </Container>
                                     < /Form>
-                               
                                     < /Container>
 
                                     < /Col>
@@ -128,3 +105,6 @@ const RecipePostTrial = (props) => {
 };
 
                                     export default RecipePostTrial;
+
+
+
