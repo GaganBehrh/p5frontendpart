@@ -29,7 +29,7 @@ function RecipePostsPage(message) {
         console.log(err);
       }
     };
-    
+
     setHasLoaded(false);
     fetchPosts();
   }, [pathname]);
@@ -38,24 +38,24 @@ function RecipePostsPage(message) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
-        { hasLoaded ? (
+        {hasLoaded ? (
           <>
-            {posts.results.length? (
+            {posts.results.length ? (
               posts.results.map((post) => (
                 <RecipePostTrial key={post.id} {...post} setPosts={setPosts} />
 
               ))
             ) : (
-            <Container className={appStyles.Content}>
-              <Asset src={NoResults} message={message} />
-            </Container>
+              <Container className={appStyles.Content}>
+                <Asset src={NoResults} message={message} />
+              </Container>
             )}
           </>
         ) : (
           <Container className={appStyles.Content}>
             <Asset spinner />
           </Container>
-        )} 
+        )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <p>Popular profiles for desktop</p>

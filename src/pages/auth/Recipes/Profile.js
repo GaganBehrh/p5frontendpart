@@ -41,9 +41,12 @@ const ProfilePage=(props)=> {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const { data } = await axiosReq.get(`/profiles/`);
-                console.log(data);
-                setPosts(data);
+                const { data: postarray } = await Promise.all([
+                    axiosReq.get(`/profiles/${id}/`),
+                  ]);
+                  setPosts({ ...posts, results: [postarray] });
+             //   console.log(data);
+               // setPosts(data);
                 console.log(posts);
                 setHasLoaded(true);
             } catch (err) {
