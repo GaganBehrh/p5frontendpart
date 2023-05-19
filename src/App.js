@@ -13,19 +13,23 @@ import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
+import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
+import { useCurrentUser } from './contexts/CurrentUser';
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
 
 function App() {
+  const CurrentUser = useCurrentUser();
+  const profile_id = CurrentUser?.profile_id || "";
   return (
 
     <div className={styles.App}>
       <Navigationbar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <Home />} />
+          <Route exact path="/" render={() => <RecipePostsPage message="No such Page found" />} />
           <Route exact path="/home" render={() => <Home />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
