@@ -14,6 +14,7 @@ import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
+import Profile from './pages/auth/Recipes/Profile';
 import { useCurrentUser } from './contexts/CurrentUser';
 
 export const CurrentUserContext = createContext();
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
+          <Route exact path="/profiles/:id" render={() => <Profile />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
