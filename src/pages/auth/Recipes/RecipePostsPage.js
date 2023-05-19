@@ -40,7 +40,7 @@ function RecipePostsPage(message) {
         <p>Popular profiles mobile</p>
         { hasLoaded ? (
           <>
-            {posts.results?.length? (
+            {posts.results.length? (
               posts.results.map((post) => (
                 <RecipePostTrial key={post.id} {...post} setPosts={setPosts} />
 
