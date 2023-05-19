@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 
 import Image from "react-bootstrap/Image";
-const CreateCommentsTrial1= (props) => {
+const CreateCommentsTrial1 = (props) => {
 
     const { post, setPost, setComments, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
@@ -29,7 +29,7 @@ const CreateCommentsTrial1= (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await axiosRes.post("/Recipecomments/", {
+            const { data } = await axiosRes.post("/Recipecomment/", {
                 content,
                 post,
             });
@@ -51,11 +51,11 @@ const CreateCommentsTrial1= (props) => {
         }
     };
 
-  return (
-    <Row className={styles.Row}>
-      <Col  md={12}>
-        <Container className={`${appStyles.Content} p-4 `}>
-        <Form onSubmit={handleSubmit}>
+    return (
+        <Row className={styles.Row}>
+            <Col md={12}>
+                <Container className={`${appStyles.Content} p-4 `}>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <InputGroup>
 
@@ -78,11 +78,11 @@ const CreateCommentsTrial1= (props) => {
                             Add your coment here
                         </Button>
                     </Form>
-        </Container>
-        
-      </Col>
-    </Row>
-  );
+                </Container>
+
+            </Col>
+        </Row>
+    );
 };
 
 export default CreateCommentsTrial1;

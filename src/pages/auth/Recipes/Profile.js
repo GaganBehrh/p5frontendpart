@@ -18,9 +18,18 @@ import btnStyles from "../../../styles/Button.module.css";
 
 import { useCurrentUser } from "../../../contexts/CurrentUser";
 import { useParams } from "react-router";
-import { Button, Image } from "react-bootstrap";
+import { Form,Button, Image } from "react-bootstrap";
 
-function ProfilePage() {
+const ProfilePage=(props)=> {
+    let {
+        
+        name,
+        content,
+        owner,
+        profile_id,
+        profile_image,
+        username,
+    } = props;
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
     const id = useParams();
@@ -45,41 +54,32 @@ function ProfilePage() {
         setHasLoaded(false);
         fetchPosts();
     });
-    const mainProfile = (
-        <>
-            <Row noGutters className="px-3 text-center">
-                <Col lg={3} className="text-lg-left">
-
-                </Col>
-                <Col lg={6}>
-                    <h3 className="m-2">Profile username</h3>
-                    <p>Profile stats</p>
-                </Col>
-                <Col lg={3} className="text-lg-right">
-                    <p>Follow button</p>
-                </Col>
-                <Col className="p-3">Profile content</Col>
-            </Row>
-        </>
-    );
-
-    const mainProfilePosts = (
-        <>
-            <hr />
-            <p className="text-center">Profile owner's posts</p>
-            <hr />
-        </>
-    );
+    
 
     return (
-        <Row>
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
+        <Row className={styles.Row} >
+            <Col className="my-auto py-2 p-md-2" md={12} >
+                <Container className={`${appStyles.Content} p-4 `}>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>UserName < /Form.Label>
+                                < Form.Control type="text" col={6}  name="name" value={owner} />
+                       </Form.Group>
+                     
+                        <Form.Group>
+                            <Form.Label>Content < /Form.Label>
+                                < Form.Control type="text" col={6}  name="name" value={content} />
+                       </Form.Group>
+                       
+                          
+                                < Button variant="outline-success" > Cancel < /Button>{' '}
 
-                {mainProfile}
-                {mainProfilePosts}
+                                    < /Form>
+                                    < /Container>
 
-            </Col>
-        </Row>
+                                    < /Col>
+                                    < /Row>
+       
     );
 }
 
