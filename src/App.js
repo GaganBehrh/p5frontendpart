@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
 import SignUpForm from './pages/auth/SignUpForm';
 import Home from './pages/auth/Home';
+import HomePage from './pages/auth/HomePage';
 import SignInForm from './pages/auth/SignInForm';
 import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
 import AddRecipeTrial from './pages/auth/Recipes/AddRecipeTrial';
@@ -31,7 +32,7 @@ function App() {
       <Container className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <RecipePostsPage message="No such Page found" />} />
-          <Route exact path="/home" render={() => <Home />} />
+          <Route exact path="/home" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />

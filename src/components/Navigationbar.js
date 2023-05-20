@@ -7,6 +7,7 @@ import { CurrentUserContext } from "../App";
 import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
 
+
 import { useParams } from "react-router";
 import {
     useCurrentUser,
@@ -78,7 +79,14 @@ const Navigationbar = () => {
     return (
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
-            <h1 className={styles.Recibook}>Recibook</h1>
+            <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/home"
+        >
+              <h1 className={styles.Recibook}>Recibook</h1>
+        </NavLink>
+          
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
