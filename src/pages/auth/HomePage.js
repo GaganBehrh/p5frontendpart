@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import styles from "../../styles/SignIn.module.css";
+import styles from "../../styles/HomePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { SetCurrentUserContext } from "../../App";
@@ -57,20 +57,32 @@ const HomePage = () => {
 
   return (
     <Row className={styles.Row}>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
-         <h1 className={styles.Recibookcreate}>Create your new recipes today</h1>
-         
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://images.themodernproper.com/billowy-turkey/production/posts/2022/MarryMeChicken_7.jpg?w=1200&h=1800&q=82&fm=jpg&fit=crop&dm=1661981453&s=eda3bbe6bf02f7b108d003457c1ea99e"}alt="recipe image"
-        />
-      </Col>
-      <Col className="my-auto py-2 p-md-2" md={6}>
+       <Col className="my-auto py-2 p-md-2" md={4}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>SIGN IN</h1>
+          <p className={styles.Header}>Create your own new exciting recipes here
+         </p>
+         <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"}alt="recipe image"
+        />
+|</Container>
+      </Col>
+      <Col className="my-auto py-2 p-md-2" md={4}>
+        <Container className={`${appStyles.Content} p-4 `}>
+          <h1 className={styles.Header}>Donot have an account yet? Sign up here</h1>
+          <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"}alt="recipe image"
+        />
+|</Container>
+      </Col>
+      <Col className="my-auto py-2 p-md-2" md={4}>
+        <Container className={`${appStyles.Content} p-4 `}>
+          <h1 className={styles.Header}>Already have an account here? Signin here</h1>
+          <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"}alt="recipe image"
+        />
 |</Container>
       </Col>
     </Row>
