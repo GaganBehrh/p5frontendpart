@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -9,11 +7,11 @@ import Asset from "../../../components/Asset";
 import RecipePostTrial from "./RecipePostTrial.js";
 import { useLocation } from "react-router";
 import appStyles from "../../../App.module.css";
-import NoResults from "../../../media/no-results.png";;
+import NoResults from "../../../media/no-results.png"; import Form from "react-bootstrap/Form";
 
 function RecipePostsPage(message) {
   const [posts, setPosts] = useState({ results: [] });
-  console.log(posts);
+   console.log(posts);
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
@@ -22,7 +20,7 @@ function RecipePostsPage(message) {
       try {
         const { data } = await axiosReq.get(`/Recipeposts/`);
         console.log(data);
-        setPosts(data);
+        setPosts({...posts, results: data});
         console.log(posts);
         setHasLoaded(true);
       } catch (err) {
@@ -40,10 +38,9 @@ function RecipePostsPage(message) {
         <p>Popular profiles mobile</p>
         {hasLoaded ? (
           <>
-            {posts.results.length ? (
-              posts.results.map((post) => (
+            {posts?.results?.length ? (
+              posts?.results.map((post) => (
                 <RecipePostTrial key={post.id} {...post} setPosts={setPosts} />
-
               ))
             ) : (
               <Container className={appStyles.Content}>
@@ -56,6 +53,7 @@ function RecipePostsPage(message) {
             <Asset spinner />
           </Container>
         )}
+
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <p>Popular profiles for desktop</p>
