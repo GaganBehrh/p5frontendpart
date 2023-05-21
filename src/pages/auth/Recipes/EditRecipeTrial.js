@@ -108,28 +108,6 @@ const EditRecipeTrial = () => {
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>
-                <Container>
-                    <Form.Group>
-                        <InputGroup>
-                            <Form.Control
-
-                                placeholder="my comment..."
-                                as="textarea"
-                                value={content}
-                                onChange={handleChange}
-                                rows={2}
-                            />
-                        </InputGroup>
-                    </Form.Group>
-                    <Button
-                        className={` btn d-block ml-auto`}
-                        disabled={!content.trim()}
-                        variant="outline-success"
-                        type="submit"
-                    >
-                        Add your coment here
-                    </Button>
-                </Container>
 
             </Col>
         </Row>

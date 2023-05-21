@@ -92,6 +92,7 @@ const RecipePostTrial = (props) => {
                             <Form.Label>RecipeSteps < /Form.Label>
                                 < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
                         </Form.Group>
+                        
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
                                 < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}

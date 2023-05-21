@@ -25,7 +25,7 @@ function RecipeDetail() {
       try {
         const [{ data: postarray }, { data: comments }] = await Promise.all([
           axiosReq.get(`/Recipeposts/${id}/`),
-          axiosReq.get(`/Recipecomment/?Recipeposts=${id}/`),
+          axiosReq.get(`/Recipecomment/`),
         ]);
         setPost({ ...post, results: [postarray] });
         setComments(comments);
@@ -34,7 +34,6 @@ function RecipeDetail() {
         console.log(err);
       }
     };
-
     handleMount();
   }, [id]);
 
@@ -44,7 +43,7 @@ function RecipeDetail() {
         <RecipePostTrial {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
-            <CreateCommentTrial1
+            <CreateCommentsTrial1
               profile_id={currentUser.profile_id}
               post={id}
               setPost={setPost}

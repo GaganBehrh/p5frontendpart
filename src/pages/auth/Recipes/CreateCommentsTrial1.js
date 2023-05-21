@@ -30,7 +30,6 @@ const CreateCommentsTrial1 = (props) => {
         event.preventDefault();
         try {
             const { data } = await axiosRes.post("/Recipecomment/", {
-                content,
                 post,
             });
             setComments((prevComments) => ({
