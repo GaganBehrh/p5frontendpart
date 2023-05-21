@@ -44,6 +44,7 @@ const RecipePostTrial = (props) => {
         history.push(`/Recipeposts/${id}/edit`)
     }
 
+
     const deleteRecipe = async () => {
         await axiosRes.delete(`/Recipeposts/${id}/`)
         history.goBack();

@@ -12,6 +12,9 @@ import { useCurrentUser } from "../../../contexts/CurrentUser";
 import RecipePostTrial1 from "./RecipePostTrial1.js";
 import RecipePostTrial from "./RecipePostTrial.js";
 import Comment from "./Comment";
+import CreateCommentTrial1 from "./Comment";
+import appStyles from "../../../App.module.css";
+
 function RecipeDetail() {
   const { id } = useParams();
   const currentUser = useCurrentUser();
@@ -22,7 +25,7 @@ function RecipeDetail() {
       try {
         const [{ data: postarray }, { data: comments }] = await Promise.all([
           axiosReq.get(`/Recipeposts/${id}/`),
-          axiosReq.get(`/Recipecomment/?Recipeposts=${id}`),
+          axiosReq.get(`/Recipecomment/?Recipeposts=${id}/`),
         ]);
         setPost({ ...post, results: [postarray] });
         setComments(comments);
@@ -39,7 +42,27 @@ function RecipeDetail() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <RecipePostTrial {...post.results[0]} setPosts={setPost} postPage />
-       <CreateCommentsTrial1/>
+        <Container className={appStyles.Content}>
+          {currentUser ? (
+            <CreateCommentTrial1
+              profile_id={currentUser.profile_id}
+              post={id}
+              setPost={setPost}
+              setComments={setComments}
+            />
+          ) : comments.results.length ? (
+            "Comments"
+          ) : null}
+          {comments?.results?.length ? (
+            comments.results.map((comment) => (
+              <Comment key={comment.id} {...comment} />
+            ))
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : (
+            <span>No comments... yet</span>
+          )}
+        </Container>
       </Col>
     </Row>
   );
