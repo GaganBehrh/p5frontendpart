@@ -27,7 +27,7 @@ const CreateCommentsTrial = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await axiosRes.post("/Recipecomments/", {
+            const { data } = await axiosRes.post("/Recipecomment/", {
                 content,
                 post,
             });

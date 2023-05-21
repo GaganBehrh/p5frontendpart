@@ -29,9 +29,7 @@ const CreateCommentsTrial1 = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await axiosRes.post("/Recipecomment/", {
-                post,
-            });
+            const { data } = await axiosRes.post("/Recipecomment/");
             setComments((prevComments) => ({
                 ...prevComments,
                 results: [data, ...prevComments.results],
@@ -45,8 +43,10 @@ const CreateCommentsTrial1 = (props) => {
                 ],
             }));
             setContent("");
+            console.log("call");
         } catch (err) {
             console.log(err);
+            console.log("callerror");
         }
     };
 
