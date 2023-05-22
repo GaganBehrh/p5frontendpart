@@ -1,5 +1,70 @@
 ![Resposive Image](src/media/Responsive.png)
 Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
+## React
+React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
+
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.
+
+Components in React basically return a piece of JSX code that tells what should be rendered on the screen. In React, we mainly have two types of components: 
+
+Functional Components: Functional components are simply javascript functions. We can create a functional component in React by writing a javascript function. These functions may or may not receive data as parameters.
+ 
+Class Components: The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to another class component. We can use JavaScript ES6 classes to create class-based components in React. 
+
+## Getting Started with Create React App
+This project was bootstrapped with Create React App.
+
+Available Scripts
+In the project directory, you can run:
+
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+See the section about deployment for more information.
+
+npm run eject
+Note: this is a one-way operation. Once you eject, you can’t go back!
+
+If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+Learn More
+You can learn more in the Create React App documentation.
+
+To learn React, check out the React documentation.
+
+Code Splitting
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+Analyzing the Bundle Size
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+Making a Progressive Web App
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+Advanced Configuration
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+Deployment
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+npm run build fails to minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 ## UX
 ### User Stories
@@ -104,9 +169,6 @@ Signup: As a developer i could signup and find the same user in the backend
 Result:Pass, this was posible to find the same user in the backend as well
 
 
-
-
-
 ## Setup and Deployment
 Making a Local Clone
 Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
@@ -137,6 +199,27 @@ All the React installation steps were followed accoriding to the guidelines in t
 Gitpod space was created as guided in the setup part of the moments app
 and the react bootstrap was installled
 
+Zero-configuration Deploy to Heroku
+Thanks to the zero-config foundation of create-react-app, the idea of zero-config deployment seemed within reach. Since these new apps all share a common, implicit architecture, the build process can be automated and then served with intelligent defaults. So, we created this community buildpack to experiment with no-configuration deployment to Heroku.
+
+Create and Deploy a React App 
+You can get started building React apps for free on Heroku.
+
+npm install -g create-react-app
+create-react-app my-app
+cd my-app
+git init
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "react-create-app on Heroku"
+git push heroku master
+heroku open
+Try it yourself using the buildpack docs.
+
+Growing Up from Zero Config
+create-react-app is very new (currently version 0.2) and since its target is a crystal-clear developer experience, more advanced use cases are not supported (or may never be supported). For example, it does not provide server-side rendering or customized bundles.
+
+To support greater control, create-react-app includes the command npm run eject. Eject unpacks all the tooling (config files and package.json dependencies) into the app's directory, so you can customize to your heart's content. Once ejected, changes you make may necessitate switching to a custom deployment with Node.js and/or static buildpacks. Always perform such project changes through a branch / pull request, so they can be easily undone. Heroku's Review Apps are perfect for testing changes to the deployment.
 
 ## Acknowledgements and Credits
 Mentor and Tutor support Media Info Inspired by "Moments App"
