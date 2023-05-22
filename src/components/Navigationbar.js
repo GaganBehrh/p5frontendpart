@@ -73,7 +73,7 @@ const Navigationbar = () => {
 
             to="/recipepostspage"
         >
-            <i className=""></i>View Recipe
+            <i className=""></i>View Recipes
         </NavLink>
 
     </>;

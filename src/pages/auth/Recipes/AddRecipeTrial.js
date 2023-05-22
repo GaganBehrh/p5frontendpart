@@ -71,8 +71,10 @@ const AddRecipeTrial = () => {
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={12}>
+      <h1 className="appstye.Content">Create your own new recipe here</h1>
         <Container className={`${appStyles.Content} p-4 `}>
           <Form onSubmit={handleSubmitbutton}>
+            
             <Form.Group>
               <Form.Label>RecipeName</Form.Label>
               <Form.Control className={styles.Input} type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
@@ -82,7 +84,7 @@ const AddRecipeTrial = () => {
               <Form.Control as="textarea" className={styles.Input} placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.push(`/Recipeposts/`)}>Cancel</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.push(`/recipepostspage`)}>Cancel</Button>{' '}
          
           </Form>
           

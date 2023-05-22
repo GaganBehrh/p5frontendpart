@@ -20,7 +20,7 @@ import {
 import axios from "axios";
 
 
-const EditRecipeTrial = () => {
+const ViewRecipe = () => {
 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -79,7 +79,7 @@ const EditRecipeTrial = () => {
         formData.append("updated_on", updated_on);
 
         try {
-            await axiosReq.put(`/Recipeposts/${id}/`, formData);
+            await axiosReq.get(`/Recipeposts/${id}/`, formData);
 
             history.push(`/Recipeposts/${id}`);
 
@@ -104,7 +104,7 @@ const EditRecipeTrial = () => {
                             <Form.Label>RecipeSteps</Form.Label>
                             <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
                         </Form.Group>
-                        <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
+
                         <Button variant="outline-success" onClick={() => history.push('/recipepostspage')}>Cancel</Button>{' '}
                     </Form>
                 </Container>
@@ -114,4 +114,4 @@ const EditRecipeTrial = () => {
     );
 };
 
-export default EditRecipeTrial;
+export default ViewRecipe;

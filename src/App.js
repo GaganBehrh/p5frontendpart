@@ -14,6 +14,7 @@ import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
+import ViewRecipe from './pages/auth/Recipes/ViewRecipe';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import Profile from './pages/auth/Recipes/Profile';
 import { useCurrentUser } from './contexts/CurrentUser';
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="/Recipeposts/add" render={() => <AddRecipeTrial />} />
           <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
+          <Route exact path="/Recipeposts/:id/view" render={() => <ViewRecipe />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/profiles/:id" render={() => <Profile />} />
           <Route render={() => <p>Page not found!</p>} />

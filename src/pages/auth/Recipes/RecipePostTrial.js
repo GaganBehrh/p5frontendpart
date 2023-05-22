@@ -44,10 +44,14 @@ const RecipePostTrial = (props) => {
         history.push(`/Recipeposts/${id}/edit`)
     }
 
-
     const deleteRecipe = async () => {
         await axiosRes.delete(`/Recipeposts/${id}/`)
         history.goBack();
+    }
+
+    const handleView = async () => {
+        history.push('');
+
     }
 
     const handleSubmit = async (event) => {
@@ -92,11 +96,9 @@ const RecipePostTrial = (props) => {
                             <Form.Label>RecipeSteps < /Form.Label>
                                 < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
                         </Form.Group>
-                        
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
-                                < Button variant="outline-success" onClick={() => history.goBack()}> Cancel < /Button>{' '}
-
+                                < Button variant="outline-success" onClick={() => history.push('/Recipeposts/:id/view')}> View < /Button>{' '}
                                     < /Form>
                                     < /Container>
 
