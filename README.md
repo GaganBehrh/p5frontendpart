@@ -1,6 +1,5 @@
 ![Resposive Image](src/media/Responsive.png)
-Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
-
+Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website
 
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
