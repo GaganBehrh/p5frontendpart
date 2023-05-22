@@ -98,7 +98,7 @@ const RecipePostTrial = (props) => {
                         </Form.Group>
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
-                                < Button variant="outline-success" onClick={() => history.push('/Recipeposts/:id/view')}> View < /Button>{' '}
+                            < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel < /Button>{' '}
                                     < /Form>
                                     < /Container>
 

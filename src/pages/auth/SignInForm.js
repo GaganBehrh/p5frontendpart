@@ -23,10 +23,9 @@ const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
   const [SignInData, setSignInData] = useState({
     username: "",
-    lastname: "",
     password1: "",
   });
-  const { username, lastname, password } = SignInData;
+  const { username, password } = SignInData;
 
 
   const [errors, setErrors] = useState({});
@@ -80,7 +79,7 @@ const SignInForm = () => {
               <Form.Control
                 className={styles.Input}
                 type="text"
-                placeholder="firstname"
+                placeholder="username"
                 name="username"
                 value={username}
                 onChange={handleChange}
@@ -91,25 +90,6 @@ const SignInForm = () => {
                 {message}
               </Alert>
             ))}
-
-            <Form.Group controlId="lastname">
-              <Form.Label className="d-none">lastname</Form.Label>
-
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="lastname"
-                name="lastname"
-                value={lastname}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            {errors.lastname?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control

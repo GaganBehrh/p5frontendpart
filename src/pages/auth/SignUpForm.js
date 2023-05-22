@@ -19,11 +19,11 @@ import axios from "axios";
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
     username: "",
-    lastname: "",
+   
     password1: "",
     password2: "",
   });
-  const { username, lastname, password1, password2 } = signUpData;
+  const { username, password1, password2 } = signUpData;
 
 
   const [errors, setErrors] = useState({});
@@ -42,7 +42,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
-      history.push("/signin");
+      history.push("/recipepostspage");
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -83,25 +83,6 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-
-            <Form.Group controlId="lastname">
-              <Form.Label className="d-none">lastname</Form.Label>
-
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="lastname"
-                name="lastname"
-                value={lastname}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            {errors.lastname?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
             <Form.Group controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
