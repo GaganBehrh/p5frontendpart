@@ -36,8 +36,8 @@ const Navigationbar = () => {
     const addPostIcon = (
         <NavLink
             className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/posts/create"
+            
+            to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
         </NavLink>
@@ -53,17 +53,9 @@ const Navigationbar = () => {
             <LoggedinPic src={currentUser?.profile_id} text="gagi123" height={20} />
 
         </div>
-
         <NavLink
             className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/Recipeposts/create"
-        >
-            <i className=""></i>Add Recipe
-        </NavLink>
-        <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
+           
             to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
@@ -73,20 +65,20 @@ const Navigationbar = () => {
     //console.log(loggedInIcons);
     console.log(currentUser);
     const loggedOutIcons = <>
-    
+
     </>
 
     return (
         <Navbar className={styles.Navigationbar} expand="md" fixed="top">
             <Container>
-            <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/home"
-        >
-              <h1 className={styles.Recibook}>Recibook</h1>
-        </NavLink>
-          
+                <NavLink
+                    className={styles.NavLink}
+                    activeClassName={styles.Active}
+                    to="/home"
+                >
+                    <h1 className={styles.Recibook}>Recibook</h1>
+                </NavLink>
+
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
