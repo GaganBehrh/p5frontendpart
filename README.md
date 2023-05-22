@@ -60,19 +60,51 @@ PEP8 Online:
 No errors found
 
 Testing of user stories
-## Manual Testing
+## Manual Testing for Front End
 User Stories
+Creation of the posts: As a user I can create the recipeposts on this website
+Result:Pass, I was able to create the recipepost on this website
+
+Editing of the posts:As a user I can edit my posts and see those changes on the website as well
+Result:Pass, I can make those changes on ym recipes and also see those changes on the website
+
+Deleting of the posts: As a developer I can delete the recipes posts which I dont want anymore
+Result:Pass, I was able to delete a recipes which i dint want anymore on my website
+
+Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
+Result:Pass, it was possible to receive all the recipesfrom the backend and see it in the front end
+
+Signup: As a developer i could easily signup on the website so as to create further recipes
+Result:Pass, I was able to Signup on the website
+
 Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
-
-Result: Pass, A navigation bar was found
-
-Sign up Test: As a user I can create a new account so that I can access all the features for signed up users
-
-Result: Pass, A sign up page was found
+Result: Pass, A navigation bar was found and i could easily navigate between different pages through this navvbar
 
 Sign in Test: As a user I can sign in to the app so that I can access functionality for logged in users
+Result: Pass, A sign in page was found where i could sign in and start creating or adding my recipes
 
-Result: Pass, A sign in page was found
+HomePage Navigation: As a user as i enter on the home page of the website, its clearly directed that i could create the recipe after signing up or there is a possibilty of directly signing up and signing in and then directly creating the recipes
+Result:Pass, On the Homepage when we click on ReciBook logo we are directed to this page where all above mentioned options were found
+
+## Manual Testing for Back End
+User stories:
+Creation of the posts: As a developer I can create the posts and receive it in the my backend posts section
+Result:Pass, I was able to create a post and was also found in the backend
+
+Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
+Result:Pass, i could see the relevant changes in the backend
+
+Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
+Result:Pass, I was able to delete a post and this post was also not found in the backend
+
+Receiving of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
+Result:Pass, it was possible to receive all the recipesfrom the backend
+
+Signup: As a developer i could signup and find the same user in the backend
+Result:Pass, this was posible to find the same user in the backend as well
+
+
+
 
 
 ## Setup and Deployment
