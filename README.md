@@ -189,7 +189,7 @@ User stories:
 * Signup: As a developer i could signup and find the same user in the backend
   Result:Pass, this was posible to find the same user in the backend as well
 
-## Setup and Deployment
+## Setup 
 Making a Local Clone
 Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
@@ -211,8 +211,15 @@ heroku login Create a new Heroku app using the following code in your terminal: 
 
 Navigate to the Settings tab on the top horizontal bar, we will be adding the required environment variables here.
 
-Click the 'Reveal Config Vars' button and add the below variables:
+Click the 'Reveal Config Vars' button and add the below variables for the backend:
+![Heroku vars](src/media/Heroku%20vars.png)
 
+
+and the env.py file for the backend can look like this
+![env.py parameteres](src/media/env%20example.png)
+
+
+### Deployment
 You can deploy it using the Deploy option and carry out the build like this Heroku Deployment
 
 All the React installation steps were followed accoriding to the guidelines in the moments app
@@ -240,6 +247,11 @@ Growing Up from Zero Config
 create-react-app is very new (currently version 0.2) and since its target is a crystal-clear developer experience, more advanced use cases are not supported (or may never be supported). For example, it does not provide server-side rendering or customized bundles.
 
 To support greater control, create-react-app includes the command npm run eject. Eject unpacks all the tooling (config files and package.json dependencies) into the app's directory, so you can customize to your heart's content. Once ejected, changes you make may necessitate switching to a custom deployment with Node.js and/or static buildpacks. Always perform such project changes through a branch / pull request, so they can be easily undone. Heroku's Review Apps are perfect for testing changes to the deployment.
+
+### Improvements 
+* UI can be improved 
+* More images can be added
+* It can be made more interactive
 
 ## Acknowledgements and Credits
 Mentor and Tutor support Media Info Inspired by "Moments App"
