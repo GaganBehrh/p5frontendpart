@@ -1,5 +1,7 @@
 ![Resposive Image](src/media/Responsive.png)
 Looking to post your recipes? You've come to the right place! ReciBook is a place where you can view the recipes of the other people.  You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive
+
+
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
 
@@ -9,11 +11,29 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
 
 A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.
 
-Components in React basically return a piece of JSX code that tells what should be rendered on the screen. In React, we mainly have two types of components: 
+Components in React basically return a piece of JSX code that tells what should be rendered on the screen. 
+man
+The reuasble component in this project is for example is the Navigation bar, Asset. These reusable components are used in several pages
 
-Functional Components: Functional components are simply javascript functions. We can create a functional component in React by writing a javascript function. These functions may or may not receive data as parameters.
- 
-Class Components: The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to another class component. We can use JavaScript ES6 classes to create class-based components in React. 
+### Architecture of the React Application
+React library is just UI library and it does not enforce any particular pattern to write a complex application.React architecture is a collection of components responsible for building a software’s User Interface (UI). You can also see it as an organization of your codebase that helps you build your unique project. 
+
+For example, a React architecture will include several UI components such as buttons, forms, API services, Central State Management services, etc. 
+
+Because of this ReactJs architectural freedom, it is the most preferred JavaScript library (framework) for building front-end applications. Get to know more about React.js features. 
+
+- React app starts with a single root component.
+
+- Root component is build using one or more component.
+
+- Each component can be nested with other component to any level.
+
+- Composition is one of the core concepts of React library. So, each component is build by composing smaller components 
+  instead of inheriting one component from another component.
+
+- Most of the components are user interface components.
+
+- React app can include third party component for specific purpose such as routing, animation, state management, etc.
 
 ## Getting Started with Create React App
 This project was bootstrapped with Create React App.
@@ -127,47 +147,47 @@ No errors found
 Testing of user stories
 ## Manual Testing for Front End
 User Stories
-Creation of the posts: As a user I can create the recipeposts on this website
-Result:Pass, I was able to create the recipepost on this website
+* Creation of the posts: As a user I can create the recipeposts on this website
+  Result:Pass, I was able to create the recipepost on this website
 
-Editing of the posts:As a user I can edit my posts and see those changes on the website as well
-Result:Pass, I can make those changes on ym recipes and also see those changes on the website
+* Editing of the posts:As a user I can edit my posts and see those changes on the website as well
+  Result:Pass, I can make those changes on ym recipes and also see those changes on the website
 
-Deleting of the posts: As a developer I can delete the recipes posts which I dont want anymore
-Result:Pass, I was able to delete a recipes which i dint want anymore on my website
+* Deleting of the posts: As a developer I can delete the recipes posts which I dont want anymore
+  Result:Pass, I was able to delete a recipes which i dint want anymore on my website
 
-Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
-Result:Pass, it was possible to receive all the recipesfrom the backend and see it in the front end
+* Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
+  Result:Pass, it was possible to receive all the recipesfrom the backend and see it in the front end
 
-Signup: As a developer i could easily signup on the website so as to create further recipes
-Result:Pass, I was able to Signup on the website
+* Signup: As a developer i could easily signup on the website so as to create further recipes
+  Result:Pass, I was able to Signup on the website
 
-Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
-Result: Pass, A navigation bar was found and i could easily navigate between different pages through this navvbar
+* Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
+  Result: Pass, A navigation bar was found and i could easily navigate between different pages through this navvbar
 
-Sign in Test: As a user I can sign in to the app so that I can access functionality for logged in users
-Result: Pass, A sign in page was found where i could sign in and start creating or adding my recipes
+* Sign in Test: As a user I can sign in to the app so that I can access functionality for logged in users
+  Result: Pass, A sign in page was found where i could sign in and start creating or adding my recipes
 
-HomePage Navigation: As a user as i enter on the home page of the website, its clearly directed that i could create the recipe after signing up or there is a possibilty of directly signing up and signing in and then directly creating the recipes
-Result:Pass, On the Homepage when we click on ReciBook logo we are directed to this page where all above mentioned options were found
+* HomePage Navigation: As a user as i enter on the home page of the website, its clearly directed that i could create the 
+  recipe after signing up or there is a possibilty of directly signing up and signing in and then directly creating the  recipes
+  Result:Pass, On the Homepage when we click on ReciBook logo we are directed to this page where all above mentioned options were found
 
 ## Manual Testing for Back End
 User stories:
-Creation of the posts: As a developer I can create the posts and receive it in the my backend posts section
-Result:Pass, I was able to create a post and was also found in the backend
+* Creation of the posts: As a developer I can create the posts and receive it in the my backend posts section
+  Result:Pass, I was able to create a post and was also found in the backend
 
-Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
-Result:Pass, i could see the relevant changes in the backend
+* Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
+  Result:Pass, i could see the relevant changes in the backend
 
-Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
-Result:Pass, I was able to delete a post and this post was also not found in the backend
+* Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
+  Result:Pass, I was able to delete a post and this post was also not found in the backend
 
-Receiving of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
-Result:Pass, it was possible to receive all the recipesfrom the backend
+* Receiving of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
+  Result:Pass, it was possible to receive all the recipesfrom the backend
 
-Signup: As a developer i could signup and find the same user in the backend
-Result:Pass, this was posible to find the same user in the backend as well
-
+* Signup: As a developer i could signup and find the same user in the backend
+  Result:Pass, this was posible to find the same user in the backend as well
 
 ## Setup and Deployment
 Making a Local Clone
