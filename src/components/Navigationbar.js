@@ -36,14 +36,22 @@ const Navigationbar = () => {
     const addPostIcon = (
         <NavLink
             className={styles.NavLink}
-            
+
             to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
         </NavLink>
 
     );
-    const loggedInIcons = <> <NavLink className={styles.NavLink} to="/signin" onClick={handleSignOut}>
+    const loggedInIcons = <>
+     <NavLink
+                    className={styles.NavLink}
+                    activeClassName={styles.Active}
+                    to="/recipepostspage"
+                >
+                    <h1 className={styles.Recibook}>Recibook</h1>
+                </NavLink>
+     <NavLink className={styles.NavLink} to="/signin" onClick={handleSignOut}>
         <i className=""></i>Sign out
     </NavLink>
         <div
@@ -55,23 +63,24 @@ const Navigationbar = () => {
         </div>
         <NavLink
             className={styles.NavLink}
-           
+
             to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+
+            to="/recipepostspage"
+        >
+            <i className=""></i>View Recipe
         </NavLink>
 
     </>;
     //console.log(loggedInIcons);
     console.log(currentUser);
     const loggedOutIcons = <>
-
-    </>
-
-    return (
-        <Navbar className={styles.Navigationbar} expand="md" fixed="top">
-            <Container>
-                <NavLink
+     <NavLink
                     className={styles.NavLink}
                     activeClassName={styles.Active}
                     to="/home"
@@ -79,7 +88,11 @@ const Navigationbar = () => {
                     <h1 className={styles.Recibook}>Recibook</h1>
                 </NavLink>
 
+    </>
 
+    return (
+        <Navbar className={styles.Navigationbar} expand="md" fixed="top">
+            <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
