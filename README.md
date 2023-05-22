@@ -248,6 +248,12 @@ create-react-app is very new (currently version 0.2) and since its target is a c
 
 To support greater control, create-react-app includes the command npm run eject. Eject unpacks all the tooling (config files and package.json dependencies) into the app's directory, so you can customize to your heart's content. Once ejected, changes you make may necessitate switching to a custom deployment with Node.js and/or static buildpacks. Always perform such project changes through a branch / pull request, so they can be easily undone. Heroku's Review Apps are perfect for testing changes to the deployment.
 
+### API testing
+- As I have created several posts i am able to call my api and all those posts from api and and read them
+- As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
+  as edit them from my api
+
+
 ### Improvements 
 * UI can be improved 
 * More images can be added
