@@ -105,7 +105,7 @@ const EditRecipeTrial = () => {
                             <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="matter" value={matter} onChange={handleChange} />
                         </Form.Group>
                         <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
-                        <Button variant="outline-success" onClick={() => history.push('/recipepostspage')}>Cancel</Button>{' '}
+                        <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>
 

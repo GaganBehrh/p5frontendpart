@@ -85,30 +85,30 @@ const RecipePostTrial = (props) => {
                 <Container className={`${appStyles.Content} p-4 `}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
-                            <Form.Label>UserName < /Form.Label>
-                                < Form.Control type="text" col={6} name="name" value={owner} />
+                            <Form.Label>UserName </Form.Label>
+                            < Form.Control type="text" col={6} name="name" value={owner} />
                         </Form.Group>
                         < Form.Group >
-                            <Form.Label>RecipeName < /Form.Label>
-                                < Form.Control type="text" col={6} name="name" value={name} />
+                            <Form.Label>RecipeName </Form.Label>
+                            < Form.Control type="text" col={6} name="name" value={name} />
                         </Form.Group>
                         < Form.Group >
-                            <Form.Label>RecipeSteps < /Form.Label>
-                                < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
+                            <Form.Label>RecipeSteps </Form.Label>
+                            < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
                         </Form.Group>
                         < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete < /Button>{' '}
                             < Button variant="outline-success" onClick={() => { editRecipepagerouting() }}> Edit < /Button>{' '}
-                            < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel < /Button>{' '}
-                                    < /Form>
-                                    < /Container>
+                                < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel < /Button>{' '}
+                                </Form>
+                            </Container>
 
-                                    < /Col>
-                                    < /Row>
+                        </Col>
+                    </Row>
 
-                                    );
+                    );
 };
 
-                                    export default RecipePostTrial;
+                    export default RecipePostTrial;
 
 
 

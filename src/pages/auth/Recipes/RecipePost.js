@@ -27,6 +27,7 @@ const Post = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
+
     const editRecipepagerouting = () => {
         history.push(`/Recipeposts/${id}/edit`)
     }
@@ -52,7 +53,7 @@ const Post = (props) => {
             </Form.Group>
             <Button variant="outline-success" onClick={() => { deleteRecipe() }}>Delete</Button>{' '}
             <Button variant="outline-success" onClick={() => { editRecipepagerouting() }}>Edit</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.push('/recipepostspage')}>Cancel</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
         </div>
 
     );
