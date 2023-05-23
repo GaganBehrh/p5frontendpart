@@ -44,26 +44,27 @@ const Navigationbar = () => {
 
     );
     const loggedInIcons = <>
-     <NavLink
-                    className={styles.NavLink}
-                    activeClassName={styles.Active}
-                    to="/recipepostspage"
-                >
-                    <h1 className={styles.Recibook}>Recibook</h1>
-                </NavLink>
-     <NavLink className={styles.NavLink} to="/signin" onClick={handleSignOut}>
-        <i className=""></i>Sign out
-    </NavLink>
+        {currentUser?.username}
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/recipepostspage"
+        >
+            <h1 className={styles.Recibook}>Recibook</h1>
+        </NavLink>
+        <NavLink className={styles.NavLink} to="/signin" onClick={handleSignOut}>
+            <i className=""></i>Sign out
+        </NavLink>
         <div
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
         >
             <LoggedinPic src={currentUser?.profile_id} text="gagi123" height={20} />
+            {currentUser?.username}
 
         </div>
         <NavLink
             className={styles.NavLink}
-
             to="/Recipeposts/add"
         >
             <i className=""></i>Add Recipe
@@ -80,13 +81,13 @@ const Navigationbar = () => {
     //console.log(loggedInIcons);
     console.log(currentUser);
     const loggedOutIcons = <>
-     <NavLink
-                    className={styles.NavLink}
-                    activeClassName={styles.Active}
-                    to="/home"
-                >
-                    <h1 className={styles.Recibook}>Recibook</h1>
-                </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/home"
+        >
+            <h1 className={styles.Recibook}>Recibook</h1>
+        </NavLink>
 
     </>
 

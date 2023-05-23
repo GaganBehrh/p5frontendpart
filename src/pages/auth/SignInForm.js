@@ -106,8 +106,6 @@ const SignInForm = () => {
                 {message}
               </Alert>
             ))}
-
-
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
