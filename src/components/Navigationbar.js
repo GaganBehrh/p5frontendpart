@@ -6,7 +6,8 @@ import styles from "../styles/Navigationbar.module.css";
 import { CurrentUserContext } from "../App";
 import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
-
+import appStyles from "../App.module.css";
+import {Image} from "react-bootstrap";
 
 import { useParams } from "react-router";
 import {
@@ -44,7 +45,6 @@ const Navigationbar = () => {
 
     );
     const loggedInIcons = <>
-        {currentUser?.username}
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
@@ -57,9 +57,9 @@ const Navigationbar = () => {
         </NavLink>
         <div
             className={styles.NavLink}
-            to={`/profiles/${currentUser?.profile_id}`}
-        >
-            <LoggedinPic src={currentUser?.profile_id} text="gagi123" height={20} />
+            to={`/profiles/${currentUser?.owner}`}>
+            <LoggedinPic src={currentUser?.image} height={20} />
+          
             {currentUser?.username}
 
         </div>

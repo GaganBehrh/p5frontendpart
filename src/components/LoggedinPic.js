@@ -6,10 +6,10 @@ const LoggedinPic = ({ src, height = 45, text }) => {
         <span>
             <img
                 className={styles.LoggedinPic}
-                src={src}
+                src={"https://cdn-icons-png.flaticon.com/512/599/599305.png"}
                 height={height}
                 width={height}
-                alt=""
+
             />
             {text}
         </span>
