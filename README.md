@@ -214,33 +214,27 @@ and the env.py file for the backend can look like this
 
 
 ### Deployment
-You can deploy it using the Deploy option and carry out the build like this Heroku Deployment
 
-All the React installation steps were followed accoriding to the guidelines in the moments app
-Gitpod space was created as guided in the setup part of the moments app
-and the react bootstrap was installled
+In the final steps of development, following was carried out
 
-Zero-configuration Deploy to Heroku
-Thanks to the zero-config foundation of create-react-app, the idea of zero-config deployment seemed within reach. Since these new apps all share a common, implicit architecture, the build process can be automated and then served with intelligent defaults. So, we created this community buildpack to experiment with no-configuration deployment to Heroku.
+In package.json file, in the “scripts” section, add the following prebuild command:
 
-Create and Deploy a React App 
-You can get started building React apps for free on Heroku.
+"heroku-prebuild": "npm install -g serve",
+This will install a package needed to serve our single page application on heroku
 
-npm install -g create-react-app
-create-react-app my-app
-cd my-app
-git init
-heroku create -b https://github.com/mars/create-react-app-buildpack.git
-git add .
-git commit -m "react-create-app on Heroku"
-git push heroku master
-heroku open
-Try it yourself using the buildpack docs.
+Add a Procfile at the root of the project with the following web command:
 
-Growing Up from Zero Config
-create-react-app is very new (currently version 0.2) and since its target is a crystal-clear developer experience, more advanced use cases are not supported (or may never be supported). For example, it does not provide server-side rendering or customized bundles.
+web: serve -s build
 
-To support greater control, create-react-app includes the command npm run eject. Eject unpacks all the tooling (config files and package.json dependencies) into the app's directory, so you can customize to your heart's content. Once ejected, changes you make may necessitate switching to a custom deployment with Node.js and/or static buildpacks. Always perform such project changes through a branch / pull request, so they can be easily undone. Heroku's Review Apps are perfect for testing changes to the deployment.
+All the changes were committed and pushed all to github.
+* Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application 
+  that runs your API)
+* Select the “Deploy” tab in the dashboard
+* Scroll down to the bottom and then select “Deploy Branch”
+* Wait for your build to complete (you can click “view build log” to watch the process in a larger window)
+* When you see the message “deployed to Heroku” in the build log, click the “open app” button at the top of the page. or 
+  once the build was succesful and fucntional the generated deployed link was generated and shared further for the submission
+
 
 ### API testing
 - As I have created several posts i am able to call my api and all those posts from api and and read them
