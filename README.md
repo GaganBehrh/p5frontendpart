@@ -4,18 +4,14 @@ Looking to create new recipesrecipes? Welcome to ReciBook You've come to the rig
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
+A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components.Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.
 
 Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
-A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.
-
-Components in React basically return a piece of JSX code that tells what should be rendered on the screen. 
-man
 The reuasble component in this project is for example is the Navigation bar, Asset. These reusable components are used in several pages
 
 ### Architecture of the React Application
-React library is just UI library and it does not enforce any particular pattern to write a complex application.React architecture is a collection of components responsible for building a software’s User Interface (UI). You can also see it as an organization of your codebase that helps you build your unique project. 
+React architecture is a collection of components responsible for building a software’s User Interface (UI). You can also see it as an organization of your codebase that helps you build your unique project. 
 
 For example, a React architecture will include several UI components such as buttons, forms, API services, Central State Management services, etc. 
 
@@ -26,9 +22,6 @@ Because of this ReactJs architectural freedom, it is the most preferred JavaScri
 - Root component is build using one or more component.
 
 - Each component can be nested with other component to any level.
-
-- Composition is one of the core concepts of React library. So, each component is build by composing smaller components 
-  instead of inheriting one component from another component.
 
 - Most of the components are user interface components.
 
@@ -103,7 +96,6 @@ Mockups were designed using Figma
 ![Add Post](src/media/Add%20Post.png)
 
 ![Signup](src/media/Signup.png)
-
 
 
 ## Existing Features
