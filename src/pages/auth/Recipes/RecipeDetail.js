@@ -42,7 +42,7 @@ function RecipeDetail() {
         <RecipePostTrial {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
-            <CreateCommentsTrial1
+            <CreateCommentsTrial1 
               profile_id={currentUser.profile_id}
               post={id}
               setPost={setPost}

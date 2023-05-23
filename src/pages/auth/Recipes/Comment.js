@@ -11,7 +11,6 @@ const Comment = (props) => {
             <Media>
               <Media.Body className="align-self-center ml-2">
                 <span >{owner}</span>
-             
                 <p>{content}</p>
               </Media.Body>
             </Media>

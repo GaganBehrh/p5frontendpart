@@ -190,7 +190,7 @@ User stories:
 * HomePage:Gives the opportunity to the user to signup/sign and also create the recipe once they are signed in
 * Signin page: This page helps the user to sign in
 * Signup page:Helps the user to create the new account and signup
-* AddRecipe Page:lets the suer to creae r add new recipes
+* AddRecipe Page:lets the suer to create or add new recipes
 * ViewRecipe Page: gives the overview of the the newly added and the existing recipes/posts
 * EditRecipePage:lets the user to edit the existing recipes
 
