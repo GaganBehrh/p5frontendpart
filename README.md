@@ -183,6 +183,17 @@ User stories:
 * Signin: As a developer, i could sign in and and access the relevant data from the backend
   * Result:Pass, i was able to signin and acess the data from the backend 
 
+
+## Pages present in the project and its related functionality:
+  There are different pages present which help the user to access different functionality
+
+* HomePage:Gives the opportunity to the user to signup/sign and also create the recipe once they are signed in
+* Signin page: This page helps the user to sign in
+* Signup page:Helps the user to create the new account and signup
+* AddRecipe Page:lets the suer to creae r add new recipes
+* ViewRecipe Page: gives the overview of the the newly added and the existing recipes/posts
+* EditRecipePage:lets the user to edit the existing recipes
+
 ## Setup 
 Making a Local Clone
 Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
