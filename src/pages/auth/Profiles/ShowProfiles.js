@@ -1,7 +1,10 @@
 import axios from "axios";
 import React,{useState, useEffect} from "react";
 import { axiosReq } from "../../../api/axioDefaults";
-import { Card,Form, Button } from 'react-bootstrap';
+import { Card,Form,Row,Col,Container, Button } from 'react-bootstrap';
+import styles from "../../../styles/Profile.module.css";
+import appStyles from "../../../App.module.css";
+
 const ShowProfiles = () => {
   const [profiles,setProfiles]=useState([]);
 
@@ -21,15 +24,14 @@ const ShowProfiles = () => {
   }, []);
 
   return (
-    <div>
-
-        <div >
+  
+<div className={styles.grid}>
         {
             profiles.map((profile, index) => (
-                <Card className="m-3 rounded shadow-lg main-students-show" style={{ width: '22em' }}>
+                <Card className="grid" style={{ width: '22em' }}>
 
-                <Card.Img src={profile.image}  width={171}
-        height={180} />
+                <Card.Img src={profile.image}  width={150}
+        height={150} />
 
                 <Card.Body>
                 <Form.Group>
@@ -38,7 +40,7 @@ const ShowProfiles = () => {
             </Form.Group>
             <Form.Group>
                 <Form.Label>Owner</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.owner} />
+                <Form.Control type="text" className=""  value={profile.owner} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Created at</Form.Label>
@@ -48,15 +50,14 @@ const ShowProfiles = () => {
                 <Form.Label>Updated at</Form.Label>
                 <Form.Control type="text" col={6}  value={profile.updated_at} />
             </Form.Group>
+            <Button variant="primary" >View Details</Button>{' '}
                 </Card.Body>
                 </Card>
             ))
-
+           
         }
-        </div>
-       
-        
-    </div>
+         </div>
+
 );
 };
      
