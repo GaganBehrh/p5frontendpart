@@ -16,7 +16,7 @@ import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import { useCurrentUser } from './contexts/CurrentUser';
-import ShowProfiles from './pages/auth/Recipes/ShowProfiles';
+import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
 
 
 export const CurrentUserContext = createContext();
