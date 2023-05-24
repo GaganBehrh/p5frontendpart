@@ -17,7 +17,7 @@ const ShowProfiles = () => {
   useEffect(() => {
     const getProfiles = async () => {
         try {
-            const { data } = await axiosReq.get(`/Recipeposts/`);
+            const { data } = await axiosReq.get(`/profiles/`);
             console.log(data);
             
 
