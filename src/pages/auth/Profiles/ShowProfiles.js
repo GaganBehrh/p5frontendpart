@@ -1,7 +1,7 @@
 import axios from "axios";
 import React,{useState, useEffect} from "react";
 import { axiosReq } from "../../../api/axioDefaults";
-import { Card, Button } from 'react-bootstrap';
+import { Card,Form, Button } from 'react-bootstrap';
 const ShowProfiles = () => {
   const [profiles,setProfiles]=useState([]);
 
@@ -32,11 +32,22 @@ const ShowProfiles = () => {
         height={180} />
 
                 <Card.Body>
-
-                    <Card.Title>Id:{profile.id}</Card.Title>
-                    <Card.Text> {profile.owner} </Card.Text>
-                  
-
+                <Form.Group>
+                <Form.Label>Id</Form.Label>
+                <Form.Control type="text" col={6}  value={profile.id} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Owner</Form.Label>
+                <Form.Control type="text" col={6}  value={profile.owner} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Created at</Form.Label>
+                <Form.Control type="text" col={6}  value={profile.created_at} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Updated at</Form.Label>
+                <Form.Control type="text" col={6}  value={profile.updated_at} />
+            </Form.Group>
                 </Card.Body>
                 </Card>
             ))
