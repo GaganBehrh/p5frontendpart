@@ -14,10 +14,10 @@ import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
-
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
-import Profile from './pages/auth/Recipes/Profile';
 import { useCurrentUser } from './contexts/CurrentUser';
+import ShowProfiles from './pages/auth/Recipes/ShowProfiles';
+
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -41,9 +41,8 @@ function App() {
           <Route exact path="/Recipeposts/add" render={() => <AddRecipeTrial />} />
           <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
-
           <Route exact path="/comments/create" render={() => <CreateComments />} />
-          <Route exact path="/profiles/:id" render={() => <Profile />} />
+          <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
