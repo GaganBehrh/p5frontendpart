@@ -17,6 +17,7 @@ import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import { useCurrentUser } from './contexts/CurrentUser';
 import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
+import AddProfile from './pages/auth/Profiles/AddProfile';
 
 
 export const CurrentUserContext = createContext();
@@ -43,6 +44,7 @@ function App() {
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
+          <Route exact path="/addprofile" render={() => <AddProfile /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
