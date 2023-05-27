@@ -1,89 +1,96 @@
-import axios from "axios";
-import React,{useState, useEffect} from "react";
-import { axiosReq } from "../../../api/axioDefaults";
-import {useHistory } from "react-router-dom";
-import { Card,Form,Row,Col,Container, Button } from 'react-bootstrap';
-import styles from "../../../styles/Profile.module.css";
+import React, { useState, useRef } from "react";
+import { Link, useHistory } from "react-router-dom";
+import styles from "../../../styles/SignIn.module.css";
+import btnStyles from "../../../styles/Button.module.css";
+import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import appStyles from "../../../App.module.css";
-import {Input,Image} from "react-bootstrap";
+import { SetCurrentUserContext } from "../../../App";
+import Image from "react-bootstrap/Image";
+import CreateCommentsTrial1 from "../Recipes/CreateCommentsTrial1";
 
-const AddProfile = () => {
+import {
+  Form,
+  Button,
+  Col,
+  Row,
+  Container,
+  Alert,
+} from "react-bootstrap";
+import axios from "axios";
 
-  const [image,setImage]=useState(null);
-  const [owner,setOwner]=useState("");
-  const [name,setName]=useState("");
-  const [content,setContent]=useState("");
-  const [created_at,setCreated_at]=useState("");
-  const [updated_at,setUpdated_at]=useState("");
-  const history = useHistory();
+const AddComment = () => {
+
   const [errors, setErrors] = useState({});
+  const [commentData, setPostData] = useState({
+    name: "",
+   owner:"",
+   
+  });
 
 
-  const AddProfile = async (event) => {
+  const { name, owner } = commentData;
+  // const { image } = postData;
+
+  const imageInput = useRef(null);
+  const history = useHistory();
+
+  const handleChange = (event) => {
+
+    console.log(event.target);
+    setPostData({
+      ...commentData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmitbutton = async (event) => {
     event.preventDefault();
     console.log("call");
-    let formData = new FormData();
-    formData.append("owner", owner);
+    const formData = new FormData();
     formData.append("name", name);
-    formData.append("content", content);
+    formData.append("owner", owner);
     //formData.append("pic", imageInput.current.files[0]);
-    formData.append("created_at", created_at);
-    formData.append("updated_at", updated_at);
+    //formData.append("created_on", created_on);
+    //formData.append("updated_on", updated_on);
 
     try {
-      const { data } = await axiosReq.post("/profiles/", formData);
+      const { data } = await axiosReq.post("/Recipecomment/", formData);
       console.log(data);
-      history.push(`/showprofiles`);
+      history.push(`/Recipecomment/${data.id}`);
 
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
-        console.log("errorcall");
       }
     }
   };
 
-
   return (
-    <div><h1> Add Profile</h1>
-  <div className="container">
-  <div className="form-group">
-    <div className="form-control">
-    <Form onSubmit={AddProfile}>
+    <Row className={styles.Row}>
+      <Col className="my-auto py-2 p-md-2" md={12}>
+        <h1 className="appstye.Content">Create your own new recipe here</h1>
+        <Container className={`${appStyles.Content} p-4 `}>
+          <Form onSubmit={handleSubmitbutton}>
 
-    <Form.Group>
-                <Form.Label>Owner</Form.Label>
-                <Form.Control type="text" placeholder="Enter the name "   value={name} onChange={(e)=>setName(e.target.value)}/>
+            <Form.Group>
+              <Form.Label>Name</Form.Label>
+              <Form.Control className={styles.Input} type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter the name of the owner" value={owner} onChange={(e)=>setOwner(e.target.value)}/>
+              <Form.Label>Ownner</Form.Label>
+              <Form.Control as="textarea" className={styles.Input} placeholder="Please enter the recipe steps"name="owner" value={owner} onChange={handleChange} />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Content</Form.Label>
-                <Form.Control type="text" placeholder="Enter the content" value={content} onChange={(e)=>setContent(e.target.value)}/>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Created_at</Form.Label>
-                <Form.Control type="text" placeholder="Enter the created date" value={created_at} onChange={(e)=>setCreated_at(e.target.value)}/>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Updated_at</Form.Label>
-                <Form.Control type="text" placeholder="Enter the updated date" value={updated_at} onChange={(e)=>setUpdated_at(e.target.value)}/>
-            </Form.Group>
-          
-            <Button variant="outline-success" type="submit">Add Profile</Button>{' '}
-            
+            <Button variant="outline-success" type="submit">Add Comment</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.push(`/showprofiles`)}>Cancel</Button>{' '}
+
           </Form>
-           
-    </div>
-  </div>
-  </div>
-  </div>
 
-);
+        </Container>
+
+      </Col>
+    </Row>
+  );
 };
-     
 
-export default  AddProfile;
+export default AddComment;
