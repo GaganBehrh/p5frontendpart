@@ -4,7 +4,7 @@ import { axiosReq } from "../../../api/axioDefaults";
 import { Card,Form,Row,Col,Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
-import Input from "react-bootstrap/Button";
+import {Input,Image} from "react-bootstrap";
 
 const AddProfile = () => {
   const [profiles,setProfiles]=useState([]);
@@ -39,7 +39,12 @@ const AddProfile = () => {
         
             <Form.Label>Image</Form.Label>
              <Form.Control type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
+             <img src={image} onChange={(e)=>setImage(e.target.files[0])}/>
+             <Image
+         
+          src={image} onChange={(e)=>setImage(e.target.files[0])}/>
              </Form.Group>
+            
           
            
     </div>
