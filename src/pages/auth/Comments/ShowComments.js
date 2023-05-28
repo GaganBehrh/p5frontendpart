@@ -5,7 +5,7 @@ import { Card,Form,Row,Col,Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
 
-const ShowProfiles = () => {
+const ShowComments = () => {
   const [profiles,setProfiles]=useState([]);
 
   useEffect(() => {
@@ -30,21 +30,14 @@ const ShowProfiles = () => {
             profiles.map((profile, index) => (
                 <Card className="grid" style={{ width: '22em' }}>
                 <Card.Body>
-                <Form.Group>
-                <Form.Label>Id</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.id} />
-            </Form.Group>
+                
             <Form.Group>
                 <Form.Label>Owner</Form.Label>
-                <Form.Control type="text" className=""  value={profile.owner} />
+                <Form.Control type="text" className=""  value={profile.name} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Created at</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.created_at} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Updated at</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.updated_at} />
+                <Form.Label>Comment</Form.Label>
+                <Form.Control type="text" col={6}  value={profile.subject} />
             </Form.Group>
             <Button variant="primary" >View Details</Button>{' '}
                 </Card.Body>
@@ -58,4 +51,4 @@ const ShowProfiles = () => {
 };
      
 
-export default ShowProfiles;
+export default ShowComments;
