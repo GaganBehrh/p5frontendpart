@@ -45,14 +45,6 @@ const ShowProfiles = () => {
                 <Form.Label>Owner</Form.Label>
                 <Form.Control type="text" className=""  value={profile.owner} />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Created at</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.created_at} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Updated at</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.updated_at} />
-            </Form.Group>
             <Button variant="primary" >View Details</Button>{' '}
                 </Card.Body>
                 </Card>
