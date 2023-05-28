@@ -72,7 +72,7 @@ const Navigationbar = () => {
         <NavLink
             className={styles.NavLink}
 
-            to="/recipepostspage"
+            to="/showrecipes"
         >
             <i className=""></i>View Recipes
         </NavLink>

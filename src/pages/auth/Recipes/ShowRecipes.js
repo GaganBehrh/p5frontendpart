@@ -48,7 +48,7 @@ const ShowRecipes = () => {
                 <Form.Label>matter</Form.Label>
                 <Form.Control type="text" className=""  value={recipe.matter} />
             </Form.Group>
-            <Button variant="primary" >View Details</Button>{' '}
+            <Button variant="primary" onClick ={`/recipedetails`}>View Details</Button>{' '}
                 </Card.Body>
                 </Card>
             ))

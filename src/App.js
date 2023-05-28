@@ -21,6 +21,7 @@ import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
 import AddComments from './pages/auth/Comments/AddComments';
 import ShowComments from './pages/auth/Comments/ShowComments';
 import ProfileDetails from './pages/auth/Profiles/ProfileDetails';
+import RecipeDetails from './pages/auth/Recipes/RecipeDetails';
 
 
 export const CurrentUserContext = createContext();
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/showcomments" render={() => <ShowComments /> } />
           <Route exact path="/showrecipes" render={() => <ShowRecipes /> } />
           <Route exact path="/profiledetails" render={() => <ProfileDetails /> } />
+          <Route exact path="/recipedetails" render={() => <RecipeDetails /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
