@@ -48,7 +48,7 @@ const Navigationbar = () => {
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
-            to="/recipepostspage"
+            to="/showrecipes"
         >
             <h1 className={styles.Recibook}>Recibook</h1>
         </NavLink>
@@ -75,6 +75,26 @@ const Navigationbar = () => {
             to="/showrecipes"
         >
             <i className=""></i>View Recipes
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            to="/addcomment"
+        >
+            <i className=""></i>Add Comments
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+
+            to="/showcomments"
+        >
+            <i className=""></i>View Comments
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+
+            to="/showprofiles"
+        >
+            <i className=""></i>View Profiles
         </NavLink>
 
     </>;
