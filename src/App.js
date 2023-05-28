@@ -44,7 +44,7 @@ function App() {
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
-          <Route exact path="/addcomments" render={() => <AddComments /> } />
+          <Route exact path="/addcomment" render={() => <AddComments /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

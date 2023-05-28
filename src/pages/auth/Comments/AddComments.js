@@ -23,12 +23,12 @@ const AddComments = () => {
   const [errors, setErrors] = useState({});
   const [commentData, setPostData] = useState({
     name: "",
-   owner:"",
+    subject:"",
    
   });
 
 
-  const { name, owner } = commentData;
+  const { name, subject } = commentData;
   // const { image } = postData;
 
   const imageInput = useRef(null);
@@ -48,11 +48,7 @@ const AddComments = () => {
     console.log("call");
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("owner", owner);
-    //formData.append("pic", imageInput.current.files[0]);
-    //formData.append("created_on", created_on);
-    //formData.append("updated_on", updated_on);
-
+    formData.append("subject", subject);
     try {
       const { data } = await axiosReq.post("/Recipecomment/", formData);
       console.log(data);
@@ -69,17 +65,17 @@ const AddComments = () => {
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={12}>
-        <h1 className="appstye.Content">Create your own new recipe here</h1>
+        <h1 className="appstye.Content">Add your comment here</h1>
         <Container className={`${appStyles.Content} p-4 `}>
           <Form onSubmit={handleSubmitbutton}>
 
             <Form.Group>
               <Form.Label>Name</Form.Label>
-              <Form.Control className={styles.Input} type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
+              <Form.Control className={styles.Input} type="text" placeholder="Please enter the name of the subject" col={6} name="name" value={name} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Ownner</Form.Label>
-              <Form.Control as="textarea" className={styles.Input} placeholder="Please enter the recipe steps"name="owner" value={owner} onChange={handleChange} />
+              <Form.Label>Comment</Form.Label>
+              <Form.Control as="textarea" className={styles.Input} placeholder="Add your comment here"name="subject" value={subject} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Add Comment</Button>{' '}
             <Button variant="outline-success" onClick={() => history.push(`/showprofiles`)}>Cancel</Button>{' '}
