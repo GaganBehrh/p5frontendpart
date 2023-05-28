@@ -24,6 +24,10 @@ const ShowComments = () => {
   }, []);
 
   return (
+    <> <Container>
+    <h1>Discover your website comments</h1>
+</Container>
+   
 <div className={styles.grid}>
         {
             profiles.map((profile, index) => (
@@ -45,6 +49,7 @@ const ShowComments = () => {
            
         }
          </div>
+         </>
 
 );
 };
