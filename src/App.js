@@ -15,6 +15,7 @@ import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
+import ShowRecipes from './pages/auth/Recipes/ShowRecipes';
 import { useCurrentUser } from './contexts/CurrentUser';
 import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
 import AddComments from './pages/auth/Comments/AddComments';
@@ -47,6 +48,7 @@ function App() {
           <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
           <Route exact path="/addcomment" render={() => <AddComments /> } />
           <Route exact path="/showcomments" render={() => <ShowComments /> } />
+          <Route exact path="/showrecipes" render={() => <ShowRecipes /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
