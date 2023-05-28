@@ -23,7 +23,10 @@ const ShowProfiles = () => {
     getProfiles();
   }, []);
 
-  return (
+  return ( 
+     <> <Container>
+    <h1>Discover all profiles here</h1>
+</Container>
   
 <div className={styles.grid}>
         {
@@ -57,6 +60,7 @@ const ShowProfiles = () => {
            
         }
          </div>
+         </>
 
 );
 };

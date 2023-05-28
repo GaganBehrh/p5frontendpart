@@ -24,7 +24,9 @@ const ShowRecipes = () => {
   }, []);
 
   return (
-  
+    <> <Container>
+    <h1>Discover your recipes here</h1>
+</Container>
 <div className={styles.grid}>
         {
             profiles.map((profile, index) => (
@@ -53,6 +55,7 @@ const ShowRecipes = () => {
            
         }
          </div>
+         </>
 
 );
 };
