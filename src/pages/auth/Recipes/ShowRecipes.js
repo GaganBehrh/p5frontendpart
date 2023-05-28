@@ -6,21 +6,21 @@ import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
 
 const ShowRecipes = () => {
-  const [profiles,setProfiles]=useState([]);
+  const [recipes,setRecipes]=useState([]);
 
   useEffect(() => {
-    const getProfiles = async () => {
+    const getRecipes = async () => {
         try {
             const { data } = await axiosReq.get(`/Recipeposts/`);
             console.log(data);
-            setProfiles(data);
+            setRecipes(data);
                
 
         } catch (err) {
             console.log(err);
         }
     };
-    getProfiles();
+    getRecipes();
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const ShowRecipes = () => {
 </Container>
 <div className={styles.grid}>
         {
-            profiles.map((profile, index) => (
+            recipes.map((recipe, index) => (
                 <Card className="grid" style={{ width: '22em' }}>
 
                 <Card.Img src={"https://picturetherecipe.com/wp-content/uploads/2018/06/Chicken-Cutlets-by-PictureTheRecipe-Featured-395x500.jpg"} alt="RecipeImage" width={150}
@@ -38,15 +38,15 @@ const ShowRecipes = () => {
                 <Card.Body>
                 <Form.Group>
                 <Form.Label>Id</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.id} />
+                <Form.Control type="text" col={6}  value={recipe.id} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Owner</Form.Label>
-                <Form.Control type="text" className=""  value={profile.name} />
+                <Form.Control type="text" className=""  value={recipe.name} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>matter</Form.Label>
-                <Form.Control type="text" className=""  value={profile.matter} />
+                <Form.Control type="text" className=""  value={recipe.matter} />
             </Form.Group>
             <Button variant="primary" >View Details</Button>{' '}
                 </Card.Body>

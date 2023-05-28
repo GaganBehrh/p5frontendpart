@@ -6,14 +6,14 @@ import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
 
 const ShowComments = () => {
-  const [profiles,setProfiles]=useState([]);
+  const [comments,setComments]=useState([]);
 
   useEffect(() => {
     const getComments = async () => {
         try {
             const { data } = await axiosReq.get(`/Recipecomment/`);
             console.log(data);
-            setProfiles(data);
+            setComments(data);
                
 
         } catch (err) {
@@ -30,17 +30,17 @@ const ShowComments = () => {
    
 <div className={styles.grid}>
         {
-            profiles.map((profile, index) => (
+            comments.map((comment, index) => (
                 <Card className="grid" style={{ width: '22em' }}>
                 <Card.Body>
                 
             <Form.Group>
                 <Form.Label>Owner</Form.Label>
-                <Form.Control type="text" className=""  value={profile.name} />
+                <Form.Control type="text" className=""  value={comment.name} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Comment</Form.Label>
-                <Form.Control type="text" col={6}  value={profile.subject} />
+                <Form.Control type="text" col={6}  value={comment.subject} />
             </Form.Group>
             <Button variant="primary" >View Details</Button>{' '}
                 </Card.Body>
