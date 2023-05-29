@@ -52,7 +52,8 @@ const AddComments = () => {
     try {
       const { data } = await axiosReq.post("/Recipecomment/", formData);
       console.log(data);
-      history.push(`/Recipecomment/${data.id}`);
+     // history.push(`/Recipecomment/${data.id}`);
+      history.push(`/showcomments`);
 
     } catch (err) {
       console.log(err);
@@ -78,7 +79,7 @@ const AddComments = () => {
               <Form.Control as="textarea" className={styles.Input} placeholder="Add your comment here"name="subject" value={subject} onChange={handleChange} />
             </Form.Group>
             <Button variant="outline-success" type="submit">Add Comment</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.push(`/showprofiles`)}>Cancel</Button>{' '}
+            <Button variant="outline-success" onClick={() => history.push(`/showrecipes`)}>Cancel</Button>{' '}
 
           </Form>
 
