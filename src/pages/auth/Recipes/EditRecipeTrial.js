@@ -47,13 +47,11 @@ const EditRecipeTrial = () => {
                 console.log(id);
                 console.log(data);
                 const { name, matter, pic, is_owner } = data;
-                is_owner ? setPostData({ name, matter, pic }) : history.push('/');
 
             } catch (err) {
                 console.log(err);
             }
         };
-
 
         handleMount();
     }, [history, id]);
@@ -80,7 +78,6 @@ const EditRecipeTrial = () => {
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
-
             history.push(`/Recipeposts/${id}`);
 
         } catch (err) {
@@ -94,7 +91,7 @@ const EditRecipeTrial = () => {
     return (
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={12}>
-                <Container className={`${appStyles.Content} p-4 `}>
+                <Container>
                     <Form onSubmit={handleSubmitbutton}>
                         <Form.Group>
                             <Form.Label>RecipeName</Form.Label>
