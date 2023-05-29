@@ -44,6 +44,7 @@ const EditRecipeTrial = () => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+                setPostData({ ...postData, name: data.name, matter: data.matter })
                 console.log(id);
                 console.log(data);
                 const { name, matter, pic, is_owner } = data;
