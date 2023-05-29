@@ -88,6 +88,10 @@ const RecipePostTrial = (props) => {
                             <Form.Label>UserName </Form.Label>
                             < Form.Control type="text" col={6} name="name" value={owner} />
                         </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Id </Form.Label>
+                            < Form.Control type="text" col={6} name="id" value={id} />
+                        </Form.Group>
                         < Form.Group >
                             <Form.Label>RecipeName </Form.Label>
                             < Form.Control type="text" col={6} name="name" value={name} />

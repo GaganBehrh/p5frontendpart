@@ -44,7 +44,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
           <Route exact path="/Recipeposts/add" render={() => <AddRecipeTrial />} />
-          <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
+          // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/showcomments" render={() => <ShowComments /> } />
           <Route exact path="/showrecipes" render={() => <ShowRecipes /> } />
           <Route exact path="/profiledetails" render={() => <ProfileDetails /> } />
-          <Route exact path="/recipedetails" render={() => <RecipeDetails /> } />
+          <Route exact path="/Recipeposts/:id" render={() => <RecipeDetails /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
@@ -60,6 +60,8 @@ function App() {
 
   );
 }
+
+// <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
 
 export default App;
 

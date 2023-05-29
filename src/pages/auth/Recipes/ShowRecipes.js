@@ -4,9 +4,13 @@ import { axiosReq } from "../../../api/axioDefaults";
 import { Card,Form,Row,Col,Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShowRecipes = () => {
   const [recipes,setRecipes]=useState([]);
+  const {id}=useParams();
+  const history=useHistory();
+
 
   useEffect(() => {
     const getRecipes = async () => {
@@ -48,7 +52,7 @@ const ShowRecipes = () => {
                 <Form.Label>matter</Form.Label>
                 <Form.Control type="text" className=""  value={recipe.matter} />
             </Form.Group>
-            <Button variant="primary" onClick ={`/recipedetails`}>View Details</Button>{' '}
+            <Button variant="primary" onClick={() => history.push(`/Recipeposts/${id}/`)}>View Details</Button>{' '}
                 </Card.Body>
                 </Card>
             ))

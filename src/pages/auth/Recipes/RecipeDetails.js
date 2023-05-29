@@ -48,7 +48,7 @@ const deleteUser = async (id) => {
           
 
             <Link className="btn btn-outline-primary mr-2">Update</Link>
-            <Link className="btn btn-danger" onClick={() => history.push('/recipedetails')}>Delete</Link>
+          
         </div>
     );
 };
