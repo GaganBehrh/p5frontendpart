@@ -18,6 +18,7 @@ const ShowRecipes = () => {
             const { data } = await axiosReq.get(`/Recipeposts/`);
             console.log(data);
             setRecipes(data);
+        
                
 
         } catch (err) {
@@ -52,7 +53,7 @@ const ShowRecipes = () => {
                 <Form.Label>matter</Form.Label>
                 <Form.Control type="text" className=""  value={recipe.matter} />
             </Form.Group>
-            <Button variant="primary" onClick={() => history.push(`/Recipeposts/${id}/`)}>View Details</Button>{' '}
+            <Button variant="primary" onClick={() => history.push(`/Recipeposts/${recipe.id}/`)}>View Details</Button>{' '}
                 </Card.Body>
                 </Card>
             ))

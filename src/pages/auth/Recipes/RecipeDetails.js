@@ -11,11 +11,12 @@ const [recipe, setRecipe] = useState({ results: [] });
 const {id} = useParams();
 const history = useHistory();
 
-useEffect(() => {
+/*useEffect(() => {
     const handleMount = async () => {
       try {
         const [{ data: postarray }] = await Promise.all([
-            axiosReq.get(`/Recipeposts/${id}/`)
+            axiosReq.get(`/Recipeposts/${data.id}/`)
+            
           ]);
         setRecipe(({ ...recipe, results: [postarray] }));
 
@@ -24,7 +25,24 @@ useEffect(() => {
       }
     };
     handleMount();
-  }, [id]);
+  }, [id]);*/
+
+  useEffect(() => {
+    const getRecipes = async () => {
+        try {
+            const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+            console.log(data);
+           // setRecipe(data);
+            history.push(`/Recipeposts/${id}`)
+
+               
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    getRecipes();
+  }, []);
 
 const deleteUser = async (id) => {
     await axios.delete(`https://p5djangobackend.herokuapp.com/Recipepeosts/${id}/`)
@@ -54,3 +72,4 @@ const deleteUser = async (id) => {
 };
 
 export default RecipeDetails;
+//history.push(`/Recipeposts/${data.id}`)
