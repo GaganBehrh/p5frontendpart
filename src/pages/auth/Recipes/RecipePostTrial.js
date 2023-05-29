@@ -82,7 +82,7 @@ const RecipePostTrial = (props) => {
     return (
         <Row className={styles.Row} >
             <Col className="my-auto py-2 p-md-2" md={12} >
-                <Container className={`${appStyles.Content} p-4 `}>
+                <Container >
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>UserName </Form.Label>

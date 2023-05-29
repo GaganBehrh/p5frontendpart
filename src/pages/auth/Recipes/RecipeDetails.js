@@ -30,10 +30,10 @@ const history = useHistory();
   useEffect(() => {
     const getRecipes = async () => {
         try {
-            const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+            const { data } = await axiosReq.get(`/Recipeposts/${recipe.id}/`);
             console.log(data);
            // setRecipe(data);
-            history.push(`/Recipeposts/${id}`)
+            history.push(`/Recipeposts/${recipe.id}`)
 
                
 
@@ -61,9 +61,6 @@ const deleteUser = async (id) => {
                
                 </div> 
             </div>
-           
-
-          
 
             <Link className="btn btn-outline-primary mr-2">Update</Link>
           

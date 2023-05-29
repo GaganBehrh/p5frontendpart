@@ -52,7 +52,6 @@ function App() {
           <Route exact path="/showcomments" render={() => <ShowComments /> } />
           <Route exact path="/showrecipes" render={() => <ShowRecipes /> } />
           <Route exact path="/profiledetails" render={() => <ProfileDetails /> } />
-          <Route exact path="/Recipeposts/:id" render={() => <RecipeDetails /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
