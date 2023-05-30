@@ -24,13 +24,13 @@ const EditComment = () => {
 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
-        owner: "",
-        content: "",
+        name: "",
+        subject: "",
 
     });
 
-    const { owner, content} = postData;
-   
+    const { name, subject } = postData;
+
     // const { image } = postData;
 
 
@@ -41,10 +41,10 @@ const EditComment = () => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/Recipecomment/${id}/`);
-                setPostData({ ...postData, owner: data.owner, content: data.matter })
+                setPostData({ ...postData, name: data.name, subject: data.subject })
                 console.log(id);
                 console.log(data);
-                const { owner, content } = data;
+                const { name, subject } = data;
 
             } catch (err) {
                 console.log(err);
@@ -68,8 +68,8 @@ const EditComment = () => {
         event.preventDefault();
         console.log("call");
         const formData = new FormData();
-        formData.append("owner", owner);
-        formData.append("conent", content);
+        formData.append("name", name);
+        formData.append("subject", subject);
 
 
         try {
@@ -90,12 +90,12 @@ const EditComment = () => {
                 <Container>
                     <Form onSubmit={handleSubmitbutton}>
                         <Form.Group>
-                            <Form.Label>RecipeName</Form.Label>
-                            <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="owner" value={owner} onChange={handleChange} />
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>RecipeSteps</Form.Label>
-                            <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} name="content" value={content} onChange={handleChange} />
+                            <Form.Label>Content</Form.Label>
+                            <Form.Control as="textarea" placeholder="Please enter the recipe steps"  name="subject" value={subject} onChange={handleChange} />
                         </Form.Group>
                         <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
