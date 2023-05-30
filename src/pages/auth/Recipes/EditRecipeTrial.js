@@ -73,7 +73,6 @@ const EditRecipeTrial = () => {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("matter", matter);
-        //formData.append("pic", imageInput.current.files[0]);
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
