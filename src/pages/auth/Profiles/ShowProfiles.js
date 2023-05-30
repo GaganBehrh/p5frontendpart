@@ -1,14 +1,30 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { axiosReq } from "../../../api/axioDefaults";
+import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import { Card, Form, Row, Col, Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShowProfiles = () => {
     const [profiles, setProfiles] = useState([]);
-    const history=useHistory();
+    const { id } = useParams();
+    const history = useHistory();
+
+    /*const deleteProfile = async () => {
+        await axiosRes.delete(`/profiles/${id}/`)
+        history.goBack();
+    }
+*/
+    const deleteProfile = async () => {
+        try {
+            await axiosRes.delete(`/profiles/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     useEffect(() => {
         const getProfiles = async () => {
@@ -59,8 +75,8 @@ const ShowProfiles = () => {
                                     <Form.Label>Created_at</Form.Label>
                                     <Form.Control type="text" className="" value={profile.created_at} />
                                 </Form.Group>
-                                <Button variant="primary"  onClick={() => history.push(`/profiles/${profile.id}/`)} >Edit</Button>{' '}
-                                <Button variant="primary" >Delete</Button>{' '}
+                                <Button variant="primary" onClick={() => history.push(`/profiles/${profile.id}/`)} >Edit</Button>{' '}
+                                <Button variant="primary" onClick={() => { deleteProfile() }}>Delete</Button>{' '}
                             </Card.Body>
                         </Card>
                     ))
