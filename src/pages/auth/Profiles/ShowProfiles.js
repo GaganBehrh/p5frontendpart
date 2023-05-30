@@ -4,9 +4,11 @@ import { axiosReq } from "../../../api/axioDefaults";
 import { Card, Form, Row, Col, Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShowProfiles = () => {
     const [profiles, setProfiles] = useState([]);
+    const history=useHistory();
 
     useEffect(() => {
         const getProfiles = async () => {
@@ -57,7 +59,7 @@ const ShowProfiles = () => {
                                     <Form.Label>Created_at</Form.Label>
                                     <Form.Control type="text" className="" value={profile.created_at} />
                                 </Form.Group>
-                                <Button variant="primary" >Edit</Button>{' '}
+                                <Button variant="primary"  onClick={() => history.push(`/profiles/${profile.id}/`)} >Edit</Button>{' '}
                                 <Button variant="primary" >Delete</Button>{' '}
                             </Card.Body>
                         </Card>

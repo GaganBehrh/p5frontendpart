@@ -23,6 +23,7 @@ import AddComments from './pages/auth/Comments/AddComments';
 import ShowComments from './pages/auth/Comments/ShowComments';
 import EditComment from './pages/auth/Comments/EditComment';
 import ProfileDetails from './pages/auth/Profiles/ProfileDetails';
+import EditProfile from './pages/auth/Profiles/EditProfile';
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -46,6 +47,7 @@ function App() {
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
+          <Route exact path="/profiles/:id/" render={() => <EditProfile />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles />} />
           <Route exact path="/addcomment" render={() => <AddComments />} />
