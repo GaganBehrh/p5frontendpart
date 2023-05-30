@@ -47,7 +47,7 @@ const EditRecipeTrial = () => {
                 setPostData({ ...postData, name: data.name, matter: data.matter })
                 console.log(id);
                 console.log(data);
-                const { name, matter, pic, is_owner } = data;
+                const { name, matter } = data;
 
             } catch (err) {
                 console.log(err);
@@ -74,8 +74,6 @@ const EditRecipeTrial = () => {
         formData.append("name", name);
         formData.append("matter", matter);
         //formData.append("pic", imageInput.current.files[0]);
-        formData.append("created_on", created_on);
-        formData.append("updated_on", updated_on);
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
