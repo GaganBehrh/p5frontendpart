@@ -14,19 +14,18 @@ import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
+
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import ShowRecipes from './pages/auth/Recipes/ShowRecipes';
 import { useCurrentUser } from './contexts/CurrentUser';
 import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
 import AddComments from './pages/auth/Comments/AddComments';
 import ShowComments from './pages/auth/Comments/ShowComments';
+import EditComment from './pages/auth/Comments/EditComment';
 import ProfileDetails from './pages/auth/Profiles/ProfileDetails';
-import RecipeDetails from './pages/auth/Recipes/RecipeDetails';
-
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
-
 
 function App() {
   const CurrentUser = useCurrentUser();
@@ -46,12 +45,13 @@ function App() {
           <Route exact path="/Recipeposts/add" render={() => <AddRecipeTrial />} />
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
+          <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
           <Route exact path="/comments/create" render={() => <CreateComments />} />
-          <Route exact path="/showprofiles" render={() => <ShowProfiles /> } />
-          <Route exact path="/addcomment" render={() => <AddComments /> } />
-          <Route exact path="/showcomments" render={() => <ShowComments /> } />
-          <Route exact path="/showrecipes" render={() => <ShowRecipes /> } />
-          <Route exact path="/profiledetails" render={() => <ProfileDetails /> } />
+          <Route exact path="/showprofiles" render={() => <ShowProfiles />} />
+          <Route exact path="/addcomment" render={() => <AddComments />} />
+          <Route exact path="/showcomments" render={() => <ShowComments />} />
+          <Route exact path="/showrecipes" render={() => <ShowRecipes />} />
+          <Route exact path="/profiledetails" render={() => <ProfileDetails />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

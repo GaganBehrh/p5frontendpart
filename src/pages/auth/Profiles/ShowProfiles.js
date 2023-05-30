@@ -57,6 +57,8 @@ const ShowProfiles = () => {
                                     <Form.Label>Created_at</Form.Label>
                                     <Form.Control type="text" className="" value={profile.created_at} />
                                 </Form.Group>
+                                <Button variant="primary" >Edit</Button>{' '}
+                                <Button variant="primary" >Delete</Button>{' '}
                             </Card.Body>
                         </Card>
                     ))
