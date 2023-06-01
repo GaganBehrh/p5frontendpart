@@ -13,7 +13,6 @@ import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
 import EditRecipe from './pages/auth/Recipes/EditRecipe';
-import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import ShowRecipes from './pages/auth/Recipes/ShowRecipes';
 import { useCurrentUser } from './contexts/CurrentUser';
 import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
@@ -35,7 +34,6 @@ function App() {
       <Navigationbar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/recipepostspage" render={() => <RecipePostsPage />} />
           <Route exact path="/" render={() => <ShowRecipes />} />
           <Route exact path="/home" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
