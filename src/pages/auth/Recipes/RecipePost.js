@@ -1,18 +1,24 @@
-import React from "react";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import RecipeDetail from "./RecipeDetail";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import axios from "axios";
-import Button from "react-bootstrap/Button";
-import LoggedinPic from "../../../components/LoggedinPic";
-import { useCurrentUser } from "../../../contexts/CurrentUser";
+import React, { useState, useRef } from "react";
+import { Link, useHistory } from "react-router-dom";
+import styles from "../../../styles/SignIn.module.css";
+import btnStyles from "../../../styles/Button.module.css";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
-import { useHistory } from "react-router";
-const Post = (props) => {
+import appStyles from "../../../App.module.css";
+import { SetCurrentUserContext } from "../../../App";
+import Image from "react-bootstrap/Image";
+import { useCurrentUser } from "../../../contexts/CurrentUser";
+
+import InputGroup from "react-bootstrap/InputGroup";
+import {
+    Form,
+    Button,
+    Col,
+    Row,
+    Container,
+    Alert,
+} from "react-bootstrap";
+import axios from "axios";
+const RecipePostTrial = (props) => {
     let {
         id,
         name,
@@ -20,67 +26,90 @@ const Post = (props) => {
         owner,
         profile_id,
         profile_image,
-        username
+        username,
     } = props;
 
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
-    const history = useHistory();
+    const { post, setPost, setComments, profileImag } = props;
+    const [content, setContent] = useState("");
 
+    const handleChange = (event) => {
+        setContent(event.target.value);
+    };
+    const history = useHistory();
     const editRecipepagerouting = () => {
         history.push(`/Recipeposts/${id}/edit`)
     }
-    // Delete function
+
     const deleteRecipe = async () => {
         await axiosRes.delete(`/Recipeposts/${id}/`)
         history.goBack();
     }
 
-    const FormFields = (
-        <div className="text-center">
-            <Form.Group>
-                <Form.Label>UserName</Form.Label>
-                <Form.Control type="text" col={6} name="name" value={owner} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>RecipeName</Form.Label>
-                <Form.Control type="text" col={6} name="name" value={name} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>RecipeSteps</Form.Label>
-                <Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
-            </Form.Group>
-            <Button variant="outline-success" onClick={() => { deleteRecipe() }}>Delete</Button>{' '}
-            <Button variant="outline-success" onClick={() => { editRecipepagerouting() }}>Edit</Button>{' '}
-            <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
-        </div>
+    const handleView = async () => {
+        history.push('');
 
-    );
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await axiosRes.post("/Recipecomments/", {
+                content,
+                post,
+            });
+            setComments((prevComments) => ({
+                ...prevComments,
+                results: [data, ...prevComments.results],
+            }));
+            setPost((prevPost) => ({
+                results: [
+                    {
+                        ...prevPost.results[0],
+                        comments_count: prevPost.results[0].comments_count + 1,
+                    },
+                ],
+            }));
+            setContent("");
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
-
-        <Card >
-            <Card.Body>
-
-                <Media className="align-items-center justify-content-between">
-                    <form>
-                        <Row>
-                            <Col md={5} lg={12} className="d-none d-md-block p-0 p-md-2">
-                                <Container >{FormFields}</Container>
-                            </Col>
-                        </Row>
-                    </form>
-                </Media>
-            </Card.Body>
-
-            <Link to={`/posts/${id}`}>
-
-            </Link>
-            <Card.Body>
-
-            </Card.Body>
-        </Card>
-    );
+        
+        <div>
+            <Form onSubmit={handleSubmit}>
+               
+            <Form.Group>
+                            <Form.Label>UserName </Form.Label>
+                            < Form.Control type="text" col={6} name="name" value={owner} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Id </Form.Label>
+                            < Form.Control type="text" col={6} name="id" value={id} />
+                        </Form.Group>
+                        < Form.Group >
+                            <Form.Label>RecipeName </Form.Label>
+                            < Form.Control type="text" col={6} name="name" value={name} />
+                        </Form.Group>
+                        < Form.Group >
+                            <Form.Label>RecipeSteps </Form.Label>
+                            < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
+                        </Form.Group>
+                        < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete </Button>{' '}
+                            < Button variant="outline-success" onClick={() =>editRecipepagerouting()}> Edit </Button>{' '}
+                                < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel </Button>{' '}
+            </Form>
+        </div>
+        
+    )
 };
 
-export default Post;
+
+export default RecipePostTrial;
+
+
+

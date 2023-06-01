@@ -6,13 +6,13 @@ import SignUpForm from './pages/auth/SignUpForm';
 import HomePage from './pages/auth/HomePage';
 import SignInForm from './pages/auth/SignInForm';
 import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
-import AddRecipeTrial from './pages/auth/Recipes/AddRecipeTrial';
-import CreateComments from './pages/auth/Recipes/CreateComments';
+import AddRecipe from './pages/auth/Recipes/AddRecipe';
+
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import './api/axioDefaults';
 import RecipeDetail from './pages/auth/Recipes/RecipeDetail';
-import EditRecipeTrial from './pages/auth/Recipes/EditRecipeTrial';
+import EditRecipe from './pages/auth/Recipes/EditRecipe';
 import RecipePostsPage from './pages/auth/Recipes/RecipePostsPage';
 import ShowRecipes from './pages/auth/Recipes/ShowRecipes';
 import { useCurrentUser } from './contexts/CurrentUser';
@@ -41,12 +41,11 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
-          <Route exact path="/Recipeposts/add" render={() => <AddRecipeTrial />} />
+          <Route exact path="/Recipeposts/add" render={() => <AddRecipe />} />
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
-          <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipeTrial />} />
+          <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
           <Route exact path="/profiles/:id/" render={() => <EditProfile />} />
-          <Route exact path="/comments/create" render={() => <CreateComments />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles />} />
           <Route exact path="/addcomment" render={() => <AddComments />} />
           <Route exact path="/showcomments" render={() => <ShowComments />} />
@@ -59,8 +58,6 @@ function App() {
 
   );
 }
-
-// <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
 
 export default App;
 

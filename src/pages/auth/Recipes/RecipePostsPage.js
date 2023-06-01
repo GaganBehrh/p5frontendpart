@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import Asset from "../../../components/Asset";
-import RecipePostTrial from "./RecipePostTrial.js";
+import RecipePostTrial from "./RecipePost.js";
 import { useLocation } from "react-router";
 import appStyles from "../../../App.module.css";
 import NoResults from "../../../media/no-results.png"; import Form from "react-bootstrap/Form";
