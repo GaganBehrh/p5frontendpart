@@ -10,8 +10,6 @@ import CreateComments from "../Recipes/CreateComments";
 import CreateCommentsTrial1 from "../Recipes/CreateCommentsTrial1";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
 import RecipePostTrial from "./RecipePostTrial.js";
-import Comment from "./Comment";
-import CreateCommentTrial1 from "./Comment";
 import appStyles from "../../../App.module.css";
 
 function RecipeDetail() {

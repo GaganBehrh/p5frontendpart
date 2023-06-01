@@ -47,10 +47,6 @@ const ShowProfiles = () => {
                                     <Form.Control type="text" col={6} value={profile.id} />
                                 </Form.Group>
                                 <Form.Group>
-                                    <Form.Label>Owner</Form.Label>
-                                    <Form.Control type="text" col={6} value={profile.owner} />
-                                </Form.Group>
-                                <Form.Group>
                                     <Form.Label>Name</Form.Label>
                                     <Form.Control type="text" className="" value={profile.name} />
                                 </Form.Group>
@@ -58,10 +54,7 @@ const ShowProfiles = () => {
                                     <Form.Label>Content</Form.Label>
                                     <Form.Control type="text" className="" value={profile.content} />
                                 </Form.Group>
-                                <Form.Group>
-                                    <Form.Label>Created_at</Form.Label>
-                                    <Form.Control type="text" className="" value={profile.created_at} />
-                                </Form.Group>
+                              
                                 <Button variant="primary" onClick={() => history.push(`/profiles/${profile.id}/`)}>View Details</Button>{' '}
 
                             </Card.Body>

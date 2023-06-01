@@ -3,7 +3,6 @@ import Navigationbar from "./components/Navigationbar";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
 import SignUpForm from './pages/auth/SignUpForm';
-import Home from './pages/auth/Home';
 import HomePage from './pages/auth/HomePage';
 import SignInForm from './pages/auth/SignInForm';
 import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
