@@ -30,12 +30,10 @@ const EditProfile = () => {
     });
 
     const {owner, name,content,created_at} = postData;
-
-    // const { image } = postData;
-
-
     const history = useHistory();
     const { id } = useParams();
+
+
 
     useEffect(() => {
         const handleMount = async () => {
@@ -76,7 +74,7 @@ const EditProfile = () => {
 
         try {
             await axiosReq.put(`/profiles/${id}/`, formData);
-            history.push(`/profiles/${id}`);
+            history.push(`/showprofiles`);
 
         } catch (err) {
             console.log(err);

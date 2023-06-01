@@ -12,20 +12,7 @@ const ShowProfiles = () => {
     const { id } = useParams();
     const history = useHistory();
 
-    /*const deleteProfile = async () => {
-        await axiosRes.delete(`/profiles/${id}/`)
-        history.goBack();
-    }
-*/
-    const deleteProfile = async () => {
-        try {
-            await axiosRes.delete(`/profiles/${id}/`);
-            history.goBack();
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
+    
     useEffect(() => {
         const getProfiles = async () => {
             try {
@@ -75,8 +62,8 @@ const ShowProfiles = () => {
                                     <Form.Label>Created_at</Form.Label>
                                     <Form.Control type="text" className="" value={profile.created_at} />
                                 </Form.Group>
-                                <Button variant="primary" onClick={() => history.push(`/profiles/${profile.id}/`)} >Edit</Button>{' '}
-                                <Button variant="primary" onClick={() => { deleteProfile() }}>Delete</Button>{' '}
+                                <Button variant="primary" onClick={() => history.push(`/profiles/${profile.id}/`)}>View Details</Button>{' '}
+
                             </Card.Body>
                         </Card>
                     ))

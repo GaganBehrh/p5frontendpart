@@ -46,10 +46,4 @@ function RecipeDetail() {
 }
 
 export default RecipeDetail;
-/* 
-  <Recipepost {...post.results[0]} setPosts={setPost} postPage />
-  <RecipePost {...RecipePost.results[0]} setRecipePosts={setRecipePost} postPage />
-  New Line
-   <RecipePost {...post.results[0]} setPosts={setPost} postPage />
-  */
 

@@ -37,6 +37,11 @@ const EditComment = () => {
     const history = useHistory();
     const { id } = useParams();
 
+    const deleteComment = async () => {
+        await axiosRes.delete(`/Recipecomment/${id}/`)
+        history.goBack();
+    }
+
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -74,7 +79,7 @@ const EditComment = () => {
 
         try {
             await axiosReq.put(`/Recipecomment/${id}/`, formData);
-            history.push(`/Recipecomment/${id}`);
+            history.push(`/showcomments`);
 
         } catch (err) {
             console.log(err);
@@ -98,6 +103,7 @@ const EditComment = () => {
                             <Form.Control as="textarea" placeholder="Please enter the recipe steps"  name="subject" value={subject} onChange={handleChange} />
                         </Form.Group>
                         <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
+                        <Button variant="outline-success" onClick={() => {deleteComment()}}>Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>
