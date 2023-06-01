@@ -7,7 +7,7 @@ import { CurrentUserContext } from "../App";
 import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
 import appStyles from "../App.module.css";
-import {Image} from "react-bootstrap";
+import { Image } from "react-bootstrap";
 
 import { useParams } from "react-router";
 import {
@@ -18,13 +18,8 @@ import {
 
 const Navigationbar = () => {
 
-
     const currentUser = useCurrentUser();
-    //console.log(currentUser)
-
     const setCurrentUser = useSetCurrentUser();
-
-
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
@@ -59,7 +54,7 @@ const Navigationbar = () => {
             className={styles.NavLink}
             to={`/profiles/${currentUser?.owner}`}>
             <LoggedinPic src={currentUser?.image} height={20} />
-          
+
             {currentUser?.username}
 
         </div>

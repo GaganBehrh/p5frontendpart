@@ -11,7 +11,7 @@ import NoResults from "../../../media/no-results.png"; import Form from "react-b
 
 function RecipePostsPage(message) {
   const [posts, setPosts] = useState({ results: [] });
-   console.log(posts);
+  console.log(posts);
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
@@ -20,7 +20,7 @@ function RecipePostsPage(message) {
       try {
         const { data } = await axiosReq.get(`/Recipeposts/`);
         console.log(data);
-        setPosts({...posts, results: data});
+        setPosts({ ...posts, results: data });
         console.log(posts);
         setHasLoaded(true);
       } catch (err) {
@@ -35,7 +35,7 @@ function RecipePostsPage(message) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+        <h1>Discover your recipes here</h1>
         {hasLoaded ? (
           <>
             {posts?.results?.length ? (
@@ -54,9 +54,6 @@ function RecipePostsPage(message) {
           </Container>
         )}
 
-      </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
       </Col>
     </Row>
   );
