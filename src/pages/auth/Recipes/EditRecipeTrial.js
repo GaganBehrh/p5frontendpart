@@ -76,7 +76,8 @@ const EditRecipeTrial = () => {
 
         try {
             await axiosReq.put(`/Recipeposts/${id}/`, formData);
-            history.push(`/Recipeposts/${id}`);
+            //history.push(`/Recipeposts/${id}`);
+            history.push(`/showrecipes`);
 
         } catch (err) {
             console.log(err);
