@@ -1,5 +1,5 @@
 ![Resposive Image](src/media/Responsive.png)
-Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website
+Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website.The user is also able to create the coments,edit them and delete the comments. The user is able to view all the recipes/posts, comments, and profile from the backend.There is a homepage which prompts user to sign up os sign in and also create a new recipe.
 
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
@@ -26,6 +26,8 @@ Because of this ReactJs architectural freedom, it is the most preferred JavaScri
 - Most of the components are user interface components.
 
 - React app can include third party component for specific purpose such as routing, animation, state management, etc.
+
+This App uses several UI componetnst such as Buttons,Row, Columns,Container etc i different files
 
 ## Getting Started with Create React App
 This project was bootstrapped with Create React App.
@@ -89,13 +91,16 @@ Sign in: As a user I can sign in to the app so that I can access functionality f
 Add Post:As a user I would like to add posts to the app so that I can add my recipe
 
 ## Wireframe:
-Mockups were designed using Figma
+Mockups were designed using Figma.The color scheme was chosen  based on what will look good to users eye.
 
 ![Sign In](src/media/Signin.png)
 
 ![Add Post](src/media/Add%20Post.png)
 
 ![Signup](src/media/Signup.png)
+
+The mockups show the initial color scheme but eventually it was developed/modified during the course of the project 
+
 
 
 ## Existing Features
@@ -106,21 +111,15 @@ Users can easily log out of their account with the click of a button.
 Log Out of Account
 Users can easily log out of their account with the click of a button.
 
-## Database Model
-![Database Model](src/media/P5%20Database%20Model.png)
-
 ## Kanban Board
 ![Kanban Board](src/media/Kanban%20Board.png)
 
 
 ## Technologies Used
- React,Heroku, Python, Django, ElephantSQL,
+ React,Heroku,Javascript
 
 ## Agile Method:
 The agile Methodology was used and different user stories were created using Kanban board and implemented for the project.
-
-## Model for project
-Here is the model I used
 
 ### Validators
 W3C HTML Validator - No errors found
@@ -136,8 +135,8 @@ PEP8 Online:
 No errors found
 
 Testing of user stories
+
 ## Manual Testing for Front End
-User Stories
 * Creation of the posts: As a user I can create the recipeposts on this website
   * Result:Pass, I was able to create the recipepost on this website
 
@@ -147,7 +146,7 @@ User Stories
 * Deleting of the posts: As a developer I can delete the recipes posts which I dont want anymore
   * Result:Pass, I was able to delete a recipes which i dint want anymore on my website
 
-* Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
+* Viewing/Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
   * Result:Pass, it was possible to receive all the recipesfrom the backend and see it in the front end
 
 * Signup: As a developer i could easily signup on the website so as to create further recipes
@@ -156,32 +155,27 @@ User Stories
 * Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
   * Result: Pass, A navigation bar was found and i could easily navigate between different pages through this navbar
 
-* Sign in Test: As a user I can sign in to the app so that I can access functionality for logged in users
+* Sign in Test: As a user I can sign in to the app ans use the website
   * Result: Pass, A sign in page was found where i could sign in and start creating or adding my recipes
 
 * HomePage Navigation: As a user as i enter on the home page of the website, its clearly directed that i could create the 
-  recipe after signing up or there is a possibilty of directly signing up and signing in and then  creating the recipes
+  recipe after signing up or there is a possibilty of directly signing up and signing in and then creating the recipes
   * Result:Pass, On the Homepage when we click on ReciBook logo we are directed to this page where all above mentioned options were found
 
-## Manual Testing for Back-End
-User stories:
-* Creation of the posts: As a developer I can create the posts and receive it in the my backend Recipeposts model
-  * Result:Pass, I was able to create a post and was also found in the backend
+* Creation of the comments: As a user I can create the comments on this website
+  * Result:Pass, I was able to create the comments on this website
 
-* Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
-  * Result:Pass, i could see the relevant changes in the backend
+* Editing of the comments: As a user I can edit my comments and see those changes on the website as well
+  * Result:Pass, I can make those changes on my comments and also see those changes on the website
 
-* Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
-  * Result:Pass, I was able to delete a post and this recipes/post were also not found in the backend
+* Deleting of the comments: As a developer I can delete the comments which I dont want anymore
+  * Result:Pass, I was able to delete a comments which i dint want anymore on my website
 
-* Receiving of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
-  * Result:Pass, it was possible to receive all the recipesfrom the backend
+* Viewing/Receiving of all comments : As a user, I was able to see all the comments created so far
+  * Result:Pass, it was possible to receive all the comments the backend and see it in the front end
 
-* Signup: As a developer i could signup and find the same user in the backend
-  * Result:Pass, this was posible to find the same user in the backend as well
-
-* Signin: As a developer, i could sign in and and access the relevant data from the backend
-  * Result:Pass, i was able to signin and acess the data from the backend 
+*Viewing/Receiving of all profiles :  As a user, I was able to see all the profiles created so far
+  * Result:Pass, it was possible to receive all the profiels from the backend and view it in the front end
 
 
 ## Pages present in the project and its related functionality:
@@ -194,69 +188,48 @@ User stories:
 * ViewRecipe Page: gives the overview of the the newly added and the existing recipes/posts
 * EditRecipePage:lets the user to edit the existing recipes
 
-## Setup 
-Making a Local Clone
-Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-
-Cloning into CI-Clone... remote: Counting objects: 10, done. remote: Compressing objects: 100% (8/8), done. remove: Total 10 (delta 1), reused 10 (delta 1) Unpacking objects: 100% (10/10), done. Running it from the github
-
-After cloning the repo please run the following command to include all the neccesary apps in requirement.txt
-
-pip install -r requirements.txt
-
-and include the env.py file which should look like this and the user has to fill in these values
-emote Heroku Deployment:
-Create an account at Heroku.
-
-Download CLI here.
-
-Open up CMD (Windows) or Terminal (MacOS) and type the following and follow the instructions that appear.
-
-heroku login Create a new Heroku app using the following code in your terminal: heroku create app-name-here With the Heroku app name you just created, modified the production.py file in the settings folder and update the following: ALLOWED_HOSTS = ['your-app-name.herokuapp.com', '127.0.0.1', 'localhost'] Open the Heroku apps webpage and click the app you created in Step 4.
-
-Navigate to the Settings tab on the top horizontal bar, we will be adding the required environment variables here.
-
-Click the 'Reveal Config Vars' button and add the below variables for the backend:
-![Heroku vars](src/media/Heroku%20vars.png)
-
-
-and the env.py file for the backend can look like this
-![env.py parameteres](src/media/env%20example.png)
-
 
 ### Deployment
 
 In the final steps of development, following was carried out
 
-In package.json file, in the “scripts” section, add the following prebuild command:
+* In package.json file, in the “scripts” section, add the following prebuild command:
 
-"heroku-prebuild": "npm install -g serve",
+* "heroku-prebuild": "npm install -g serve",
 This will install a package needed to serve our single page application on heroku
 
-Add a Procfile at the root of the project with the following web command:
+* Add a Procfile at the root of the project with the following web command:
 
 web: serve -s build
 
-All the changes were committed and pushed all to github.
+* All the changes were committed and pushed all to github.
+
 * Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application 
   that runs your API)
+
 * Select the “Deploy” tab in the dashboard
+
 * Scroll down to the bottom and then select “Deploy Branch”
+
 * Wait for your build to complete (you can click “view build log” to watch the process in a larger window)
+
 * When you see the message “deployed to Heroku” in the build log, click the “open app” button at the top of the page. or 
   once the build was succesful and fucntional the generated deployed link was generated and shared further for the submission
 
 
 ### API testing
-- As I have created several posts i am able to call my api and all those posts from api and and read them
-- As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
+* As I have created several posts i am able to call my api and all those posts from api and and read them
+* As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
   as edit them from my api
 
 
-### Improvements 
+### Things that could be improved
 * UI can be improved 
 * More images can be added
 * It can be made more interactive
+* A search bar could be added to filter the posts
+* The recipes could be liked, followed by other users
+* The comments could be liked or followed by the other users
 
 ## Acknowledgements and Credits
 Mentor and Tutor support Media Info Inspired by "Moments App"

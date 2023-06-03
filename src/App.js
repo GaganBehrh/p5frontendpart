@@ -34,7 +34,7 @@ function App() {
       <Navigationbar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <ShowRecipes />} />
+          <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/home" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />

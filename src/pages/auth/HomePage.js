@@ -35,7 +35,7 @@ const HomePage = () => {
   return (
     <Row className={styles.Row}>
        <Col className="my-auto py-2 p-md-2" md={4}>
-        <Container className={`${appStyles.Content} p-4 `}>
+        <Container>
           <p className={styles.Header} >Create new recipes by simple Sign up 
          </p>
          <Image
@@ -45,7 +45,7 @@ const HomePage = () => {
 |</Container>
       </Col>
       <Col className="my-auto py-2 p-md-2" md={4}>
-        <Container className={`${appStyles.Content} p-4 `}>
+        <Container >
           <h1 className={styles.Header}>Donot have an account yet?
           <NavLink
             className={styles.NavLink}
@@ -61,7 +61,7 @@ const HomePage = () => {
 |</Container>
       </Col>
       <Col className="my-auto py-2 p-md-2" md={4}>
-        <Container className={`${appStyles.Content} p-4 `}>
+        <Container>
           <h1 className={styles.Header}>Already have an account here?   <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
