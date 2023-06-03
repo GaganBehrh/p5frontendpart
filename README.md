@@ -99,28 +99,28 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
   Result: I was able to go the Home page, signup from there and was able to access all the features for signed up users such as create recipes etc
 
 * Sign in: As a user I woud like to sign in to the app so that I can access functionality for logged in users
-  Result: I was able to go the Home page, signuin from there and was able to access all the features for signed in users such as create recipes etc
+  * Result: I was able to go the Home page, signuin from there and was able to access all the features for signed in users such as create recipes etc
 
 * Add Recipe:As a user I would like to add recipes to the app so that I can add my recipe
-  Result: I was able to add Recipe with the Add Recipe button on the Navbar
+  * Result: I was able to add Recipe with the Add Recipe button on the Navbar
 
 * Edit Recipe:As a user I would like to edit the recipes to the app so that I can view my changes on the recipe
-   Result: I was able to edit the Recipe with the Edit button and view my changes
+  * Result: I was able to edit the Recipe with the Edit button and view my changes
 
 * Delete Recipes:As a user I would like to delete the recipes to the app so that I can delete the recipes which I dont want to have
-   Result: I was able to delete the Recipes with the Delete button and those recipes were no more available
+  * Result: I was able to delete the Recipes with the Delete button and those recipes were no more available
 
 * Add Comments:As a user I would like to add comments for the overall website so that I can express my opinion about the website
-  Result: I was able to add comment with the Add Comment button on the Navbar so that I can express my opinion about the overal website
+  * Result: I was able to add comment with the Add Comment button on the Navbar so that I can express my opinion about the overal website
 
 * Edit Comment:As a user I would like to edit the comments to the app so that I can view my changes on the recipe
-   Result: I was able to edit the Comments with the Edit button and view my changes
+  * Result: I was able to edit the Comments with the Edit button and view my changes
 
 * Delete Comments:As a user I would like to delete the comments to the app so that I can delete the coments which I dont want to have
-   Result: I was able to delete the Recipes with the Delete button and those recipes were no more available
+  * Result: I was able to delete the Recipes with the Delete button and those recipes were no more available
 
 * View Existing Profiles; As a user I would like to view the existing profile so that I can have an idea what kind of people are posting on this website
-Result: I was able to view the existing profiles with the View Profile button on the Nav bar and have an idea of who was posting on the website
+  * Result: I was able to view the existing profiles with the View Profile button on the Nav bar and have an idea of who was posting on the website
 
 
 
