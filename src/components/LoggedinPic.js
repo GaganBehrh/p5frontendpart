@@ -16,4 +16,4 @@ const LoggedinPic = ({ src, height = 45, text }) => {
     );
 };
 
-export default LoggedinPic;
+export default LoggedinPic

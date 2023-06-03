@@ -27,7 +27,17 @@ Because of this ReactJs architectural freedom, it is the most preferred JavaScri
 
 - React app can include third party component for specific purpose such as routing, animation, state management, etc.
 
-This App uses several UI componetnst such as Buttons,Row, Columns,Container etc i different files
+This App uses several UI componetnst such as Buttons,Row, Columns,Container etc in different files
+ 
+## React Bootstrap
+React Bootstap was used for this project.React Bootstrap is the rebuilt version of the popular frontend CSS framework for React. Each component of the React Bootstrap is built from scratch with no unneeded dependencies and is accessible by default.
+
+There is a total of 27 components with a consistent design that is compatible with core bootstrap and can be easily put into production. This App uses several UI componetnst such as Buttons,Row, Columns,Container etc in different files. 
+React-Bootstrap is a complete re-implementation of the Bootstrap components using React. It has no dependency on either bootstrap.js or jQuery. If you have React setup and React-Bootstrap installed, you have everything you need.
+
+Methods and events using jQuery is done imperatively by directly manipulating the DOM. In contrast, React uses updates to the state to update the virtual DOM. In this way, React-Bootstrap provides a more reliable solution by incorporating Bootstrap functionality into React's virtual DOM. 
+
+More Information regarding the React Boostrap can be found on "https://react-bootstrap.github.io/docs/getting-started/introduction"
 
 ## Getting Started with Create React App
 This project was bootstrapped with Create React App.
@@ -100,7 +110,6 @@ Mockups were designed using Figma.The color scheme was chosen  based on what wil
 ![Signup](src/media/Signup.png)
 
 The mockups show the initial color scheme but eventually it was developed/modified during the course of the project 
-
 
 
 ## Existing Features
@@ -185,8 +194,12 @@ Testing of user stories
 * Signin page: This page helps the user to sign in
 * Signup page:Helps the user to create the new account and signup
 * AddRecipe Page:lets the suer to create or add new recipes
-* ViewRecipe Page: gives the overview of the the newly added and the existing recipes/posts
+* ShowRecipe Page: gives the overview of the the newly added and the existing recipes/posts
 * EditRecipePage:lets the user to edit the existing recipes
+* AddComment Page:lets the suer to create or add new comments
+* ShowComment Page: gives the overview of the the newly added and the existing comments
+* EditCommet:lets the user to edit the existing comments
+* ShowProfiles: YOu can view different recipes
 
 
 ### Deployment
@@ -232,4 +245,4 @@ web: serve -s build
 * The comments could be liked or followed by the other users
 
 ## Acknowledgements and Credits
-Mentor and Tutor support Media Info Inspired by "Moments App"
+Mentor and Tutor support Media Info Inspired by "Moments App",some of the text was inspired by he Readme file on React Bootstrap website
