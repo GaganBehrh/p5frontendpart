@@ -19,6 +19,7 @@ import AddComments from './pages/auth/Comments/AddComments';
 import ShowComments from './pages/auth/Comments/ShowComments';
 import EditComment from './pages/auth/Comments/EditComment';
 import DeleteComment from './pages/auth/Comments/DeleteComment';
+import DeleteRecipe from './pages/auth/Recipes/DeleteRecipe';
 import ProfileDetails from './pages/auth/Profiles/ProfileDetails';
 import EditProfile from './pages/auth/Profiles/EditProfile';
 
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/Recipeposts/add" render={() => <AddRecipe />} />
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
+          <Route exact path="/Recipecposts/:id/del" render={() => <DeleteRecipe />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
           <Route exact path="/Recipecomment/:id/del" render={() => <DeleteComment />} />
           <Route exact path="/profiles/:id/" render={() => <EditProfile />} />

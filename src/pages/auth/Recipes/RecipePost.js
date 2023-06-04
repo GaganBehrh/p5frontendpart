@@ -18,7 +18,7 @@ import {
     Alert,
 } from "react-bootstrap";
 import axios from "axios";
-const RecipePostTrial = (props) => {
+const RecipePost = (props) => {
     let {
         id,
         name,
@@ -44,7 +44,7 @@ const RecipePostTrial = (props) => {
     }
 
     const deleteRecipe = async () => {
-        await axiosRes.delete(`/Recipeposts/${id}/`)
+        await axiosRes.delete(`/Recipeposts/${id}/del`)
         history.goBack();
     }
 
@@ -79,37 +79,35 @@ const RecipePostTrial = (props) => {
     };
 
     return (
-        
+
         <div>
             <Form onSubmit={handleSubmit}>
-               
-            <Form.Group>
-                            <Form.Label>UserName </Form.Label>
-                            < Form.Control type="text" col={6} name="name" value={owner} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Id </Form.Label>
-                            < Form.Control type="text" col={6} name="id" value={id} />
-                        </Form.Group>
-                        < Form.Group >
-                            <Form.Label>RecipeName </Form.Label>
-                            < Form.Control type="text" col={6} name="name" value={name} />
-                        </Form.Group>
-                        < Form.Group >
-                            <Form.Label>RecipeSteps </Form.Label>
-                            < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
-                        </Form.Group>
-                        < Button variant="outline-success" onClick={() => { deleteRecipe() }}> Delete </Button>{' '}
-                            < Button variant="outline-success" onClick={() =>editRecipepagerouting()}> Edit </Button>{' '}
-                                < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel </Button>{' '}
+
+                <Form.Group>
+                    <Form.Label>UserName </Form.Label>
+                    < Form.Control type="text" col={6} name="name" value={owner} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Id </Form.Label>
+                    < Form.Control type="text" col={6} name="id" value={id} />
+                </Form.Group>
+                < Form.Group >
+                    <Form.Label>RecipeName </Form.Label>
+                    < Form.Control type="text" col={6} name="name" value={name} />
+                </Form.Group>
+                < Form.Group >
+                    <Form.Label>RecipeSteps </Form.Label>
+                    < Form.Control as="textarea" placeholder="Please enter the recipe steps" rows={8} value={matter} />
+                </Form.Group>
+                < Button variant="outline-success" onClick={() => { history.push(`/Recipeposts/${id}/del`) }}> Delete </Button>{' '}
+                < Button variant="outline-success" onClick={() => editRecipepagerouting()}> Edit </Button>{' '}
+                < Button variant="outline-success" onClick={() => { history.goBack() }}> Cancel </Button>{' '}
             </Form>
         </div>
-        
+
     )
 };
-
-
-export default RecipePostTrial;
+export default RecipePost;
 
 
 

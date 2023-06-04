@@ -112,7 +112,5 @@ const EditComment = () => {
         </Row>
     );
 };
-
 export default EditComment;
 
-// <Button variant="outline-success" onClick={() => {deleteComment()}}>Delete</Button>{' '}

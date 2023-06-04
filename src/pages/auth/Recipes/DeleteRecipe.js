@@ -20,7 +20,7 @@ import {
 import axios from "axios";
 
 
-const DeleteComment = () => {
+const DeleteRecipe = () => {
 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -36,8 +36,8 @@ const DeleteComment = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(`/Recipecomment/${id}/`);
-                setPostData({ ...postData, name: data.name, subject: data.subject })
+                const { data } = await axiosReq.get(`/Recipeposts/${id}/`);
+                setPostData({ ...postData, name: data.name })
                 console.log(id);
                 console.log(data);
                 const { name, subject } = data;
@@ -64,12 +64,9 @@ const DeleteComment = () => {
         console.log("call");
         const formData = new FormData();
         formData.append("name", name);
-        formData.append("subject", subject);
-
-
         try {
-            await axiosReq.delete(`/Recipecomment/${id}/`, formData);
-            history.push(`/showcomments`);
+            await axiosReq.delete(`/Recipeposts/${id}/`, formData);
+            history.push(`/showrecipes`);
 
         } catch (err) {
             console.log(err);
@@ -84,7 +81,7 @@ const DeleteComment = () => {
             <Col >
                 <Container>
                     <Form onSubmit={handleSubmitbutton}>
-                    <p class="text-sm-left">Are you sure you want to delete this Comment?</p>
+                        <p class="text-sm-left">Are you sure you want to delete this recipe?</p>
                         <Button variant="outline-success" type="submit">Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
@@ -95,4 +92,4 @@ const DeleteComment = () => {
     );
 };
 
-export default DeleteComment;
+export default DeleteRecipe;
