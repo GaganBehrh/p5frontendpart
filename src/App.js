@@ -43,7 +43,7 @@ function App() {
           <Route exact path="/Recipeposts/add" render={() => <AddRecipe />} />
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
-          <Route exact path="/Recipecposts/:id/del" render={() => <DeleteRecipe />} />
+          <Route exact path="/Recipeposts/:id/del" render={() => <DeleteRecipe />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
           <Route exact path="/Recipecomment/:id/del" render={() => <DeleteComment />} />
           <Route exact path="/profiles/:id/" render={() => <EditProfile />} />
