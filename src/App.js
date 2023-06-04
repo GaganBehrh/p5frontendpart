@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/Recipeposts/add" render={() => <AddRecipe />} />
-          // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
+          <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
           <Route exact path="/Recipeposts/:id/del" render={() => <DeleteRecipe />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
@@ -57,6 +57,5 @@ function App() {
 
   );
 }
-
 export default App;
 

@@ -1,12 +1,10 @@
 ![Resposive Image](src/media/Responsive.png)
-Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes and share it.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website.The user is also able to create the coments,edit them and delete the comments. The user is able to view all the recipes/posts, comments, and profile from the backend.There is a homepage which prompts user to sign up os sign in and also create a new recipe.
+Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website.The user is also able to create the coments,edit them and delete the comments. The user is able to view all the recipes/posts, comments, and profile from the backend.There is a homepage which prompts user to sign up or sign in and also create a new recipe.
 
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
 
-A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components.Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.
-
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components.Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
 The reuasble component in this project is for example is the Navigation bar, Asset. These reusable components are used in several pages
 
@@ -93,7 +91,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## UX
 ### User Stories
 * US1- Navigation bar(Issue#9) : As a user I would like to view the navbar, click on different options present on the navigation bar so that Ican navigate easily between pages
- * Result: I was able to go the navigation bar,click on different options present on it and I could navigate easily between pages
+ * Result: I was able to go the navigation bar,click on different options present on it and I could navigate easily betweenthe pages
 
 * US2- Sign up (Issue#7): As a user I would like to create a new account so that I can access all the features for signed up users such as create recipes etc
  * Result: I was able to go the Home page, signup from there and was able to access all the features for signed up users such as create recipes etc
@@ -111,7 +109,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
   * Result: I was able to delete the Recipes with the Delete button and those recipes were no more available
 
 * US7-Add Comments (Issue#12):As a user I would like to add comments for the overall website so that I can express my opinion about the website
-  * Result: I was able to add comment with the Add Comment button on the Navbar so that I can express my opinion about the overal website
+  * Result: I was able to add comment with the Add Comment button on the Navbar and was able to express my opinion about the overal website
 
 * US8-Edit Comment (Issue#13):As a user I would like to edit the comments to the app so that I can view my changes on the recipe
   * Result: I was able to edit the Comments with the Edit button and view my changes
@@ -123,11 +121,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
   * Result: I was able to view the existing profiles with the View Profile button on the Nav bar and have an idea of who was posting on the website
 
 
-
-
-
 ## Wireframe:
-Mockups were designed using Figma.The color scheme was chosen  based on what will look good to users eye.
+Mockups were designed using Figma.The color scheme was chosen based on what will look good to users eye.
 
 ![Sign In](src/media/Signin.png)
 
@@ -139,12 +134,29 @@ The mockups show the initial color scheme but eventually it was developed/modifi
 
 
 ## Existing Features
-Register Account
-Anybody can register for free and create their own unique account.
-Log In to Account
-Users can easily log out of their account with the click of a button.
-Log Out of Account
-Users can easily log out of their account with the click of a button.
+* Register Account
+ * Anybody can register for free and create their own unique account.
+* Log In to Account
+* Users can easily log out of their account with the click of a button.
+* Log Out of Account
+ * Users can easily log out of their account with the click of a button.
+* Add Recipes
+ * Users can add the Recipes by a click of a button
+* Edit Recipes
+ * Users can edit the Recipes by a click of a button
+* Delete Recipes
+ * Users can edit the Recipes by a click of a button
+* Add Comment
+ * Users can add the Recipes by a click of a button
+* Edit Comment
+ * Users can edit the Recipes by a click of a button
+* Delete Comment
+ * Users can edit the Recipes by a click of a button
+* View All profiles
+ * User can view all the profiles in this project
+* View All recipes
+ * User can view all the recipes in this project
+
 
 ## Kanban Board
 ![Kanban Board](src/media/Kanban%20Board.png)
@@ -159,9 +171,7 @@ The agile Methodology was used and different user stories were created using Kan
 ### Validators
 W3C HTML Validator - No errors found
 
-
 W3C CSS Validator -No errors found
-
 
 JShint:
 only warnings found
@@ -182,16 +192,16 @@ Testing of user stories
   * Result:Pass, I was able to delete a recipes which i dint want anymore on my website
 
 * Viewing/Receiving of all Recipes from the backend: As a user, I was able to see all the recipes created so far
-  * Result:Pass, it was possible to receive all the recipesfrom the backend and see it in the front end
+  * Result:Pass, it was possible to receive all the recipes from the backend and see it in the front end
 
-* Signup: As a developer i could easily signup on the website so as to create further recipes
-  * Result:Pass, I was able to Signup on the website
+* Signup: As a developer I could easily signup on the website so as to create further recipes
+  * Result:Pass, I was able to Signup on the website and create further recipes
 
 * Navigation Test: As a user I can view a navbar from every page so that I can navigate easily between pages
-  * Result: Pass, A navigation bar was found and i could easily navigate between different pages through this navbar
+  * Result: Pass, A navigation bar was found and I could easily navigate between different pages through this navbar
 
 * Sign in Test: As a user I can sign in to the app ans use the website
-  * Result: Pass, A sign in page was found where i could sign in and start creating or adding my recipes
+  * Result: Pass, A sign in page was found where I could sign in and start creating or adding my recipes
 
 * HomePage Navigation: As a user as i enter on the home page of the website, its clearly directed that i could create the 
   recipe after signing up or there is a possibilty of directly signing up and signing in and then creating the recipes
@@ -210,7 +220,7 @@ Testing of user stories
   * Result:Pass, it was possible to receive all the comments the backend and see it in the front end
 
 *Viewing/Receiving of all profiles :  As a user, I was able to see all the profiles created so far
-  * Result:Pass, it was possible to receive all the profiels from the backend and view it in the front end
+  * Result:Pass, it was possible to receive all the profiles from the backend and view it in the front end
 
 
 ## Pages present in the project and its related functionality:
@@ -257,9 +267,26 @@ web: serve -s build
 
 
 ### API testing
-* As I have created several posts i am able to call my api and all those posts from api and and read them
-* As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
-  as edit them from my api
+* As a user/developer I am able to create the recipes and post it in the backend.
+ * Result:Pass, I was able to create the posts and find that data in the django-api as well as see them in the frontend
+* As a user/developer I am able to edit the recipes and post those changes in the backend.
+ * Result:Pass, I was able to edit the recipes and find those changes in the django-api as well as see those chanes in the frontend.
+* As a user/developer I am able to delete those recipes and find them no more in the backend.
+ * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api as well as they were not found in the front end
+* As a user/developer I am able to view the recipes and find them in the django-api as well.
+ * Result:Pass,I was able to view the recipes and find them in the backend as well.
+
+* As a user/developer I am able to create the comments and post it in the backend.
+ * Result:Pass, I was able to create the comments and find that data in the django-api as well as see them in the frontend
+
+* As a user/developer I am able to edit the comments and post those changes in the backend.
+ * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
+* As a user/developer I am able to delete those comments and find them no more in the backend.
+ * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api as well as they were not found in the front end
+* As a user/developer I am able to view the comments and find them in the django-api as well.
+ * Result:Pass,I was able to view the comments and find them in the backend as well.
+* As a user/developer I am able to view the profiles and find them in the django-api as well.
+ * Result:Pass,I was able to view the profiles and find them in the backend as well.
 
 
 ### Things that could be improved

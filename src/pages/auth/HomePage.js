@@ -26,12 +26,8 @@ const HomePage = () => {
     password1: "",
   });
   const { username, lastname, password } = SignInData;
-
-
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
-
   return (
     <Row className={styles.Row}>
        <Col className="my-auto py-2 p-md-2" md={4}>
@@ -75,7 +71,6 @@ const HomePage = () => {
         />
 |</Container>
       </Col>
-     
     </Row>
   );
 };

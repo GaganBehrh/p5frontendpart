@@ -8,7 +8,6 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import InputGroup from "react-bootstrap/InputGroup";
-
 import {
     Form,
     Button,
@@ -18,8 +17,6 @@ import {
     Alert,
 } from "react-bootstrap";
 import axios from "axios";
-
-
 const DeleteRecipe = () => {
 
     const [errors, setErrors] = useState({});
@@ -57,8 +54,6 @@ const DeleteRecipe = () => {
             [event.target.name]: event.target.value,
         });
     };
-
-
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");

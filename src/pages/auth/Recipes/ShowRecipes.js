@@ -6,22 +6,16 @@ import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
 import Asset from "../../../components/Asset";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
-
 const ShowRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const { id } = useParams();
     const history = useHistory();
-
-
     useEffect(() => {
         const getRecipes = async () => {
             try {
                 const { data } = await axiosReq.get(`/Recipeposts/`);
                 console.log(data);
                 setRecipes(data);
-
-
-
             } catch (err) {
                 console.log(err);
             }
@@ -59,7 +53,6 @@ const ShowRecipes = () => {
                             </Card.Body>
                         </Card>
                     ))
-
                 }
             </div>
         </>

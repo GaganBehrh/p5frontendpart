@@ -7,7 +7,6 @@ import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useCurrentUser } from "../../../contexts/CurrentUser";
-
 import InputGroup from "react-bootstrap/InputGroup";
 import {
     Form,
@@ -28,8 +27,6 @@ const RecipePost = (props) => {
         profile_image,
         username,
     } = props;
-
-
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const { post, setPost, setComments, profileImag } = props;
