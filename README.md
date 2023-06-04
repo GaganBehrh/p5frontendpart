@@ -1,5 +1,5 @@
 ![Resposive Image](src/media/Responsive.png)
-Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website.The user is also able to create the coments,edit them and delete the comments. The user is able to view all the recipes/posts, comments, and profile from the backend.There is a homepage which prompts user to sign up or sign in and also create a new recipe.
+Looking to create new recipesrecipes? Welcome to ReciBook You've come to the right place! ReciBook is a place where you can be very creative and create your own recipes, view, edit and delete these recipes once they are old and not useful. You can create your own free account and add an unlimited number of recipes.This website is also responsive. The website uses React frontend framework to create this project and retreives and sends the data in the backend with the django-api.The user is able to view all those created recipes on a page . The user is able to sign up and sign on this website.The user is also able to create the coments,edit them and delete the comments. The user is able to view all the recipes/posts, comments, and profile from the backend.There is a homepage which prompts user to sign up or sign in and also create a new recipe.This project provides the CRUD functionality for different recipes, comments etc
 
 ## React
 React is a library for building user interfaces, which comprise only one part of an app. Deciding on all the other parts — styles, routers, npm modules, ES6 code, bundling and more — and then figuring out how to use them is a drain on developers. This has become known as javascript fatigue. Despite this complexity, usage of React continues to grow.
@@ -268,25 +268,23 @@ web: serve -s build
 
 ### API testing
 * As a user/developer I am able to create the recipes and post it in the backend.
- * Result:Pass, I was able to create the posts and find that data in the django-api as well as see them in the frontend
+  * Result:Pass, I was able to create the posts and find that data in the django-api as well as see them in the frontend
 * As a user/developer I am able to edit the recipes and post those changes in the backend.
- * Result:Pass, I was able to edit the recipes and find those changes in the django-api as well as see those chanes in the frontend.
+  * Result:Pass, I was able to edit the recipes and find those changes in the django-api as well as see those chanes in the frontend.
 * As a user/developer I am able to delete those recipes and find them no more in the backend.
- * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api as well as they were not found in the front end
+  * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api as well as they were not found in the front end
 * As a user/developer I am able to view the recipes and find them in the django-api as well.
- * Result:Pass,I was able to view the recipes and find them in the backend as well.
-
-* As a user/developer I am able to create the comments and post it in the backend.
- * Result:Pass, I was able to create the comments and find that data in the django-api as well as see them in the frontend
-
+  * Result:Pass,I was able to view the recipes and find them in the backend as well.
+* As a user/developer I am able to create the comments and post it in the backend. 
+  * Result:Pass, I was able to create the comments and find that data in the django-api as well as see them in the frontend
 * As a user/developer I am able to edit the comments and post those changes in the backend.
- * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
+  * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
 * As a user/developer I am able to delete those comments and find them no more in the backend.
- * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api as well as they were not found in the front end
+  * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api as well as they were not found in the front end
 * As a user/developer I am able to view the comments and find them in the django-api as well.
- * Result:Pass,I was able to view the comments and find them in the backend as well.
+  * Result:Pass,I was able to view the comments and find them in the backend as well.
 * As a user/developer I am able to view the profiles and find them in the django-api as well.
- * Result:Pass,I was able to view the profiles and find them in the backend as well.
+  * Result:Pass,I was able to view the profiles and find them in the backend as well.
 
 
 ### Things that could be improved
