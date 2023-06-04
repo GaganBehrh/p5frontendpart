@@ -8,7 +8,6 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import InputGroup from "react-bootstrap/InputGroup";
-
 import {
     Form,
     Button,
@@ -18,8 +17,6 @@ import {
     Alert,
 } from "react-bootstrap";
 import axios from "axios";
-
-
 const DeleteComment = () => {
 
     const [errors, setErrors] = useState({});
@@ -57,16 +54,12 @@ const DeleteComment = () => {
             [event.target.name]: event.target.value,
         });
     };
-
-
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");
         const formData = new FormData();
         formData.append("name", name);
         formData.append("subject", subject);
-
-
         try {
             await axiosReq.delete(`/Recipecomment/${id}/`, formData);
             history.push(`/showcomments`);
@@ -84,7 +77,7 @@ const DeleteComment = () => {
             <Col >
                 <Container>
                     <Form onSubmit={handleSubmitbutton}>
-                    <p class="text-sm-left">Are you sure you want to delete this Comment?</p>
+                        <p class="text-sm-left">Are you sure you want to delete this Comment?</p>
                         <Button variant="outline-success" type="submit">Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
@@ -94,5 +87,4 @@ const DeleteComment = () => {
         </Row>
     );
 };
-
 export default DeleteComment;

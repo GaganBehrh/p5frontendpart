@@ -8,7 +8,6 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import InputGroup from "react-bootstrap/InputGroup";
-
 import {
     Form,
     Button,
@@ -19,7 +18,6 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
-
 const EditComment = () => {
 
     const [errors, setErrors] = useState({});
@@ -28,19 +26,9 @@ const EditComment = () => {
         subject: "",
 
     });
-
     const { name, subject } = postData;
-
-    // const { image } = postData;
-
-
     const history = useHistory();
     const { id } = useParams();
-
-    const deleteComment = async () => {
-        await axiosRes.delete(`/Recipecomment/${id}/`)
-        history.goBack();
-    }
 
     useEffect(() => {
         const handleMount = async () => {
@@ -67,8 +55,6 @@ const EditComment = () => {
             [event.target.name]: event.target.value,
         });
     };
-
-
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");
@@ -100,10 +86,10 @@ const EditComment = () => {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Content</Form.Label>
-                            <Form.Control as="textarea" placeholder="Please enter the recipe steps"  name="subject" value={subject} onChange={handleChange} />
+                            <Form.Control as="textarea" placeholder="Please enter the recipe steps" name="subject" value={subject} onChange={handleChange} />
                         </Form.Group>
                         <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
-                        <Button variant="outline-success"  onClick={() =>history.push(`/Recipecomment/${id}/del`)} >Delete</Button>{' '}
+                        <Button variant="outline-success" onClick={() => history.push(`/Recipecomment/${id}/del`)} >Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>

@@ -8,13 +8,11 @@ import axios from "axios";
 import LoggedinPic from "./LoggedinPic";
 import appStyles from "../App.module.css";
 import { Image } from "react-bootstrap";
-
 import { useParams } from "react-router";
 import {
     useCurrentUser,
     useSetCurrentUser,
 } from "../contexts/CurrentUser";
-
 
 const Navigationbar = () => {
 

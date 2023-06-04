@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/LoggedininPic.module.css";
-
 const LoggedinPic = ({ src, height = 45, text }) => {
     return (
         <span>
@@ -15,5 +14,4 @@ const LoggedinPic = ({ src, height = 45, text }) => {
         </span>
     );
 };
-
 export default LoggedinPic

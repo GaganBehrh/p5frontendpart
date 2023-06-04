@@ -6,8 +6,6 @@ import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
-
-
 import {
   Form,
   Button,
@@ -17,9 +15,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
-
 const AddRecipeTrial = () => {
-
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     name: "",
@@ -28,11 +24,7 @@ const AddRecipeTrial = () => {
     created_on: "",
     updated_on: "",
   });
-
-
   const { name, matter, pic, created_on, updated_on } = postData;
-  // const { image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
 
@@ -54,7 +46,6 @@ const AddRecipeTrial = () => {
     //formData.append("pic", imageInput.current.files[0]);
     formData.append("created_on", created_on);
     formData.append("updated_on", updated_on);
-
     try {
       const { data } = await axiosReq.post("/Recipeposts/", formData);
       console.log(data);
@@ -85,11 +76,8 @@ const AddRecipeTrial = () => {
             </Form.Group>
             <Button variant="outline-success" type="submit">Create Recipe</Button>{' '}
             <Button variant="outline-success" onClick={() => history.push(`/recipepostspage`)}>Cancel</Button>{' '}
-
           </Form>
-
         </Container>
-
       </Col>
     </Row>
   );

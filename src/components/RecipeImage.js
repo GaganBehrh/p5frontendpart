@@ -1,9 +1,6 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-
-
-
 const RecipeImage = ({ spinner, src, message }) => {
   return (
     <div className={`p-4`}>

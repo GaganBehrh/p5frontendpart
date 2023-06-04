@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axioDefaults";
 import { useCurrentUser } from "../contexts/CurrentUser";
 
-
 const ProfileDataContext = createContext();
 const SetProfileDataContext = createContext();
 

@@ -5,7 +5,6 @@ import { Card, Form, Row, Col, Container, Button } from 'react-bootstrap';
 import styles from "../../../styles/Profile.module.css";
 import appStyles from "../../../App.module.css";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
-
 const ShowComments = () => {
     const [comments, setComments] = useState([]);
     const history = useHistory();
@@ -52,6 +51,5 @@ const ShowComments = () => {
 
     );
 };
-
 
 export default ShowComments;

@@ -5,8 +5,6 @@ import btnStyles from "../../../styles/Button.module.css";
 import { axiosReq, axiosRes } from "../../../api/axioDefaults";
 import appStyles from "../../../App.module.css";
 import { SetCurrentUserContext } from "../../../App";
-import Image from "react-bootstrap/Image";
-
 
 import {
   Form,
@@ -26,23 +24,16 @@ const AddComments = () => {
     subject:"",
    
   });
-
-
   const { name, subject } = commentData;
-  // const { image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
-
   const handleChange = (event) => {
-
     console.log(event.target);
     setPostData({
       ...commentData,
       [event.target.name]: event.target.value,
     });
   };
-
   const handleSubmitbutton = async (event) => {
     event.preventDefault();
     console.log("call");
@@ -80,14 +71,10 @@ const AddComments = () => {
             </Form.Group>
             <Button variant="outline-success" type="submit">Add Comment</Button>{' '}
             <Button variant="outline-success" onClick={() => history.push(`/showrecipes`)}>Cancel</Button>{' '}
-
           </Form>
-
         </Container>
-
       </Col>
     </Row>
   );
 };
-
 export default AddComments;

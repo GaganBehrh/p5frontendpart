@@ -8,7 +8,6 @@ import { SetCurrentUserContext } from "../../../App";
 import Image from "react-bootstrap/Image";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import InputGroup from "react-bootstrap/InputGroup";
-
 import {
     Form,
     Button,
@@ -18,8 +17,6 @@ import {
     Alert,
 } from "react-bootstrap";
 import axios from "axios";
-
-
 const EditProfile = () => {
 
     const [errors, setErrors] = useState({});
@@ -28,13 +25,9 @@ const EditProfile = () => {
         subject: "",
 
     });
-
     const {owner, name,content,created_at} = postData;
     const history = useHistory();
     const { id } = useParams();
-
-
-
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -60,8 +53,6 @@ const EditProfile = () => {
             [event.target.name]: event.target.value,
         });
     };
-
-
     const handleSubmitbutton = async (event) => {
         event.preventDefault();
         console.log("call");
@@ -70,8 +61,6 @@ const EditProfile = () => {
         formData.append("name", name);
         formData.append("content", content);
         formData.append("created_at", created_at);
-
-
         try {
             await axiosReq.put(`/profiles/${id}/`, formData);
             history.push(`/showprofiles`);

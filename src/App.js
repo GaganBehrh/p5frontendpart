@@ -5,7 +5,6 @@ import { Route, Switch } from "react-router-dom";
 import SignUpForm from './pages/auth/SignUpForm';
 import HomePage from './pages/auth/HomePage';
 import SignInForm from './pages/auth/SignInForm';
-import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
 import AddRecipe from './pages/auth/Recipes/AddRecipe';
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -39,7 +38,6 @@ function App() {
           <Route exact path="/home" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/Recipeposts/create" render={() => <CreateRecipes />} />
           <Route exact path="/Recipeposts/add" render={() => <AddRecipe />} />
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
