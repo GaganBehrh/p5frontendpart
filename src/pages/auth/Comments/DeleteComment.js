@@ -20,7 +20,7 @@ import {
 import axios from "axios";
 
 
-const EditComment = () => {
+const DeleteComment = () => {
 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -30,10 +30,6 @@ const EditComment = () => {
     });
 
     const { name, subject } = postData;
-
-    // const { image } = postData;
-
-
     const history = useHistory();
     const { id } = useParams();
 
@@ -60,7 +56,6 @@ const EditComment = () => {
     }, [history, id]);
 
     const handleChange = (event) => {
-
         console.log(event.target);
         setPostData({
             ...postData,
@@ -78,7 +73,7 @@ const EditComment = () => {
 
 
         try {
-            await axiosReq.put(`/Recipecomment/${id}/`, formData);
+            await axiosReq.delete(`/Recipecomment/${id}/`, formData);
             history.push(`/showcomments`);
 
         } catch (err) {
@@ -94,16 +89,8 @@ const EditComment = () => {
             <Col className="my-auto py-2 p-md-2" md={12}>
                 <Container>
                     <Form onSubmit={handleSubmitbutton}>
-                        <Form.Group>
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" placeholder="Please enter the name of the recipe" col={6} name="name" value={name} onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Content</Form.Label>
-                            <Form.Control as="textarea" placeholder="Please enter the recipe steps"  name="subject" value={subject} onChange={handleChange} />
-                        </Form.Group>
-                        <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
-                        <Button variant="outline-success"  onClick={() =>history.push(`/Recipecomment/${id}/del`)} >Delete</Button>{' '}
+                    <p class="text-sm-left">Are you sure you want to delete this text?</p>
+                        <Button variant="outline-success" type="submit">Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
                 </Container>
@@ -113,6 +100,4 @@ const EditComment = () => {
     );
 };
 
-export default EditComment;
-
-// <Button variant="outline-success" onClick={() => {deleteComment()}}>Delete</Button>{' '}
+export default DeleteComment;

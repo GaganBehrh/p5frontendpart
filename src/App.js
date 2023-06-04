@@ -7,7 +7,6 @@ import HomePage from './pages/auth/HomePage';
 import SignInForm from './pages/auth/SignInForm';
 import CreateRecipes from './pages/auth/Recipes/CreateRecipes';
 import AddRecipe from './pages/auth/Recipes/AddRecipe';
-
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import './api/axioDefaults';
@@ -19,6 +18,7 @@ import ShowProfiles from './pages/auth/Profiles/ShowProfiles';
 import AddComments from './pages/auth/Comments/AddComments';
 import ShowComments from './pages/auth/Comments/ShowComments';
 import EditComment from './pages/auth/Comments/EditComment';
+import DeleteComment from './pages/auth/Comments/DeleteComment';
 import ProfileDetails from './pages/auth/Profiles/ProfileDetails';
 import EditProfile from './pages/auth/Profiles/EditProfile';
 
@@ -43,6 +43,7 @@ function App() {
           // <Route exact path="/Recipeposts/:id" render={() => <RecipeDetail />} />
           <Route exact path="/Recipeposts/:id/edit" render={() => <EditRecipe />} />
           <Route exact path="/Recipecomment/:id/" render={() => <EditComment />} />
+          <Route exact path="/Recipecomment/:id/del" render={() => <DeleteComment />} />
           <Route exact path="/profiles/:id/" render={() => <EditProfile />} />
           <Route exact path="/showprofiles" render={() => <ShowProfiles />} />
           <Route exact path="/addcomment" render={() => <AddComments />} />
