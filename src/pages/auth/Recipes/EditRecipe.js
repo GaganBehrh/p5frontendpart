@@ -20,7 +20,7 @@ import {
 import axios from "axios";
 
 
-const EditRecipeTrial = () => {
+const EditRecipe = () => {
 
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
@@ -109,4 +109,4 @@ const EditRecipeTrial = () => {
     );
 };
 
-export default EditRecipeTrial;
+export default EditRecipe;
