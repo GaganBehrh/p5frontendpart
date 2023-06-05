@@ -41,7 +41,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
-      history.push("/recipepostspage");
+      history.push("/showprofiles");
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -49,15 +49,15 @@ const SignUpForm = () => {
 
   return (
     <Row className={styles.Row}>
-       <Col
+      <Col
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
-         <h1 className={styles.Recibookcreate}>Create your new recipes today</h1>
-         
+        <h1 className={styles.Recibookcreate}>Create your new recipes today</h1>
+
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"}alt="recipe image"
+          src={"https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"} alt="recipe image"
         />
       </Col>
       <Col className="my-auto py-2 p-md-2" md={6}>
@@ -132,11 +132,11 @@ const SignUpForm = () => {
 
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-          Create and share  your exciting  new recipes with ReciBook. Already have an account? <span>Sign in</span>
+            Create and share  your exciting  new recipes with ReciBook. Already have an account? <span>Sign in</span>
           </Link>
         </Container>
       </Col>
-      
+
     </Row>
   );
 };
