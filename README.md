@@ -6,6 +6,8 @@ React is a library for building user interfaces, which comprise only one part of
 
 A Component is one of the core building blocks of React. In other words UI in React will be made up of pieces called components.Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components make the task of building UIs much easier. A UI can be broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI.Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
+These components are what take a web page or app from simply being informational to being an interactive experience. Check out the following React-Bootstrap components.
+
 The reuasble component in this project is for example is the Navigation bar, Asset. These reusable components are used in several pages
 
 ### Architecture of the React Application
@@ -26,6 +28,15 @@ Because of this ReactJs architectural freedom, it is the most preferred JavaScri
 - React app can include third party component for specific purpose such as routing, animation, state management, etc.
 
 This App uses several UI componetnst such as Buttons,Row, Columns,Container etc in different files
+
+React allows us to split a large bundle file into multiple chunks using import() using React. With the use of components, we dont have to write a lot of very tricky JavaScript code again and again.This saves a lot of time, effort and also promotes the concept of code reusability in the app.With the use of React-Bootstrap  saves you time because the JavaScript elements are already there, wrapped in neat little React-shaped bows and you just have to take these elements and put it in your code.
+The other advantages are
+- Speed.
+- Flexibility.
+- Performance.
+- Usability.
+
+
  
 ## React Bootstrap
 React Bootstap was used for this project.React Bootstrap is the rebuilt version of the popular frontend CSS framework for React. Each component of the React Bootstrap is built from scratch with no unneeded dependencies and is accessible by default.
