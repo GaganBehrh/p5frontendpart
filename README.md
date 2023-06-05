@@ -174,10 +174,10 @@ W3C HTML Validator - No errors found
 W3C CSS Validator -No errors found
 
 JShint:
-only warnings found
+only warnings were found
 
 PEP8 Online:
-No errors found
+only wanrnings were found
 
 Testing of user stories
 

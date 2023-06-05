@@ -24,7 +24,9 @@ const ShowComments = () => {
     }, []);
 
     return (
-        <>
+        <><Container>
+        <h1>Discover all Comments here</h1>
+    </Container>
             <div className={styles.grid}>
                 {
                     comments.map((comment, index) => (

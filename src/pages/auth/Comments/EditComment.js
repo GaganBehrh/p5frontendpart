@@ -88,7 +88,7 @@ const EditComment = () => {
                             <Form.Label>Content</Form.Label>
                             <Form.Control as="textarea" placeholder="Please enter the recipe steps" name="subject" value={subject} onChange={handleChange} />
                         </Form.Group>
-                        <Button variant="outline-success" type="submit" >Edit Recipe</Button>{' '}
+                        <Button variant="outline-success" type="submit" >Edit</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.push(`/Recipecomment/${id}/del`)} >Delete</Button>{' '}
                         <Button variant="outline-success" onClick={() => history.goBack()}>Cancel</Button>{' '}
                     </Form>
